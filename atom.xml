@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>MyBlog</title>
   
-  <subtitle>欢迎进入我的博客！</subtitle>
+  <subtitle>这里是我所热爱的世界！</subtitle>
   <link href="https://luan-bx.github.io/atom.xml" rel="self"/>
   
   <link href="https://luan-bx.github.io/"/>
