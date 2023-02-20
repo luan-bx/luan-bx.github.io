@@ -6,7 +6,7 @@
   <link href="https://luan-bx.github.io/atom.xml" rel="self"/>
   
   <link href="https://luan-bx.github.io/"/>
-  <updated>2023-02-16T07:38:14.486Z</updated>
+  <updated>2023-02-20T13:16:12.619Z</updated>
   <id>https://luan-bx.github.io/</id>
   
   <author>
@@ -17,11 +17,57 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://luan-bx.github.io/2023/02/16/hello-world/"/>
-    <id>https://luan-bx.github.io/2023/02/16/hello-world/</id>
+    <title>git</title>
+    <link href="https://luan-bx.github.io/2023/02/20/git/"/>
+    <id>https://luan-bx.github.io/2023/02/20/git/</id>
+    <published>2023-02-20T11:38:38.000Z</published>
+    <updated>2023-02-20T13:16:12.619Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Git" scheme="https://luan-bx.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown</title>
+    <link href="https://luan-bx.github.io/2023/02/18/markdown/"/>
+    <id>https://luan-bx.github.io/2023/02/18/markdown/</id>
+    <published>2023-02-18T11:48:54.000Z</published>
+    <updated>2023-02-20T11:56:32.566Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Markdown 是一种轻量级标记语言，它用简洁的语法代替排版，使我们专心于码字。它的目标是实现易读易写，成为一种适用于网络的书写语言。同时，Markdown支持嵌入html标签。&lt;br&gt;注意：Markdown使用#、+、*等符号来标记， 符号后面必须跟上 至少1个</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Markdown" scheme="https://luan-bx.github.io/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo</title>
+    <link href="https://luan-bx.github.io/2023/02/16/hexo/"/>
+    <id>https://luan-bx.github.io/2023/02/16/hexo/</id>
     <published>2023-02-16T07:38:14.486Z</published>
-    <updated>2023-02-16T07:38:14.486Z</updated>
+    <updated>2023-02-20T13:15:56.725Z</updated>
     
     
       
@@ -34,6 +80,8 @@
     
     
     
+    
+    <category term="Hexo" scheme="https://luan-bx.github.io/tags/Hexo/"/>
     
   </entry>
   
