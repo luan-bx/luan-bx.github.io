@@ -4,9 +4,16 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Markdown, lbx">
-    <meta name="description" content="Markdown 是一种轻量级标记语言，它用简洁的语法代替排版，使我们专心于码字。它的目标是实现易读易写，成为一种适用于网络的书写语言。同时，Markdown支持嵌入html标签。注意：符号后面必须跟至少1个空格才有效！
-常用命令标题# 一">
+    <meta name="keywords" content="Hexo, lbx">
+    <meta name="description" content="常用命令清理hexo clean
+
+构建静态文件hexo g
+
+上传至仓库hexo d
+
+打开本地服务器hexo server //可进行本地调试
+
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +25,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Markdown | MyBlog</title>
+    <title>Hexo | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -290,12 +297,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Markdown</h1>
+                    <h1 class="description center-align post-title">Hexo</h1>
                 </div>
             </div>
         </div>
@@ -319,8 +326,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
                     </div>
@@ -335,7 +342,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-16
+                    2022-02-15
                 </div>
                 
 
@@ -344,7 +351,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    248
+                    39
                 </div>
                 
 
@@ -361,59 +368,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Markdown 是一种轻量级标记语言，它用简洁的语法代替排版，使我们专心于码字。它的目标是实现易读易写，成为一种适用于网络的书写语言。同时，Markdown支持嵌入html标签。<br>注意：符号后面必须跟至少1个空格才有效！</p>
-<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 一级标题</span>
-<span class="token title important"><span class="token punctuation">##</span> 二级标题</span>
-<span class="token title important"><span class="token punctuation">###</span> 三级标题</span>
+                <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="清理"><a href="#清理" class="headerlink" title="清理"></a>清理</h2><pre class=" language-bash"><code class="language-bash">hexo clean
 </code></pre>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
-</ul>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token list punctuation">-</span> Red
-<span class="token list punctuation">-</span> Green
-<span class="token list punctuation">-</span> Blue
+<h2 id="构建静态文件"><a href="#构建静态文件" class="headerlink" title="构建静态文件"></a>构建静态文件</h2><pre class=" language-bash"><code class="language-bash">hexo g
 </code></pre>
-<h2 id="标号"><a href="#标号" class="headerlink" title="标号"></a>标号</h2><ol>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
-</ol>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token list punctuation">1.</span> Red
-<span class="token list punctuation">2.</span> Green
-<span class="token list punctuation">3.</span> Blue
+<h2 id="上传至仓库"><a href="#上传至仓库" class="headerlink" title="上传至仓库"></a>上传至仓库</h2><pre class=" language-bash"><code class="language-bash">hexo d
 </code></pre>
-<h2 id="打开本地服务器"><a href="#打开本地服务器" class="headerlink" title="打开本地服务器"></a>打开本地服务器</h2><blockquote>
-<p>一级引用</p>
-<blockquote>
-<p>二级引用</p>
-<blockquote>
-<p>三级引用</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>引用 ，注意：在<code>&gt;</code>后面有 1 个空格</p>
-<pre><code>这是引用的代码块形式    //在`&gt;`后面有 5 个空格
-</code></pre>
-</blockquote>
-<blockquote>
-<p>代码例子：<br>    protected void onCreate(Bundle savedInstanceState) {<br>        super.onCreate(savedInstanceState);<br>        setContentView(R.layout.activity_main);<br>    }</p>
-</blockquote>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> 一级引用
-<span class="token blockquote punctuation">> ></span> 二级引用
-<span class="token blockquote punctuation">> > ></span> 三级引用
-</code></pre>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> 引用 ，注意：在<span class="token code keyword">`>`</span>后面有 1 个空格
-<span class="token blockquote punctuation">></span> 
-<span class="token blockquote punctuation">></span><span class="token code keyword">     这是引用的代码块形式    //在`>`后面有 5 个空格</span>
-</code></pre>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> 代码例子：
-<span class="token code keyword">    protected void onCreate(Bundle savedInstanceState) &amp;#123;</span>
-<span class="token code keyword">        super.onCreate(savedInstanceState);</span>
-<span class="token code keyword">        setContentView(R.layout.activity_main);</span>
-<span class="token code keyword">    &amp;#125;</span>
+<h2 id="打开本地服务器"><a href="#打开本地服务器" class="headerlink" title="打开本地服务器"></a>打开本地服务器</h2><pre class=" language-bash"><code class="language-bash">hexo server //可进行本地调试
 </code></pre>
 
                 
@@ -441,7 +402,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luan-bx.github.io/2022/02/16/markdown/">https://luan-bx.github.io/2022/02/16/markdown/</a>
+                    <a href="https://luan-bx.github.io/2022/02/15/java2/">https://luan-bx.github.io/2022/02/15/java2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -479,8 +440,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
                         </div>
@@ -530,13 +491,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/02/20/java3/">
+                <a href="/2022/02/15/hexo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git常用命令">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Hexo">
                         
-                        <span class="card-title">git常用命令</span>
+                        <span class="card-title">Hexo</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -547,7 +508,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-15
                         </span>
                         <span class="publish-author">
                             
@@ -560,8 +521,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -572,16 +533,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/16/java1/">
+                <a href="/2022/02/15/java2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Markdown">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Hexo">
                         
-                        <span class="card-title">Markdown</span>
+                        <span class="card-title">Hexo</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -592,7 +553,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-15
                             </span>
                         <span class="publish-author">
                             
@@ -602,11 +563,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
