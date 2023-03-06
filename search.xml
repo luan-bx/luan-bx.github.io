@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>git常用命令</title>
-      <link href="/2023/02/20/git/"/>
-      <url>/2023/02/20/git/</url>
-      
-        <content type="html"><![CDATA[<h2 id="一、查看已有ssh-key首先确保能够查看隐藏目录，进入C-Users-XXXXX-ssh目录，查看是否生成过密钥。id-rsa-pub和id-rsa分别为一对公-x2F-私密钥多个账户可再次创建密钥，但默认的名字需要修改，不能相同，否则会被提示是否重写默认为id-rsa，因此第二个密钥我修改了名字为id-rsa-lbx"><a href="#一、查看已有ssh-key首先确保能够查看隐藏目录，进入C-Users-XXXXX-ssh目录，查看是否生成过密钥。id-rsa-pub和id-rsa分别为一对公-x2F-私密钥多个账户可再次创建密钥，但默认的名字需要修改，不能相同，否则会被提示是否重写默认为id-rsa，因此第二个密钥我修改了名字为id-rsa-lbx" class="headerlink" title="一、查看已有ssh key首先确保能够查看隐藏目录，进入C:\Users\XXXXX.ssh目录，查看是否生成过密钥。id_rsa.pub和id_rsa分别为一对公&#x2F;私密钥多个账户可再次创建密钥，但默认的名字需要修改，不能相同，否则会被提示是否重写默认为id_rsa，因此第二个密钥我修改了名字为id_rsa_lbx"></a>一、查看已有ssh key<br>首先确保能够查看隐藏目录，进入C:\Users\XXXXX.ssh目录，查看是否生成过密钥。<br>id_rsa.pub和id_rsa分别为一对公&#x2F;私密钥<br>多个账户可再次创建密钥，但默认的名字需要修改，不能相同，否则会被提示是否重写<br>默认为id_rsa，因此第二个密钥我修改了名字为id_rsa_lbx</h2><h2 id="二、生成ssh-keyssh-keygen-t-rsa-C-“-x79-x6f-117-x72-101-x6d-x61-105-108-x40-121-111-x75-114-99-x6f-109-112-97-110-121-46-x63-x6f-x6d-“蓝色字体为你的邮箱，不同ssh-key需要绑定不同邮箱如果已经生成多个ssh-key，如上图，则跳过此步三、设置ssh-key的代理（1）首先查看代理ssh-add-l如果提示Could-not-open-a-connection-to-your-authentication-agent-则系统代理里没有任何key，执行如下操作exec-ssh-agent-bash若系统已经有ssh-key-代理-可以删除ssh-add-D"><a href="#二、生成ssh-keyssh-keygen-t-rsa-C-“-x79-x6f-117-x72-101-x6d-x61-105-108-x40-121-111-x75-114-99-x6f-109-112-97-110-121-46-x63-x6f-x6d-“蓝色字体为你的邮箱，不同ssh-key需要绑定不同邮箱如果已经生成多个ssh-key，如上图，则跳过此步三、设置ssh-key的代理（1）首先查看代理ssh-add-l如果提示Could-not-open-a-connection-to-your-authentication-agent-则系统代理里没有任何key，执行如下操作exec-ssh-agent-bash若系统已经有ssh-key-代理-可以删除ssh-add-D" class="headerlink" title="二、生成ssh keyssh-keygen -t rsa -C “&#x79;&#x6f;&#117;&#x72;&#101;&#x6d;&#x61;&#105;&#108;&#x40;&#121;&#111;&#x75;&#114;&#99;&#x6f;&#109;&#112;&#97;&#110;&#121;&#46;&#x63;&#x6f;&#x6d;“蓝色字体为你的邮箱，不同ssh key需要绑定不同邮箱如果已经生成多个ssh key，如上图，则跳过此步三、设置ssh key的代理（1）首先查看代理ssh-add -l如果提示Could not open a connection to your authentication agent.则系统代理里没有任何key，执行如下操作exec ssh-agent bash若系统已经有ssh-key 代理 ,可以删除ssh-add -D"></a>二、生成ssh key<br>ssh-keygen -t rsa -C “<a href="mailto:&#x79;&#x6f;&#117;&#x72;&#101;&#x6d;&#x61;&#105;&#108;&#x40;&#121;&#111;&#x75;&#114;&#99;&#x6f;&#109;&#112;&#97;&#110;&#121;&#46;&#x63;&#x6f;&#x6d;">&#x79;&#x6f;&#117;&#x72;&#101;&#x6d;&#x61;&#105;&#108;&#x40;&#121;&#111;&#x75;&#114;&#99;&#x6f;&#109;&#112;&#97;&#110;&#121;&#46;&#x63;&#x6f;&#x6d;</a>“<br>蓝色字体为你的邮箱，不同ssh key需要绑定不同邮箱<br>如果已经生成多个ssh key，如上图，则跳过此步<br>三、设置ssh key的代理<br>（1）首先查看代理<br>ssh-add -l<br>如果提示<br>Could not open a connection to your authentication agent.<br>则系统代理里没有任何key，执行如下操作<br>exec ssh-agent bash<br>若系统已经有ssh-key 代理 ,可以删除<br>ssh-add -D</h2><h2 id="（2）-添加私钥ssh-add-x2F-ssh-x2F-id-rsassh-add-x2F-ssh-x2F-id-rsa-lbx"><a href="#（2）-添加私钥ssh-add-x2F-ssh-x2F-id-rsassh-add-x2F-ssh-x2F-id-rsa-lbx" class="headerlink" title="（2） 添加私钥ssh-add ~&#x2F;.ssh&#x2F;id_rsassh-add ~&#x2F;.ssh&#x2F;id_rsa_lbx"></a>（2） 添加私钥<br>ssh-add ~&#x2F;.ssh&#x2F;id_rsa<br>ssh-add ~&#x2F;.ssh&#x2F;id_rsa_lbx</h2><h2 id="（3）添加公钥在目标账户github的ssh管理页面，添加对应的公钥（刚才生成的ssh-key，如id-rsa-pub-等以-pub结尾的文件内容）。"><a href="#（3）添加公钥在目标账户github的ssh管理页面，添加对应的公钥（刚才生成的ssh-key，如id-rsa-pub-等以-pub结尾的文件内容）。" class="headerlink" title="（3）添加公钥在目标账户github的ssh管理页面，添加对应的公钥（刚才生成的ssh key，如id_rsa.pub 等以.pub结尾的文件内容）。"></a>（3）添加公钥<br>在目标账户github的ssh管理页面，添加对应的公钥（刚才生成的ssh key，如id_rsa.pub 等以.pub结尾的文件内容）。</h2><p>（4）新建并编辑配置文件config<br>在 ~&#x2F;.ssh 目录下新建一个config文件<br>touch ~&#x2F;.ssh&#x2F;config<br>添加内容<br>方法一：</p><h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><p>Host github.com<br>    HostName github.com<br>    PreferredAuthentications publickey<br>    IdentityFile ~&#x2F;.ssh&#x2F;id_rsa<br>user git<br>其中，id_rsa 为你要关联的账户对应的密钥，电脑需要关联哪个账户，这边就写哪个<br>如此，ssh就会根据登陆的不同域，来读取对应的私钥文件<br>如需要用到其他账户的远程仓库，则在此处修改目标仓库生成的ssh key即可。<br>方法二：<br>同时将两个ssh key同时写入，但区分Host名称即可，并且对应的ssh key文件对应好。<br>并且以后在github.com前面加上前缀（Host名称），就可以跳转到各个账号的仓库。</p><hr><p> 四、测试<br>ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#109;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#109;</a><br>若出现<br>Hi XXX! You’ve successfully authenticated, but GitHub does not provide shell access.<br>则表示成功。查看XXX是否为关联的账户</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Git </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Markdown</title>
       <link href="/2023/02/18/markdown/"/>
       <url>/2023/02/18/markdown/</url>
@@ -53,6 +34,25 @@
         <tags>
             
             <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git常用命令</title>
+      <link href="/2021/02/20/git/"/>
+      <url>/2021/02/20/git/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、基本操作"><a href="#一、基本操作" class="headerlink" title="一、基本操作"></a>一、基本操作</h1><ul><li>初始化本地库</li></ul><pre class=" language-Bash"><code class="language-Bash">git init</code></pre><ul><li>查看状态</li></ul><pre class=" language-Bash"><code class="language-Bash">git status</code></pre><h1 id="二、推"><a href="#二、推" class="headerlink" title="二、推"></a>二、推</h1><ul><li>添加到暂缓区</li></ul><pre class=" language-Bash"><code class="language-Bash">git add .</code></pre><ul><li>提交至本地库</li></ul><pre class=" language-Bash"><code class="language-Bash">git commit -m '提交信息'</code></pre><ul><li>推到远程仓库</li></ul><pre class=" language-Bash"><code class="language-Bash">git push</code></pre><h1 id="三、拉"><a href="#三、拉" class="headerlink" title="三、拉"></a>三、拉</h1><ul><li>下拉并与本地合并</li></ul><pre class=" language-Bash"><code class="language-Bash">git pull</code></pre><ul><li>如未知关联的仓库</li></ul><pre class=" language-Bash"><code class="language-Bash">git pull 仓库名 分支名</code></pre><h1 id="四、冲突"><a href="#四、冲突" class="headerlink" title="四、冲突"></a>四、冲突</h1><p>冲突产生的表现：后面状态为MERGING</p><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/57e02acec7b8b8e0f654934c039e9bb3.png"></p><ul><li>查看状态</li></ul><pre class=" language-Bash"><code class="language-Bash">git status</code></pre><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/fd0174cbfce59addaf90bb936b2fd5eb.png"></p><p>解决合并问题：</p><p>1）编辑有冲突的文件，删除特殊符号，决定要使用的内容</p><p>特殊符号：<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD 当前分支的代码======= 合并过来的代码&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code></p><p>2）添加到暂存区</p><pre class=" language-Bash"><code class="language-Bash">git add XXXX（文件名） 或 git add .</code></pre><p>3）查看解决状态，全部绿色（modified修改过）</p><pre class=" language-Bash"><code class="language-Bash">git status</code></pre><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/552a8ad42e123ea5e10a70e027dba00e.png"></p><p>4）执行提交（注意：此时使用git commit 命令时不能带文件名）</p><pre class=" language-Bash"><code class="language-Bash">git commit -m ' '</code></pre><p>发现后面MERGING 消失，变为正常</p><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/52b7fdf6e1ddb65b57e28ce92189a6ec.png"></p><h1 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h1><ul><li>创建分支</li></ul><pre class=" language-Bash"><code class="language-Bash">git branch 分支名</code></pre><ul><li>查看分支</li></ul><pre class=" language-Bash"><code class="language-Bash">git branch -v</code></pre><ul><li>切换分支（切换分支的本质就是移动HEAD 指针）</li></ul><pre class=" language-Bash"><code class="language-Bash">git checkout 分支名</code></pre><ul><li>指定分支合并到当前分支</li></ul><pre class=" language-Bash"><code class="language-Bash">git merge 分支名</code></pre><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/b2ac0f41fb9fa4621cdc29209adcd2bd.png"></p><h1 id="六、版本"><a href="#六、版本" class="headerlink" title="六、版本"></a>六、版本</h1><ul><li>查看历史记录</li></ul><pre class=" language-Bash"><code class="language-Bash">git reflog</code></pre><ul><li>版本穿梭</li></ul><pre class=" language-Bash"><code class="language-Bash">git reset --hard 版本号</code></pre><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/ed7d30769d8dcd9b6b10fc6b00e47bca.png"></p><h1 id="七、vim相关操作"><a href="#七、vim相关操作" class="headerlink" title="七、vim相关操作"></a>七、vim相关操作</h1><p>主要用到：</p><p>“a”进入编辑</p><p>“Esc”退出编辑</p><p>“shift + :”开始编辑命令</p><p>“:wq”保存</p><p>“:q”退出vim</p><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/5320d98f969a0ceb31459fc7709aee67.png"></p><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/4be93568a0522540764bf5a8f66b6ae7.png"></p><h1 id="八、添加远程仓库"><a href="#八、添加远程仓库" class="headerlink" title="八、添加远程仓库"></a>八、添加远程仓库</h1><p>git remote add 仓库名（本地自拟） <code>git@xxx.github.com:用户名/仓库.git</code><br><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/83939ba5a3ff4ac70ac4de6a49408d18.png"><br>如果是推到新的仓库，出现以下情况，</p><p>则是：远程仓库中有着本地仓库没有的文件，由于远程仓库和本地仓库没有共同的commit，需要先pull<br><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/a7b47c89caeca75e6a55961785655fa6.png"><br>拒绝合并不相关的历史<br><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/bff674eb63d3e263de3d7c57612ec168.png"><br>所以需要：</p><pre class=" language-Bash"><code class="language-Bash">git pull origin master --allow-unrelated-histories</code></pre><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/6afab4a5a34889f623d1dfdb69f11007.png"><br>完成！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
             
         </tags>
       
