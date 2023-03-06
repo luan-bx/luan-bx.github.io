@@ -4,33 +4,16 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="git常用命令, lbx">
-    <meta name="description" content="一、基本操作
-初始化本地库
+    <meta name="keywords" content="Hexo, lbx">
+    <meta name="description" content="常用命令清理hexo clean
 
-git init
+构建静态文件hexo g
 
+上传至仓库hexo d
 
-查看状态
+打开本地服务器hexo server //可进行本地调试
 
-git status
-
-二、推
-添加到暂缓区
-
-git add .
-
-
-提交至本地库
-
-git commit -m &#39;提交信息&#39;
-
-
-推到远程仓库
-
-git push
-
-三、拉">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -42,7 +25,7 @@ git push
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>git常用命令 | MyBlog</title>
+    <title>Hexo | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -314,12 +297,12 @@ git push
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git常用命令</h1>
+                    <h1 class="description center-align post-title">Hexo</h1>
                 </div>
             </div>
         </div>
@@ -343,8 +326,8 @@ git push
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
                     </div>
@@ -359,7 +342,7 @@ git push
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-20
+                    2022-02-15
                 </div>
                 
 
@@ -368,7 +351,7 @@ git push
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    448
+                    39
                 </div>
                 
 
@@ -385,109 +368,14 @@ git push
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、基本操作"><a href="#一、基本操作" class="headerlink" title="一、基本操作"></a>一、基本操作</h1><ul>
-<li>初始化本地库</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git init
+                <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="清理"><a href="#清理" class="headerlink" title="清理"></a>清理</h2><pre class=" language-bash"><code class="language-bash">hexo clean
 </code></pre>
-<ul>
-<li>查看状态</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git status
+<h2 id="构建静态文件"><a href="#构建静态文件" class="headerlink" title="构建静态文件"></a>构建静态文件</h2><pre class=" language-bash"><code class="language-bash">hexo g
 </code></pre>
-<h1 id="二、推"><a href="#二、推" class="headerlink" title="二、推"></a>二、推</h1><ul>
-<li>添加到暂缓区</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git add .
+<h2 id="上传至仓库"><a href="#上传至仓库" class="headerlink" title="上传至仓库"></a>上传至仓库</h2><pre class=" language-bash"><code class="language-bash">hexo d
 </code></pre>
-<ul>
-<li>提交至本地库</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git commit -m '提交信息'
+<h2 id="打开本地服务器"><a href="#打开本地服务器" class="headerlink" title="打开本地服务器"></a>打开本地服务器</h2><pre class=" language-bash"><code class="language-bash">hexo server //可进行本地调试
 </code></pre>
-<ul>
-<li>推到远程仓库</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git push
-</code></pre>
-<h1 id="三、拉"><a href="#三、拉" class="headerlink" title="三、拉"></a>三、拉</h1><ul>
-<li>下拉并与本地合并</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git pull
-</code></pre>
-<ul>
-<li>如未知关联的仓库</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git pull 仓库名 分支名
-</code></pre>
-<h1 id="四、冲突"><a href="#四、冲突" class="headerlink" title="四、冲突"></a>四、冲突</h1><p>冲突产生的表现：后面状态为MERGING</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/57e02acec7b8b8e0f654934c039e9bb3.png"></p>
-<ul>
-<li>查看状态</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git status
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/fd0174cbfce59addaf90bb936b2fd5eb.png"></p>
-<p>解决合并问题：</p>
-<p>1）编辑有冲突的文件，删除特殊符号，决定要使用的内容</p>
-<p>特殊符号：<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD 当前分支的代码======= 合并过来的代码&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code></p>
-<p>2）添加到暂存区</p>
-<pre class=" language-Bash"><code class="language-Bash">git add XXXX（文件名） 或 git add .
-</code></pre>
-<p>3）查看解决状态，全部绿色（modified修改过）</p>
-<pre class=" language-Bash"><code class="language-Bash">git status
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/552a8ad42e123ea5e10a70e027dba00e.png"></p>
-<p>4）执行提交（注意：此时使用git commit 命令时不能带文件名）</p>
-<pre class=" language-Bash"><code class="language-Bash">git commit -m ' '
-</code></pre>
-<p>发现后面MERGING 消失，变为正常</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/52b7fdf6e1ddb65b57e28ce92189a6ec.png"></p>
-<h1 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h1><ul>
-<li>创建分支</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git branch 分支名
-</code></pre>
-<ul>
-<li>查看分支</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git branch -v
-</code></pre>
-<ul>
-<li>切换分支（切换分支的本质就是移动HEAD 指针）</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git checkout 分支名
-</code></pre>
-<ul>
-<li>指定分支合并到当前分支</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git merge 分支名
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/b2ac0f41fb9fa4621cdc29209adcd2bd.png#left"></p>
-<h1 id="六、版本"><a href="#六、版本" class="headerlink" title="六、版本"></a>六、版本</h1><ul>
-<li>查看历史记录</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git reflog
-</code></pre>
-<ul>
-<li>版本穿梭</li>
-</ul>
-<pre class=" language-Bash"><code class="language-Bash">git reset --hard 版本号
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/ed7d30769d8dcd9b6b10fc6b00e47bca.png"></p>
-<h1 id="七、vim相关操作"><a href="#七、vim相关操作" class="headerlink" title="七、vim相关操作"></a>七、vim相关操作</h1><p>主要用到：</p>
-<p>“a”进入编辑</p>
-<p>“Esc”退出编辑</p>
-<p>“shift + :”开始编辑命令</p>
-<p>“:wq”保存</p>
-<p>“:q”退出vim</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/5320d98f969a0ceb31459fc7709aee67.png"></p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/4be93568a0522540764bf5a8f66b6ae7.png"></p>
-<h1 id="八、添加远程仓库"><a href="#八、添加远程仓库" class="headerlink" title="八、添加远程仓库"></a>八、添加远程仓库</h1><p>git remote add 仓库名（本地自拟） <code>git@xxx.github.com:用户名/仓库.git</code><br><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/83939ba5a3ff4ac70ac4de6a49408d18.png"><br>如果是推到新的仓库，出现以下情况，</p>
-<p>则是：远程仓库中有着本地仓库没有的文件，由于远程仓库和本地仓库没有共同的commit，需要先pull<br><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/a7b47c89caeca75e6a55961785655fa6.png"><br>拒绝合并不相关的历史<br><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/bff674eb63d3e263de3d7c57612ec168.png"><br>所以需要：</p>
-<pre class=" language-Bash"><code class="language-Bash">git pull origin master --allow-unrelated-histories
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/img/6afab4a5a34889f623d1dfdb69f11007.png"><br>完成！</p>
 
                 
             </div>
@@ -514,7 +402,7 @@ git push
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luan-bx.github.io/2021/02/20/git/">https://luan-bx.github.io/2021/02/20/git/</a>
+                    <a href="https://luan-bx.github.io/2022/02/15/hexo/">https://luan-bx.github.io/2022/02/15/hexo/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -552,8 +440,8 @@ git push
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
                         </div>
@@ -603,7 +491,52 @@ git push
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/02/16/hexo/">
+                <a href="/2022/02/16/markdown/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Markdown">
+                        
+                        <span class="card-title">Markdown</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Luan-bx
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/02/15/hexo/">
                     <div class="card-image">
                         
                         
@@ -619,53 +552,8 @@ git push
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-16
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Luan-bx
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/02/20/git/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git常用命令">
-                        
-                        <span class="card-title">git常用命令</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-15
                             </span>
                         <span class="publish-author">
                             
@@ -679,8 +567,8 @@ git push
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -741,8 +629,8 @@ git push
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('true'),
+            headingSelector: 'h1, h2'
         });
 
         // Set scroll toc fixed.
@@ -875,7 +763,7 @@ git push
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">613</span>
+                        class="white-color">727</span>
             
             
             
