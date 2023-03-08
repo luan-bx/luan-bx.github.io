@@ -6,7 +6,7 @@
   <link href="https://luan-bx.github.io/atom.xml" rel="self"/>
   
   <link href="https://luan-bx.github.io/"/>
-  <updated>2023-03-08T09:23:03.314Z</updated>
+  <updated>2023-03-08T09:48:47.902Z</updated>
   <id>https://luan-bx.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://luan-bx.github.io/2023/02/14/javacodeimplements/"/>
     <id>https://luan-bx.github.io/2023/02/14/javacodeimplements/</id>
     <published>2023-02-14T14:32:51.000Z</published>
-    <updated>2023-03-08T09:23:03.314Z</updated>
+    <updated>2023-03-08T09:48:47.902Z</updated>
     
     
       
@@ -41,8 +41,6 @@
     
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
     
-    <category term="代码模板" scheme="https://luan-bx.github.io/tags/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/"/>
-    
     <category term="接口" scheme="https://luan-bx.github.io/tags/%E6%8E%A5%E5%8F%A3/"/>
     
     <category term="继承" scheme="https://luan-bx.github.io/tags/%E7%BB%A7%E6%89%BF/"/>
@@ -54,7 +52,7 @@
     <link href="https://luan-bx.github.io/2022/07/10/javacodefile/"/>
     <id>https://luan-bx.github.io/2022/07/10/javacodefile/</id>
     <published>2022-07-10T08:19:45.000Z</published>
-    <updated>2023-03-08T09:23:32.718Z</updated>
+    <updated>2023-03-08T09:48:54.702Z</updated>
     
     
       
@@ -73,8 +71,6 @@
     <category term="Code" scheme="https://luan-bx.github.io/tags/Code/"/>
     
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="代码模板" scheme="https://luan-bx.github.io/tags/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
@@ -131,6 +127,35 @@
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
     
     <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TCP收发测试</title>
+    <link href="https://luan-bx.github.io/2022/06/20/javacodetcp/"/>
+    <id>https://luan-bx.github.io/2022/06/20/javacodetcp/</id>
+    <published>2022-06-20T13:06:39.000Z</published>
+    <updated>2023-03-08T09:57:48.818Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;接收&quot;&gt;&lt;a href=&quot;#接收&quot; class=&quot;headerlink&quot; title=&quot;接收&quot;&gt;&lt;/a&gt;接收&lt;/h1&gt;&lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="TCP" scheme="https://luan-bx.github.io/categories/TCP/"/>
+    
+    
+    <category term="Code" scheme="https://luan-bx.github.io/tags/Code/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
     
   </entry>
   
@@ -193,7 +218,7 @@
     <link href="https://luan-bx.github.io/2022/06/03/javacodemysql/"/>
     <id>https://luan-bx.github.io/2022/06/03/javacodemysql/</id>
     <published>2022-06-03T10:36:12.000Z</published>
-    <updated>2023-03-08T09:23:41.501Z</updated>
+    <updated>2023-03-08T09:48:42.956Z</updated>
     
     
       
@@ -212,8 +237,6 @@
     <category term="Code" scheme="https://luan-bx.github.io/tags/Code/"/>
     
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="代码模板" scheme="https://luan-bx.github.io/tags/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/"/>
     
     <category term="数据库" scheme="https://luan-bx.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
