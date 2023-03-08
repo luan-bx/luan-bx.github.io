@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java笔记（八）多线程, lbx">
+    <meta name="keywords" content="Java（八）多线程, lbx">
     <meta name="description" content="概述程序(program)是为完成特定任务、用某种语言编写的一组指令的集合。即指一段静态的代码，静态对象。
 进程(process)是程序的一次执行过程，或是正在运行的一个程序。是一个动态的过程：有它自身的产生、存在和消亡的过程。——生命周期">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java笔记（八）多线程 | MyBlog</title>
+    <title>Java（八）多线程 | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -290,12 +290,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java笔记（八）多线程</h1>
+                    <h1 class="description center-align post-title">Java（八）多线程</h1>
                 </div>
             </div>
         </div>
@@ -319,18 +319,27 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">Java笔记</span>
-                            </a>
-                        
                             <a href="/tags/Java/">
                                 <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">Java笔记</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -348,7 +357,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.8k
+                    4.7k
                 </div>
                 
 
@@ -557,11 +566,11 @@ setPriority(int newPriority) ：改变线程的优先级
 <p>E.死亡：</p>
 <p>线程完成了它的全部工作或线程被提前强制性地中止或出现异常导致结束</p>
 <p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/5eccdb02a448b7b568a383da378c6566.png"></p>
-<h1 id="线程的同步"><a href="#线程的同步" class="headerlink" title="线程的同步"></a>线程的同步</h1><h2 id="Synchronized同步代码块"><a href="#Synchronized同步代码块" class="headerlink" title="Synchronized同步代码块"></a>Synchronized同步代码块</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">synchronized</span> <span class="token punctuation">(</span>同步监视器<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<h1 id="线程的同步"><a href="#线程的同步" class="headerlink" title="线程的同步"></a>线程的同步</h1><h2 id="Synchronized同步代码块"><a href="#Synchronized同步代码块" class="headerlink" title="Synchronized同步代码块"></a>Synchronized同步代码块</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">synchronized</span> <span class="token punctuation">(</span>同步监视器<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
 <span class="token comment" spellcheck="true">// 需要被同步的代码；</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>同步监视器可自定义，但需要保证每个线程调用时，该对象是同一个。</p>
 <pre><code>A.使用实现Runnable接口的方法：
@@ -575,11 +584,11 @@ B.使用继承Thread类的方法：
 <h2 id="Synchronized同步方法"><a href="#Synchronized同步方法" class="headerlink" title="Synchronized同步方法"></a>Synchronized同步方法</h2><p>如果整个方法均需要同步，synchronized还可以放在方法声明中，表示整个方法为同步方法。</p>
 <pre class=" language-java"><code class="language-java">例如：
 
-<span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">show</span> <span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">show</span> <span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
 …<span class="token punctuation">.</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>A.使用实现Runnable接口的方法：</p>
 <p>只会创建一个对象，所以可以直接用上面的形势，此时也是有监视器的，是this，即刚创建的该类的对象。</p>
@@ -635,27 +644,27 @@ B.使用继承Thread类的方法：
 <h2 id="Lock-锁"><a href="#Lock-锁" class="headerlink" title="Lock(锁)"></a>Lock(锁)</h2><p>从JDK 5.0开始，Java提供了更强大的线程同步机制——通过显式定义同步锁对象来实现同步。同步锁使用Lock对象充当。</p>
 <p>java.util.concurrent.locks.Lock接口是控制多个线程对共享资源进行访问的工具。锁提供了对共享资源的独占访问，每次只能有一个线程对Lock对象加锁，线程开始访问共享资源之前应先获得Lock对象。</p>
 <p>ReentrantLock 类实现了 Lock ，它拥有与 synchronized 相同的并发性和内存语义，在实现线程安全的控制中，比较常用的是ReentrantLock，可以显式加锁、释放锁。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
 
 <span class="token keyword">private</span> <span class="token keyword">final</span> ReentrantLock lock <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ReenTrantLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">m</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">m</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 
 lock<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">try</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">try</span><span class="token punctuation">{</span>
 
 证线程安全的代码<span class="token punctuation">;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">finally</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">finally</span><span class="token punctuation">{</span>
 
 lock<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>注意：如果同步代码有异常，要将unlock()写入finally语句块</p>
 <h2 id="synchronized-与-Lock-的对比"><a href="#synchronized-与-Lock-的对比" class="headerlink" title="synchronized 与 Lock 的对比"></a>synchronized 与 Lock 的对比</h2><ol>
@@ -713,15 +722,15 @@ lock<span class="token punctuation">.</span><span class="token function">unlock<
 <p>Runnable被线程执行，又可以作为Future得到Callable的返回值</p>
 <h2 id="创建流程"><a href="#创建流程" class="headerlink" title="创建流程"></a>创建流程</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1.创建一个实现Callable的实现类</span>
 
-<span class="token keyword">class</span> <span class="token class-name">NumThread</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">NumThread</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span><span class="token punctuation">{</span>
 <span class="token comment" spellcheck="true">//2.实现call方法，将此线程需要执行的操作声明在call（）中</span>
 
 <span class="token annotation punctuation">@Override</span>
 
-Public Object call（）<span class="token keyword">throws</span> Exception<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+Public Object call（）<span class="token keyword">throws</span> Exception<span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 在调用类中：
 
@@ -737,7 +746,7 @@ FutureTask futureTask <span class="token operator">=</span> <span class="token k
 
 <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>futureTask<span class="token punctuation">)</span> <span class="token punctuation">.</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-Try<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+Try<span class="token punctuation">{</span>
 
 <span class="token comment" spellcheck="true">//6.获取Callable中dplL方法的返回值</span>
 
@@ -747,10 +756,10 @@ object sum <span class="token operator">=</span> futureTask<span class="token pu
 
 System<span class="token punctuation">.</span> out <span class="token punctuation">.</span> <span class="token function">println</span><span class="token punctuation">(</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
 e<span class="token punctuation">.</span> <span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ExecutionException</span> e<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ExecutionException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 e<span class="token punctuation">.</span> <span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><h2 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h2><p>背景：经常创建和销毁、使用量特别大的资源，比如并发情况下的线程，对性能影响很大。</p>
@@ -838,12 +847,12 @@ e<span class="token punctuation">.</span> <span class="token function">printStac
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">Java笔记</span>
-                                </a>
-                            
                                 <a href="/tags/Java/">
                                     <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">Java笔记</span>
                                 </a>
                             
                         </div>
@@ -893,13 +902,13 @@ e<span class="token punctuation">.</span> <span class="token function">printStac
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/06/05/java9/">
+                <a href="/2022/06/03/javacodemysql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Java笔记（九）枚举类与注解">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="数据库相关操作集合code">
                         
-                        <span class="card-title">Java笔记（九）枚举类与注解</span>
+                        <span class="card-title">数据库相关操作集合code</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -910,12 +919,16 @@ e<span class="token punctuation">.</span> <span class="token function">printStac
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-03
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Luan-bx
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -923,12 +936,20 @@ e<span class="token punctuation">.</span> <span class="token function">printStac
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">Java笔记</span>
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
                     </a>
                     
                     <a href="/tags/Java/">
                         <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/">
+                        <span class="chip bg-color">代码模板</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
                 </div>
@@ -946,9 +967,9 @@ e<span class="token punctuation">.</span> <span class="token function">printStac
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Java笔记（七）异常处理">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Java（七）异常处理">
                         
-                        <span class="card-title">Java笔记（七）异常处理</span>
+                        <span class="card-title">Java（七）异常处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -963,8 +984,12 @@ e<span class="token punctuation">.</span> <span class="token function">printStac
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Luan-bx
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -972,12 +997,12 @@ e<span class="token punctuation">.</span> <span class="token function">printStac
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">Java笔记</span>
-                    </a>
-                    
                     <a href="/tags/Java/">
                         <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Java笔记</span>
                     </a>
                     
                 </div>
@@ -1172,7 +1197,7 @@ e<span class="token punctuation">.</span> <span class="token function">printStac
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">23.4k</span>
+                        class="white-color">21.8k</span>
             
             
             

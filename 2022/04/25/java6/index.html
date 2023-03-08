@@ -4,10 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java笔记（六）面向对象下, lbx">
-    <meta name="description" content="static类属性、类方法类属性作为该类各个对象之间共享的变量。在设计类时,分析哪些属性不因对象的不同而改变，将这些属性设置为类属性。相应的方法设置为类方法。
-类变量（类属性）由该类的所有实例共享.
-如果方法与调用者无关，则这样的方法通常被">
+    <meta name="keywords" content="Java（六）面向对象（下）, lbx">
+    <meta name="description" content="static类属性、类方法类属性作为该类各个对象之间共享的变量。在设计类时,分析哪些属性不因对象的不同而改变，将这些属性设置为类属性。相应的方法设置为类方法。类变量（类属性）由该类的所有实例共享.如果方法与调用者无关，则这样的方法通常被声明">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java笔记（六）面向对象下 | MyBlog</title>
+    <title>Java（六）面向对象（下） | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -291,12 +289,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java笔记（六）面向对象下</h1>
+                    <h1 class="description center-align post-title">Java（六）面向对象（下）</h1>
                 </div>
             </div>
         </div>
@@ -320,18 +318,27 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">Java笔记</span>
-                            </a>
-                        
                             <a href="/tags/Java/">
                                 <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">Java笔记</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -349,7 +356,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    638
                 </div>
                 
 
@@ -366,248 +373,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><h2 id="类属性、类方法"><a href="#类属性、类方法" class="headerlink" title="类属性、类方法"></a>类属性、类方法</h2><p>类属性作为该类各个对象之间共享的变量。在设计类时,分析哪些属性不因对象的不同而改变，将这些属性设置为类属性。相应的方法设置为类方法。</p>
-<p>类变量（类属性）由该类的所有实例共享.</p>
-<p>如果方法与调用者无关，则这样的方法通常被声明为类方法，由于不需要创建对象就可以调用类方法，从而简化了方法的调用。</p>
+                <h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><h2 id="类属性、类方法"><a href="#类属性、类方法" class="headerlink" title="类属性、类方法"></a>类属性、类方法</h2><p>类属性作为该类各个对象之间共享的变量。在设计类时,分析哪些属性不因对象的不同而改变，将这些属性设置为类属性。相应的方法设置为类方法。<br>类变量（类属性）由该类的所有实例共享.<br>如果方法与调用者无关，则这样的方法通常被声明为类方法，由于不需要创建对象就可以调用类方法，从而简化了方法的调用。</p>
 <h2 id="使用范围"><a href="#使用范围" class="headerlink" title="使用范围"></a>使用范围</h2><p>在Java类中，可用static修饰：属性、方法、代码块、内部类 </p>
-<h2 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h2><ol>
-<li>随着类的加载而加载 </li>
-<li>优先于对象存在 </li>
-<li>修饰的成员，被所有对象所共享 </li>
-<li>访问权限允许时，可不创建对象，直接被类调用(如Person.id、Person.add(int num) )</li>
-<li>调用时，在一处修改了static的变量或方法，所有调用该static的均同步变化。</li>
-<li>在static方法内部只能访问类的static修饰的属性或方法，不能访问类的非static结构。</li>
-<li>因为不需要实例就可访问static方法，因此static方法内部不能有this,也不能有super 。</li>
-<li>static修饰的方法不能被重写。</li>
-</ol>
+<h2 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h2><p>A.随着类的加载而加载 </p>
+<p>B.优先于对象存在 </p>
+<p>C.修饰的成员，被所有对象所共享 </p>
+<p>D.访问权限允许时，可不创建对象，直接被类调用(如Person.id、Person.add(int num) )</p>
+<p>E.调用时，在一处修改了static的变量或方法，所有调用该static的均同步变化。</p>
+<p>F.在static方法内部只能访问类的static修饰的属性或方法，不能访问类的非static结构。</p>
+<p>G.因为不需要实例就可访问static方法，因此static方法内部不能有this,也不能有super 。</p>
+<p>H.static修饰的方法不能被重写。</p>
 <h1 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h1><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><p>设计模式是在大量的实践中总结和理论化之后优选的代码结构、编程风格、以及解决问题的思考方式。“套路” </p>
 <h2 id="单例设计模式-1"><a href="#单例设计模式-1" class="headerlink" title="单例设计模式"></a>单例设计模式</h2><p>所谓类的单例设计模式，就是采取一定的方法保证在整个的软件系统中，对某个类只能存在一个对象实例，并且该类只提供一个取得其对象实例的方法。如果我们要让类在一个虚拟机中只能产生一个对象，我们首先必须将类的构造器的访问权限设置为private，这样，就不能用new操作符在类的外部产生类的对象了，但在类内部仍可以产生该类的对象。因为在类的外部开始还无法得到类的对象，只能调用该类的某个静态方法以返回类内部创建的对象，静态方法只能访问类中的静态成员变量，所以，指向类内部产生的该类对象的变量也必须定义成静态的。</p>
 <h2 id="单例-饿汉式"><a href="#单例-饿汉式" class="headerlink" title="单例-饿汉式"></a>单例-饿汉式</h2><p>一加载类就new好了，等待调用。</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/709cf37cc9f052e30b95c055e1b82d72.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/000000000000.png"></p>
 <h2 id="单例-懒汉式"><a href="#单例-懒汉式" class="headerlink" title="单例-懒汉式"></a>单例-懒汉式</h2><p>用的时候再new</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/4d4d17c8c32a7ad6530086db0c91d857.png"></p>
-<h2 id="单例模式的优点"><a href="#单例模式的优点" class="headerlink" title="单例模式的优点"></a>单例模式的优点</h2><p>由于单例模式只生成一个实例，减少了系统性能开销，当一个对象的产生需要比较多的资源时，如读取配置、产生其他依赖对象时，则可以通过在应用启动时直接产生一个单例对象，然后永久驻留内存的方式来解决。</p>
-<h2 id="单例设计模式应用"><a href="#单例设计模式应用" class="headerlink" title="单例设计模式应用"></a>单例设计模式应用</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/75c18bbd715c20b17f6c8ffa1511c05e.png"></p>
-<h1 id="main"><a href="#main" class="headerlink" title="main"></a>main</h1><p>因为main() 方法是静态的，我们不能直接访问该类中的非静态成员，必须创建该类的一个实例对象后，才能通过这个对象去访问类中的非静态成员。</p>
-<h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>对Java类或对象进行初始化</p>
-<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>一个类中代码块若有修饰符，则只能被static修饰，称为静态代码块(static block)，没有使用static修饰的，为非静态代码块。</p>
-<p>static代码块通常用于初始化static的属性</p>
-<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p>A.静态代码块：用static 修饰的代码块</p>
-<ol>
-<li><p>可以有输出语句。</p>
-</li>
-<li><p>可以对类的属性、类的声明进行初始化操作。</p>
-</li>
-<li><p>不可以对非静态的属性初始化。即：不可以调用非静态的属性和方法。</p>
-</li>
-<li><p>若有多个静态的代码块，那么按照从上到下的顺序依次执行。</p>
-</li>
-<li><p>静态代码块的执行要先于非静态代码块。</p>
-</li>
-<li><p>静态代码块随着类的加载而加载，且只执行一次。</p>
-</li>
-</ol>
-<p>B.非静态代码块：没有static修饰的代码块</p>
-<ol>
-<li><p>可以有输出语句。</p>
-</li>
-<li><p>可以对类的属性、类的声明进行初始化操作。</p>
-</li>
-<li><p>除了调用非静态的结构外，还可以调用静态的变量或方法。</p>
-</li>
-<li><p>若有多个非静态的代码块，那么按照从上到下的顺序依次执行。</p>
-</li>
-<li><p>每次创建对象的时候，都会执行一次。且先于构造器执行。</p>
-</li>
-</ol>
-<h2 id="分析运行顺序"><a href="#分析运行顺序" class="headerlink" title="分析运行顺序"></a>分析运行顺序</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/a7f2a2103ec4c85b8f7560dc2bbd8fa7.png"></p>
-<p>先执行的是father的static代码块，然后son的static代码块，才是打印“777777777”，因为main方法的运行，需要son类的加载，又继承了father，所以从father开始打印。</p>
-<h2 id="属性赋值的位置"><a href="#属性赋值的位置" class="headerlink" title="属性赋值的位置"></a>属性赋值的位置</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/01ff1c2927b7a994314cb03b0e3fec01.png"></p>
-<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>声明类、变量和方法时，可使用关键字final来修饰,表示“最终的”。</p>
-<p>A.final标记的类不能被继承。提高安全性，提高程序的可读性。</p>
-<p>如：String类、System类、StringBuffer类</p>
-<p>B.final标记的方法不能被子类重写。</p>
-<p>如：Object类中的getClass()。</p>
-<p>C.final标记的变量(成员变量或局部变量)称为常量。名称大写，且只能被赋值一次,不可修改。final标记的成员变量必须在声明时或在每个构造器中或代码块中显式赋值，然后才能使用。</p>
-<p>如：final double MY_PI &#x3D; 3.14;</p>
-<p>static final：全局常量</p>
-<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><p>第一题：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Something</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">addOne</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">return</span> <span class="token operator">++</span>x<span class="token punctuation">;</span> 错误，对x进行修改了
-
-        <span class="token keyword">return</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> 正确，对x没有变化，只是用x进行运算。
-
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<p>第二题：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Something</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-
-        Other o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Other</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">new</span> <span class="token class-name">Something</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addOne</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addOne</span><span class="token punctuation">(</span><span class="token keyword">final</span> Other o<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-
-        o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Other</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 错误，对象o重新赋值。
-
-        o<span class="token punctuation">.</span>i<span class="token operator">++</span><span class="token punctuation">;</span> 正确，对象o的属性依然可以重新改写。
-
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">class</span> <span class="token class-name">Other</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-
-         <span class="token keyword">public</span> <span class="token keyword">int</span> i<span class="token punctuation">;</span>
-
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<h2 id="final属性赋值位置"><a href="#final属性赋值位置" class="headerlink" title="final属性赋值位置"></a>final属性赋值位置</h2><p>加载类之前一定要赋值,否则此属性不能再赋值了。</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/634faa1a27ec57c6e5b2a36e7b52d69a.png"></p>
-<h1 id="抽象类、抽象方法"><a href="#抽象类、抽象方法" class="headerlink" title="抽象类、抽象方法"></a>抽象类、抽象方法</h1><p>有时将一个父类设计得非常抽象，以至于它没有具体的实例，这样的类叫做抽象类。</p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ol>
-<li><p>用abstract关键字来修饰一个类，这个类叫做抽象类。</p>
-</li>
-<li><p>用abstract来修饰一个方法，该方法叫做抽象方法。</p>
-<p> 抽象方法：只有方法的声明，没有方法的实现。以分号结束：</p>
-<p> 比如：public abstract void talk();</p>
-</li>
-<li><p>含有抽象方法的类必须被声明为抽象类。</p>
-</li>
-<li><p>抽象类不能被实例化。抽象类是用来被继承的，抽象类的子类必须重写父类的抽象方法，并提供方法体。若没有重写全部的抽象方法，仍为抽象类。</p>
-</li>
-<li><p>不能用abstract修饰变量、代码块、构造器；</p>
-</li>
-<li><p>不能用abstract修饰私有方法、静态方法、final的方法、final的类。</p>
-</li>
-</ol>
-<p>个人理解：相当于规定了子类应该有哪些方法，各个子类根据实际情况执行自己的代码。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>超类声明一个方法但不提供实现，该方法的实现由子类提供。这样的方法称为抽象方法。有一个或更多抽象方法的类称为抽象类。</p>
-<h2 id="模板方法设计模式（多态的应用）"><a href="#模板方法设计模式（多态的应用）" class="headerlink" title="模板方法设计模式（多态的应用）"></a>模板方法设计模式（多态的应用）</h2><p>抽象类体现的就是一种模板模式的设计，抽象类作为多个子类的通用模板，子类在抽象类的基础上进行扩展、改造，但子类总体上会保留抽象类的行为方式。</p>
-<p>解决的问题：</p>
-<p>当功能内部一部分实现是确定的，一部分实现是不确定的。这时可以把不确定的部分暴露出去，让子类去实现。</p>
-<p>换句话说，在软件开发中实现一个算法时，整体步骤很固定、通用，这些步骤已经在父类中写好了。但是某些部分易变，易变部分可以抽象出来，供不同子类实现。这就是一种模板模式。</p>
-<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h2 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h2><p>一方面，有时必须从几个类中派生出一个子类，继承它们所有的属性和方法。但是，Java不支持多重继承。有了接口，就可以得到多重继承的效果。</p>
-<p>另一方面，有时必须从几个类中抽取出一些共同的行为特征，而它们之间又没有is-a的关系，仅仅是具有相同的行为特征而已。例如：鼠标、键盘、打印机、扫描仪、摄像头、充电器、MP3机、手机、数码相机、移动硬盘等都支持USB连接。</p>
-<p>接口就是规范，定义的是一组规则，体现了现实世界中“如果你是&#x2F;要…则必须能…”的思想。继承是一个”是不是”的关系，而接口实现则是 “能不能”的关系。</p>
-<p>接口的本质是契约，标准，规范，就像我们的法律一样。制定好后大家都要遵守。</p>
-<p>接口(interface)是抽象方法和常量值定义的集合。</p>
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
-<li><p>用interface来定义。</p>
-</li>
-<li><p>接口中的所有成员变量都默认是由public static final修饰的。</p>
-</li>
-<li><p>接口中的所有抽象方法都默认是由public abstract修饰的。</p>
-</li>
-<li><p>接口中没有构造器。</p>
-</li>
-<li><p>接口采用多继承机制。</p>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/b546e6d5db2292cf4971ac6d72e20375.png"></p>
-<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><ol>
-<li>定义Java类的语法格式：先写extends，后写implements</li>
-</ol>
-<p><code>class SubClass extends SuperClass implements InterfaceA&#123; &#125;</code></p>
-<ol start="2">
-<li><p>一个类可以实现多个接口，接口也可以继承其它接口。</p>
-</li>
-<li><p>实现接口的类必须提供接口中所有方法的具体实现内容，方可实例化。否则，仍为抽象类。</p>
-</li>
-<li><p>接口的主要用途就是被实现类实现。（面向接口编程）</p>
-</li>
-<li><p>与继承关系类似，接口与实现类之间存在多态性</p>
-</li>
-<li><p>接口和类是并列关系，或者可以理解为一种特殊的类。从本质上讲，接口是一种特殊的抽象类，这种抽象类中只包含常量和方法的定义(JDK7.0及之前)，而没有变量和方法的实现。</p>
-</li>
-<li><p>分别介绍本类、父类、接口的调用：</p>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/8fe06d507ad6ca7bf22811b1a5bb784f.png"></p>
-<h1 id="代理模式（接口的应用）"><a href="#代理模式（接口的应用）" class="headerlink" title="代理模式（接口的应用）"></a>代理模式（接口的应用）</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>代理模式是Java开发中使用较多的一种设计模式。代理设计就是为其他对象提供一种代理以控制对这个对象的访问。</p>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ol>
-<li><p>安全代理：屏蔽对真实角色的直接访问。</p>
-</li>
-<li><p>远程代理：通过代理类处理远程方法调用（RMI）</p>
-</li>
-<li><p>延迟加载：先加载轻量级的代理对象，真正需要再加载真实对象</p>
-</li>
-</ol>
-<p>比如你要开发一个大文档查看软件，大文档中有大的图片，有可能一个图片有100MB，在打开文件时，不可能将所有的图片都显示出来，这样就可以使用代理模式，当需要查看图片时，用proxy来进行大图片的打开。</p>
-<p>分类:</p>
-<p>静态代理（静态定义代理类）</p>
-<p>动态代理（动态生成代理类）</p>
-<p>JDK自带的动态代理，需要反射等知识</p>
-<h1 id="接口与抽象类对比"><a href="#接口与抽象类对比" class="headerlink" title="接口与抽象类对比"></a>接口与抽象类对比</h1><h2 id="对比-1"><a href="#对比-1" class="headerlink" title="对比"></a>对比</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/b5a26bc11945b4112ee36b9496add9e6.png"></p>
-<p>在开发中，常看到一个类不是去继承一个已经实现好的类，而是要么继承抽象类，要么实现接口。</p>
-<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/5163d2a46e34631286a0d77c843db3c0.png"></p>
-<p>编译错误，接口和继承一个优先级，所以不确定此时x是哪个。</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/f30143fce0d4f84c33dfd00fba1557d7.png"></p>
-<p>编译错误：<code>The final field Rollable.ball cannot be assigned</code></p>
-<p>任何在interface里声明的interface variable (接口变量，也可称成员变量)，默认为public static final。不可修改参数</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/5e4c76fbf6c6d631e8c9551a8c894ac4.png"></p>
-<h2 id="java-8的改进"><a href="#java-8的改进" class="headerlink" title="java 8的改进"></a>java 8的改进</h2><p>Java 8中，你可以为接口添加静态方法和默认方法。从技术角度来说，这是完全合法的，只是它看起来违反了接口作为一个抽象定义的理念。</p>
-<p>静态方法：使用static 关键字修饰。可以通过接口直接调用静态方法，并执行其方法体。我们经常在相互一起使用的类中使用静态方法。你可以在标准库中找到像Collection&#x2F;Collections或者Path&#x2F;Paths这样成对的接口和类。</p>
-<p>默认方法：默认方法使用default 关键字修饰。可以通过实现类对象来调用。我们在已有的接口中提供新方法的同时，还保持了与旧版本代码的兼容性。比如：java 8 API中对Collection、List、Comparator等接口提供了丰富的默认方法。</p>
-<h2 id="默认方法"><a href="#默认方法" class="headerlink" title="默认方法"></a>默认方法</h2><p>若一个接口中定义了一个默认方法，而另外一个接口中也定义了一个同名同参数的方法（不管此方法是否是默认方法），在实现类同时实现了这两个接口时，会出现：接口冲突。</p>
-<p>解决办法：实现类必须覆盖接口中同名同参数的方法，来解决冲突。</p>
-<p>若一个接口中定义了一个默认方法，而父类中也定义了一个同名同参数的非抽象方法，则不会出现冲突问题。因为此时遵守：类优先原则。接口中具有相同名称和参数的默认方法会被忽略。</p>
-<h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h2 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h2><p>成员内部类作为类的成员的角色：</p>
-<ol>
-<li><p>和外部类不同，Inner class还可以声明为private或protected；</p>
-</li>
-<li><p>可以调用外部类的结构;</p>
-</li>
-<li><p>可以声明为static的，但此时就不能再使用外层类的非static的成员变量；</p>
-</li>
-</ol>
-<p>成员内部类作为类的角色：</p>
-<ol>
-<li><p>可以在内部定义属性、方法、构造器等结构</p>
-</li>
-<li><p>可以声明为abstract类，因此可以被其它的内部类继承</p>
-</li>
-<li><p>可以声明为final的</p>
-</li>
-<li><p>编译以后生成OuterClass$InnerClass.class字节码文件（也适用于局部内部类）</p>
-</li>
-</ol>
-<p>【注意】</p>
-<ol>
-<li><p>非static的成员内部类中的成员不能声明为static的，只有在外部类或static的成员内部类中才可声明static成员。</p>
-</li>
-<li><p>外部类访问成员内部类的成员，需要“内部类.成员”或“内部类对象.成员”的方式</p>
-</li>
-<li><p>成员内部类可以直接使用外部类的所有成员，包括私有的数据</p>
-</li>
-<li><p>当想要在外部类的静态成员部分使用内部类时，可以考虑内部类声明为静态的</p>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/fc1953d02ec6a928f1280de2ad9e91fb.png"></p>
-<p>（2）特点</p>
-<ol>
-<li><p>内部类仍然是一个独立的类，在编译之后内部类会被编译成独立的.class文件，但是前面冠以外部类的类名和$符号，以及数字编号。</p>
-</li>
-<li><p>只能在声明它的方法或代码块中使用，而且是先声明后使用。除此之外的任何地方都不能使用该类。</p>
-</li>
-<li><p>局部内部类可以使用外部类的成员，包括私有的。</p>
-</li>
-<li><p>局部内部类可以使用外部方法的局部变量，但是必须是final的。由局部内部类和局部变量的声明周期不同所致。</p>
-</li>
-<li><p>局部内部类和局部变量地位类似，不能使用public,protected,缺省,private</p>
-</li>
-<li><p>局部内部类不能使用static修饰，因此也不能包含静态成员</p>
-</li>
-</ol>
 
                 
             </div>
@@ -672,12 +452,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">Java笔记</span>
-                                </a>
-                            
                                 <a href="/tags/Java/">
                                     <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">Java笔记</span>
                                 </a>
                             
                         </div>
@@ -731,9 +511,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Java笔记（七）异常处理">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Java（七）异常处理">
                         
-                        <span class="card-title">Java笔记（七）异常处理</span>
+                        <span class="card-title">Java（七）异常处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -748,8 +528,12 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Luan-bx
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -757,12 +541,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">Java笔记</span>
-                    </a>
-                    
                     <a href="/tags/Java/">
                         <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Java笔记</span>
                     </a>
                     
                 </div>
@@ -780,9 +564,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java笔记（三）数组">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Java（三）数组">
                         
-                        <span class="card-title">Java笔记（三）数组</span>
+                        <span class="card-title">Java（三）数组</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -797,8 +581,12 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Luan-bx
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -806,12 +594,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">Java笔记</span>
-                    </a>
-                    
                     <a href="/tags/Java/">
                         <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Java笔记</span>
                     </a>
                     
                 </div>
@@ -1006,7 +794,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">23.4k</span>
+                        class="white-color">21.8k</span>
             
             
             
