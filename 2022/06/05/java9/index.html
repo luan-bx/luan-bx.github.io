@@ -4,8 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java笔记（一）语言概述, lbx">
-    <meta name="description" content="java语言的特点是什么？面向对象性：两个基本概念（要素）：类、对象；三大特性：封装、继承、多态健壮性：吸收了C&amp;#x2F;C++语言的优点，但去掉了其影响程序健壮性的部分（如指针、内存的申请与释放等），提供了一个相对安全的内存管理和访问机">
+    <meta name="keywords" content="Java笔记（九）枚举类与注解, lbx">
+    <meta name="description" content="枚举类定义
+使用枚举类的实现
+JDK1.5之前需要自定义枚举类
+JDK 1.5 新增的enum 关键字用于定义枚举类
+若枚举只有一个对象, 则可以作为一种单例模式的实现方式。
+属性枚举类对象的属性不应允许被改动, 所以应该使用private">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java笔记（一）语言概述 | MyBlog</title>
+    <title>Java笔记（九）枚举类与注解 | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -289,12 +294,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java笔记（一）语言概述</h1>
+                    <h1 class="description center-align post-title">Java笔记（九）枚举类与注解</h1>
                 </div>
             </div>
         </div>
@@ -338,7 +343,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-28
+                    2022-06-05
                 </div>
                 
 
@@ -347,7 +352,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    842
+                    1.2k
                 </div>
                 
 
@@ -364,55 +369,84 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="java语言的特点是什么？"><a href="#java语言的特点是什么？" class="headerlink" title="java语言的特点是什么？"></a>java语言的特点是什么？</h1><p>面向对象性：两个基本概念（要素）：类、对象；三大特性：封装、继承、多态<br>健壮性：吸收了C&#x2F;C++语言的优点，但去掉了其影响程序健壮性的部分（如指针、内存的申请与释放等），提供了一个相对安全的内存管理和访问机制<br>跨平台性：通过Java语言编写的应用程序在不同的系统平台上都可以运行。“Write once , Run Anywhere”</p>
-<h1 id="软件开发"><a href="#软件开发" class="headerlink" title="软件开发"></a>软件开发</h1><p>软件，即一系列按照特定顺序组织的计算机数据和指令的集合。有系统软件和应用软件之分。</p>
-<p>系统软件：windows、mac os、linux、android、ios…</p>
-<p>应用软件：ppt、画图板、word…</p>
-<h1 id="人机交互方式"><a href="#人机交互方式" class="headerlink" title="人机交互方式"></a>人机交互方式</h1><p>图形化界面(Graphical User Interface GUI)：这种方式简单直观</p>
-<p>命令行方式(Command Line Interface CLI)：需要有一个控制台，输入特定的指令，让计算机完成一些操作。</p>
-<p>Pascal之父Nicklaus Wirth：“Algorithms+Data Structures&#x3D;Programs”</p>
-<p>应用程序 &#x3D; 算法 + 数据结构</p>
-<h1 id="常用的DOS命令（cmd）"><a href="#常用的DOS命令（cmd）" class="headerlink" title="常用的DOS命令（cmd）"></a>常用的DOS命令（cmd）</h1><p>dir : 列出当前目录下的文件以及文件夹</p>
-<p>md : 创建目录</p>
-<p>rd : 删除目录</p>
-<p>cd : 进入指定目录</p>
-<p>cd.. : 退回到上一级目录</p>
-<p>cd: 退回到根目录</p>
-<p>del : 删除文件</p>
-<p>exit : 退出dos 命令行</p>
-<h1 id="Java优势"><a href="#Java优势" class="headerlink" title="Java优势"></a>Java优势</h1><p>A.纯粹的面向对象</p>
-<p>B.舍弃了C语言中容易引起错误的指针</p>
-<p>C.增加了垃圾回收器功能</p>
-<h1 id="Java两种核心机制"><a href="#Java两种核心机制" class="headerlink" title="Java两种核心机制"></a>Java两种核心机制</h1><p>Java虚拟机（Java Virtal Machine），JVM</p>
-<p>垃圾收集机制（Garbage Collection），也会出现内存泄漏、内存溢出事件。</p>
-<h1 id="System-out-println-和System-out-print-什么区别呢？"><a href="#System-out-println-和System-out-print-什么区别呢？" class="headerlink" title="System.out.println()和System.out.print()什么区别呢？"></a>System.out.println()和System.out.print()什么区别呢？</h1><p>System.out.println();打印完后，会换行。</p>
-<p>System.out.print();打印完后，不会换行。</p>
-<p>\n(换行)，\t(制表符)</p>
-<h1 id="一个”-java”源文件中是否可以包括多个类（不是内部类）？"><a href="#一个”-java”源文件中是否可以包括多个类（不是内部类）？" class="headerlink" title="一个”.java”源文件中是否可以包括多个类（不是内部类）？"></a>一个”.java”源文件中是否可以包括多个类（不是内部类）？</h1><p>答：可以。但最多只有一个类名声明为public，与文件名相同。</p>
-<h1 id="文件名和类名"><a href="#文件名和类名" class="headerlink" title="文件名和类名"></a>文件名和类名</h1><p>Something类的文件名叫OtherThing.java</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Something</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> something_to_do<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Do something ..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                <h1 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/34059251250e2378bb5ab19c7d2de263.png"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>枚举类的实现</p>
+<p>JDK1.5之前需要自定义枚举类</p>
+<p>JDK 1.5 新增的enum 关键字用于定义枚举类</p>
+<p>若枚举只有一个对象, 则可以作为一种单例模式的实现方式。</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>枚举类对象的属性不应允许被改动, 所以应该使用private final 修饰</p>
+<p>枚举类的使用private final 修饰的属性应该在构造器中为其赋值</p>
+<p>若枚举类显式的定义了带参数的构造器, 则在列出枚举值时也必须对应的传入参数</p>
+<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><ol>
+<li><p>私有化类的构造器，保证不能在类的外部创建其对象</p>
+</li>
+<li><p>在类的内部创建枚举类的实例。声明为：public static final</p>
+</li>
+<li><p>对象如果有实例变量，应该声明为private final，并在构造器中初始化</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/3ccf7553934222fa3346383952fad029.png"></p>
+<h2 id="enum"><a href="#enum" class="headerlink" title="enum"></a>enum</h2><p>使用enum 定义的枚举类默认继承了java.lang.Enum类，因此不能再继承其他类</p>
+<p>枚举类的构造器只能使用private 权限修饰符</p>
+<p>枚举类的所有实例必须在枚举类中显式列出(, 分隔; 结尾)。列出的实例系统会自动添加public static final 修饰</p>
+<p>必须在枚举类的第一行声明枚举类对象</p>
+<p>JDK 1.5 中可以在switch 表达式中使用Enum定义的枚举类的对象作为表达式, case 子句可以直接使用枚举值的名字, 无需添加枚举类作为限定。</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/2de2ddaf456e7f43f8a21073b3f9a065.png"></p>
+<h2 id="Enum类的主要方法"><a href="#Enum类的主要方法" class="headerlink" title="Enum类的主要方法"></a>Enum类的主要方法</h2><p>values()方法：返回枚举类型的对象数组。该方法可以很方便地遍历所有的枚举值。</p>
+<p>valueOf(String str)：可以把一个字符串转为对应的枚举类对象。要求字符串必须是枚举类对象的“名字”。如不是，会有运行时异常：IllegalArgumentException。</p>
+<p>toString()：返回当前枚举类对象常量的名称</p>
+<h1 id="注解-Annotation"><a href="#注解-Annotation" class="headerlink" title="注解(Annotation)"></a>注解(Annotation)</h1><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>框架&#x3D; 注解+ 反射+ 设计模式。</p>
+<h2 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h2><p>使用Annotation 时要在其前面增加@ 符号, 并把该Annotation 当成一个修饰符使用。用于修饰它支持的程序元素</p>
+<p>示例一：生成文档相关的注解</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@author</span> 标明开发该类模块的作者，多个作者之间使用<span class="token punctuation">,</span>分割
+
+<span class="token annotation punctuation">@version</span> 标明该类模块的版本
+
+<span class="token annotation punctuation">@see</span> 参考转向，也就是相关主题
+
+<span class="token annotation punctuation">@since</span> 从哪个版本开始增加的
+
+<span class="token annotation punctuation">@param</span> 对方法中某参数的说明，如果没有参数就不能写
+
+@<span class="token keyword">return</span> 对方法返回值的说明，如果方法的返回值类型是<span class="token keyword">void</span>就不能写
+
+<span class="token annotation punctuation">@exception</span> 对方法可能抛出的异常进行说明，如果没有用<span class="token keyword">throws</span>显式抛出的异常就不能写
+
+其中
+
+<span class="token annotation punctuation">@param</span> @<span class="token keyword">return</span> 和<span class="token annotation punctuation">@exception</span> 这三个标记都是只用于方法的。
+
+<span class="token annotation punctuation">@param</span>的格式要求：<span class="token annotation punctuation">@param</span> 形参名形参类型形参说明
+
+@<span class="token keyword">return</span> 的格式要求：@<span class="token keyword">return</span> 返回值类型返回值说明
+
+<span class="token annotation punctuation">@exception</span>的格式要求：<span class="token annotation punctuation">@exception</span> 异常类型异常说明
+
+<span class="token annotation punctuation">@param</span>和<span class="token annotation punctuation">@exception</span>可以并列多个
 </code></pre>
-<p>这个很明显。</p>
-<p>答案: 正确。从来没有人说过Java的class名字必须和其文件名相同。但public class的名字必须和文件名相同。</p>
-<h1 id="配置环境变量为什么要设置path（设置path的目的是什么）？"><a href="#配置环境变量为什么要设置path（设置path的目的是什么）？" class="headerlink" title="配置环境变量为什么要设置path（设置path的目的是什么）？"></a>配置环境变量为什么要设置path（设置path的目的是什么）？</h1><p>目的是为了在控制台的任何文件路径下，都可以调用jdk指定目录下的所有指令。</p>
-<h1 id="JDK-JRE和JVM，以及关系是什么？"><a href="#JDK-JRE和JVM，以及关系是什么？" class="headerlink" title="JDK,JRE和JVM，以及关系是什么？"></a>JDK,JRE和JVM，以及关系是什么？</h1><p>JDK: Java Development Kit Java 开发工具包</p>
-<p>JRE: Java Runtime Environment Java运行环境</p>
-<p>关系：</p>
-<p>使用JDK的开发工具完成的Java程序，交给JRE运行。</p>
-<p>JDK包含JRE，JRE包含JVM.</p>
-<p>JDK &#x3D; JRE + 开发工具集（如javac编译工具）</p>
-<p>JRE &#x3D; JVM + Java SE 标准类库</p>
-<h1 id="终端／cmd运行程序格式？"><a href="#终端／cmd运行程序格式？" class="headerlink" title="终端／cmd运行程序格式？"></a>终端／cmd运行程序格式？</h1><p>编译：javac 源文件名.java （会生成类名.calss的文件，称为字节码文件）</p>
-<p>运行：java 类名 （不要加后缀.class）</p>
-<h1 id="程序的入口"><a href="#程序的入口" class="headerlink" title="程序的入口"></a>程序的入口</h1><p>main()方法</p>
-<p>Public static void main(String[] args)</p>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>分为单行注释、多行注释、文档注释（java特有）</p>
-<p>单行注释、多行注释——对程序进行说明，增加可读性，不参与编译，.class文件不包含。</p>
-<p>文档注释——可以被jdk提供的工具javadoc解析，生成一套以网页文件形式的说明文档。</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/df0df4eaa159df410ae8f7a738e5d945.png"></p>
+<p>示例二：在编译时进行格式检查(JDK内置的三个基本注解)</p>
+<pre class=" language-jaca"><code class="language-jaca">@Override: 限定重写父类方法, 该注解只能用于方法
+
+@Deprecated: 用于表示所修饰的元素(类, 方法等)已过时。通常是因为所修饰的结构危险或存在更好的选择
+
+@SuppressWarnings: 抑制编译器警告
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/ec2780a0a554659af1142a760506674d.png"></p>
+<p>示例三：跟踪代码依赖性，实现替代配置文件功能</p>
+<p>Servlet3.0提供了注解,使得不再需要在web.xml文件中进行Servlet的部署。</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/e50a36402caf94bb90b82d16505f157c.png"></p>
+<p>spring框架中关于“事务”的管理</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/d78c3c5ae03ac27f3f36169232949396.png"></p>
+<h2 id="自定义-1"><a href="#自定义-1" class="headerlink" title="自定义"></a>自定义</h2><p>A.定义新的Annotation 类型使用@interface 关键字</p>
+<p>B.自定义注解自动继承了java.lang.annotation.Annotation接口</p>
+<p>C.Annotation 的成员变量在Annotation 定义中以无参数方法的形式来声明。其方法名和返回值定义了该成员的名字和类型。我们称为配置参数。类型只能是八种基本数据类型、String类型、Class类型、enum类型、Annotation类型、以上所有类型的数组。</p>
+<p>D.可以在定义Annotation 的成员变量时为其指定初始值, 指定成员变量的初始值可使用default 关键字</p>
+<p>E.如果只有一个参数成员，建议使用参数名为value</p>
+<p>F.如果定义的注解含有配置参数，那么使用时必须指定参数值，除非它有默认值。格式是“参数名 &#x3D; 参数值”，如果只有一个参数成员，且名称为value，可以省略“value&#x3D;”</p>
+<p>G.没有成员定义的Annotation 称为标记; 包含成员变量的Annotation 称为元数据Annotation</p>
+<p>注意：自定义注解必须配上注解的信息处理流程才有意义。</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/fd74a963746898e2fc85bd86573cd7ef.png"></p>
 
                 
             </div>
@@ -439,7 +473,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luan-bx.github.io/2022/03/28/java1/">https://luan-bx.github.io/2022/03/28/java1/</a>
+                    <a href="https://luan-bx.github.io/2022/06/05/java9/">https://luan-bx.github.io/2022/06/05/java9/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -532,13 +566,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/06/java2/">
+                <a href="/2022/06/17/java11/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Java笔记（二）基本语法">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Java笔记（十一）IO流">
                         
-                        <span class="card-title">Java笔记（二）基本语法</span>
+                        <span class="card-title">Java笔记（十一）IO流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -549,7 +583,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-17
                         </span>
                         <span class="publish-author">
                             
@@ -581,13 +615,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/20/git/">
+                <a href="/2022/05/21/java8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git常用命令">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java笔记（八）多线程">
                         
-                        <span class="card-title">git常用命令</span>
+                        <span class="card-title">Java笔记（八）多线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -598,7 +632,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-21
                             </span>
                         <span class="publish-author">
                             
@@ -611,8 +645,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Java笔记</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>

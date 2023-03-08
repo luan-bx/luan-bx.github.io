@@ -6,7 +6,7 @@
   <link href="https://luan-bx.github.io/atom.xml" rel="self"/>
   
   <link href="https://luan-bx.github.io/"/>
-  <updated>2023-03-08T03:14:17.794Z</updated>
+  <updated>2023-03-08T04:56:16.812Z</updated>
   <id>https://luan-bx.github.io/</id>
   
   <author>
@@ -17,11 +17,163 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Java笔记（六）面向对象（下）</title>
+    <title>Java笔记零碎知识</title>
+    <link href="https://luan-bx.github.io/2022/06/30/java12/"/>
+    <id>https://luan-bx.github.io/2022/06/30/java12/</id>
+    <published>2022-06-30T02:23:19.000Z</published>
+    <updated>2023-03-08T04:56:16.812Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.在字符串“”中，加入双引号，会与方法中的“”混淆。&lt;/p&gt;
+&lt;p&gt;分别在前面加 \ ,即可打印出双引号&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java笔记（十）集合</title>
+    <link href="https://luan-bx.github.io/2022/06/17/java10/"/>
+    <id>https://luan-bx.github.io/2022/06/17/java10/</id>
+    <published>2022-06-17T11:56:09.000Z</published>
+    <updated>2023-03-08T04:37:40.938Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;h2 id=&quot;对比数组&quot;&gt;&lt;a href=&quot;#对比数组&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java笔记（十一）IO流</title>
+    <link href="https://luan-bx.github.io/2022/06/17/java11/"/>
+    <id>https://luan-bx.github.io/2022/06/17/java11/</id>
+    <published>2022-06-17T11:56:09.000Z</published>
+    <updated>2023-03-08T04:53:09.122Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;File类&quot;&gt;&lt;a href=&quot;#File类&quot; class=&quot;headerlink&quot; title=&quot;File类&quot;&gt;&lt;/a&gt;File类&lt;/h1&gt;&lt;h2 id=&quot;说明&quot;&gt;&lt;a href=&quot;#说明&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java笔记（九）枚举类与注解</title>
+    <link href="https://luan-bx.github.io/2022/06/05/java9/"/>
+    <id>https://luan-bx.github.io/2022/06/05/java9/</id>
+    <published>2022-06-05T07:48:23.000Z</published>
+    <updated>2023-03-08T04:25:03.507Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;枚举类&quot;&gt;&lt;a href=&quot;#枚举类&quot; class=&quot;headerlink&quot; title=&quot;枚举类&quot;&gt;&lt;/a&gt;枚举类&lt;/h1&gt;&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java笔记（八）多线程</title>
+    <link href="https://luan-bx.github.io/2022/05/21/java8/"/>
+    <id>https://luan-bx.github.io/2022/05/21/java8/</id>
+    <published>2022-05-21T10:08:56.000Z</published>
+    <updated>2023-03-08T04:16:27.871Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;h2 id=&quot;程序-program&quot;&gt;&lt;a href=&quot;#程序-program&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java笔记（七）异常处理</title>
+    <link href="https://luan-bx.github.io/2022/05/12/java7/"/>
+    <id>https://luan-bx.github.io/2022/05/12/java7/</id>
+    <published>2022-05-12T07:46:28.000Z</published>
+    <updated>2023-03-08T04:02:37.345Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;h2 id=&quot;说明&quot;&gt;&lt;a href=&quot;#说明&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java笔记（六）面向对象下</title>
     <link href="https://luan-bx.github.io/2022/04/25/java6/"/>
     <id>https://luan-bx.github.io/2022/04/25/java6/</id>
     <published>2022-04-25T13:02:37.000Z</published>
-    <updated>2023-03-08T03:14:17.794Z</updated>
+    <updated>2023-03-08T03:40:57.947Z</updated>
     
     
       
