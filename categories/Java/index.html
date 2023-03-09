@@ -325,28 +325,10 @@
                 
                 
                 
-                <a href="/categories/%E6%96%87%E4%BB%B6/" title="文件: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F9EBEA;">文件
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/%E6%8E%A5%E5%8F%A3/" title="接口: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">接口
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">数据库
+                            style="background-color: #F9EBEA;">接口
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -355,16 +337,16 @@
                 <a href="/categories/TCP/" title="TCP: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #E8F8F5;">TCP
+                            style="background-color: #F5EEF8;">TCP
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E8%AF%AD%E8%A8%80/" title="语言: 1">
+                <a href="/categories/%E6%96%87%E4%BB%B6/" title="文件: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">语言
+                            style="background-color: #D5F5E3;">文件
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -373,7 +355,25 @@
                 <a href="/categories/git/" title="git: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">git
+                            style="background-color: #E8F8F5;">git
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">数据库
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E8%AF%AD%E8%A8%80/" title="语言: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">语言
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -407,62 +407,6 @@
 
     <article id="articles" class="container articles">
         <div class="row tags-posts">
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/07/05/java12/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Java零碎知识">
-                            
-                            <span class="card-title">Java零碎知识</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                1.在字符串“”中，加入双引号，会与方法中的“”混淆。
-分别在前面加 \ ,即可打印出双引号
-
-2.产生随机数
-int value = (int)(Math.random() * 90 + 10) // [10.0, 100.0)
-
-Mat
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Java/">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                        <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                            <span class="chip bg-color">Java笔记</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -739,6 +683,56 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
                 </div>
             </div>
             
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/05/15/java6/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Java（六）面向对象（下）">
+                            
+                            <span class="card-title">Java（六）面向对象（下）</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                static类属性、类方法类属性作为该类各个对象之间共享的变量。在设计类时,分析哪些属性不因对象的不同而改变，将这些属性设置为类属性。相应的方法设置为类方法。类变量（类属性）由该类的所有实例共享.如果方法与调用者无关，则这样的方法通常被声明
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Java/">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                        <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                            <span class="chip bg-color">Java笔记</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
     </article>
 </main>
@@ -841,7 +835,7 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">32k</span>
+                        class="white-color">32.3k</span>
             
             
             

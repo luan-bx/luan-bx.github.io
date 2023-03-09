@@ -503,22 +503,15 @@ String <span class="token function">getName</span><span class="token punctuation
 <p>同优先级线程组成先进先出队列（先到先服务），使用时间片策略</p>
 <p>对高优先级，使用优先调度的抢占式策略</p>
 <h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a>线程的优先级</h2><p>线程的优先级等级</p>
-<pre><code>MAX_PRIORITY：10
-
-MIN _PRIORITY：1
-
-NORM_PRIORITY：5
-</code></pre>
+<p>MAX_PRIORITY：10</p>
+<p>MIN _PRIORITY：1</p>
+<p>NORM_PRIORITY：5</p>
 <p>涉及的方法</p>
-<pre><code>getPriority() ：返回线程优先值
-
-setPriority(int newPriority) ：改变线程的优先级
-</code></pre>
+<p>getPriority() ：返回线程优先值</p>
+<p>setPriority(int newPriority) ：改变线程的优先级</p>
 <p>说明</p>
-<pre><code>线程创建时继承父线程的优先级
-
-低优先级只是获得调度的概率低，并非一定是在高优先级线程之后才被调用
-</code></pre>
+<p>线程创建时继承父线程的优先级</p>
+<p>低优先级只是获得调度的概率低，并非一定是在高优先级线程之后才被调用</p>
 <h2 id="补充：线程的分类"><a href="#补充：线程的分类" class="headerlink" title="补充：线程的分类"></a>补充：线程的分类</h2><p>Java中的线程分为两类：一种是守护线程，一种是用户线程。</p>
 <ol>
 <li><p>它们在几乎每个方面都是相同的，唯一的区别是判断JVM何时离开。</p>
@@ -551,14 +544,10 @@ setPriority(int newPriority) ：改变线程的优先级
 <span class="token punctuation">}</span>
 </code></pre>
 <p>同步监视器可自定义，但需要保证每个线程调用时，该对象是同一个。</p>
-<pre><code>A.使用实现Runnable接口的方法：
-
-只会创建一个对象，所以监视器可以用this，即刚创建的该类的对象。
-
-B.使用继承Thread类的方法：
-
-由于创建多线程会创建出多个对象，就拥有了多个监视器，所以此时用把监视器设置为：该类.calss，因为一个类只有一个，且类也是对象。
-</code></pre>
+<p>A.使用实现Runnable接口的方法：</p>
+<p>只会创建一个对象，所以监视器可以用this，即刚创建的该类的对象。</p>
+<p>B.使用继承Thread类的方法：</p>
+<p>由于创建多线程会创建出多个对象，就拥有了多个监视器，所以此时用把监视器设置为：该类.calss，因为一个类只有一个，且类也是对象。</p>
 <h2 id="Synchronized同步方法"><a href="#Synchronized同步方法" class="headerlink" title="Synchronized同步方法"></a>Synchronized同步方法</h2><p>如果整个方法均需要同步，synchronized还可以放在方法声明中，表示整个方法为同步方法。</p>
 <pre class=" language-java"><code class="language-java">例如：
 
@@ -1171,7 +1160,7 @@ e<span class="token punctuation">.</span> <span class="token function">printStac
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">32k</span>
+                        class="white-color">32.3k</span>
             
             
             
