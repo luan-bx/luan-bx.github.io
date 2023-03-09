@@ -4,13 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java（九）枚举类 | 注解, lbx">
-    <meta name="description" content="枚举类定义
-使用枚举类的实现
-JDK1.5之前需要自定义枚举类
-JDK 1.5 新增的enum 关键字用于定义枚举类
-若枚举只有一个对象, 则可以作为一种单例模式的实现方式。
-属性枚举类对象的属性不应允许被改动, 所以应该使用private">
+    <meta name="keywords" content="Java（七）异常处理, lbx">
+    <meta name="description" content="概述说明因为很多问题不是靠代码能够避免的，(开发过程中的语法错误和逻辑错误不是异常) ，比如：
+
+客户输入数据的格式
+
+读取文件是否存在
+
+网络是否始终保持通畅等等
+
+
+异常分类Error：Java虚拟机无法解决的严重问题。如：JVM系统内">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +26,7 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java（九）枚举类 | 注解 | MyBlog</title>
+    <title>Java（七）异常处理 | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -272,12 +276,12 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java（九）枚举类 | 注解</h1>
+                    <h1 class="description center-align post-title">Java（七）异常处理</h1>
                 </div>
             </div>
         </div>
@@ -330,7 +334,7 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-05
+                    2022-05-22
                 </div>
                 
 
@@ -339,7 +343,7 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.1k
                 </div>
                 
 
@@ -356,84 +360,113 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/34059251250e2378bb5ab19c7d2de263.png"></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>枚举类的实现</p>
-<p>JDK1.5之前需要自定义枚举类</p>
-<p>JDK 1.5 新增的enum 关键字用于定义枚举类</p>
-<p>若枚举只有一个对象, 则可以作为一种单例模式的实现方式。</p>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>枚举类对象的属性不应允许被改动, 所以应该使用private final 修饰</p>
-<p>枚举类的使用private final 修饰的属性应该在构造器中为其赋值</p>
-<p>若枚举类显式的定义了带参数的构造器, 则在列出枚举值时也必须对应的传入参数</p>
-<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><ol>
-<li><p>私有化类的构造器，保证不能在类的外部创建其对象</p>
+                <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>因为很多问题不是靠代码能够避免的，(开发过程中的语法错误和逻辑错误不是异常) ，比如：</p>
+<ol>
+<li><p>客户输入数据的格式</p>
 </li>
-<li><p>在类的内部创建枚举类的实例。声明为：public static final</p>
+<li><p>读取文件是否存在</p>
 </li>
-<li><p>对象如果有实例变量，应该声明为private final，并在构造器中初始化</p>
+<li><p>网络是否始终保持通畅等等</p>
 </li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/3ccf7553934222fa3346383952fad029.png"></p>
-<h2 id="enum"><a href="#enum" class="headerlink" title="enum"></a>enum</h2><p>使用enum 定义的枚举类默认继承了java.lang.Enum类，因此不能再继承其他类</p>
-<p>枚举类的构造器只能使用private 权限修饰符</p>
-<p>枚举类的所有实例必须在枚举类中显式列出(, 分隔; 结尾)。列出的实例系统会自动添加public static final 修饰</p>
-<p>必须在枚举类的第一行声明枚举类对象</p>
-<p>JDK 1.5 中可以在switch 表达式中使用Enum定义的枚举类的对象作为表达式, case 子句可以直接使用枚举值的名字, 无需添加枚举类作为限定。</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/2de2ddaf456e7f43f8a21073b3f9a065.png"></p>
-<h2 id="Enum类的主要方法"><a href="#Enum类的主要方法" class="headerlink" title="Enum类的主要方法"></a>Enum类的主要方法</h2><p>values()方法：返回枚举类型的对象数组。该方法可以很方便地遍历所有的枚举值。</p>
-<p>valueOf(String str)：可以把一个字符串转为对应的枚举类对象。要求字符串必须是枚举类对象的“名字”。如不是，会有运行时异常：IllegalArgumentException。</p>
-<p>toString()：返回当前枚举类对象常量的名称</p>
-<h1 id="注解-Annotation"><a href="#注解-Annotation" class="headerlink" title="注解(Annotation)"></a>注解(Annotation)</h1><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>框架&#x3D; 注解+ 反射+ 设计模式。</p>
-<h2 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h2><p>使用Annotation 时要在其前面增加@ 符号, 并把该Annotation 当成一个修饰符使用。用于修饰它支持的程序元素</p>
-<p>示例一：生成文档相关的注解</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@author</span> 标明开发该类模块的作者，多个作者之间使用<span class="token punctuation">,</span>分割
+<h2 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h2><p>Error：Java虚拟机无法解决的严重问题。如：JVM系统内部错误、资源耗尽等严重情况。比如：StackOverflowError和OOM。一般不编写针对性的代码进行处理。</p>
+<p>Exception: 其它因编程错误或偶然的外在因素导致的一般性问题，可以使用针对性的代码进行处理。例如：</p>
+<ol>
+<li><p>空指针访问</p>
+</li>
+<li><p>试图读取不存在的文件</p>
+</li>
+<li><p>网络连接中断</p>
+</li>
+<li><p>数组角标越界</p>
+</li>
+</ol>
+<p>捕获错误最理想的是在编译期间，但有的错误只有在运行时才会发生。比如：除数为0，数组下标越界等</p>
+<p>分类：编译时异常和运行时异常</p>
+<h2 id="常见异常"><a href="#常见异常" class="headerlink" title="常见异常"></a>常见异常</h2><pre class=" language-java"><code class="language-java">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span><span class="token function">RuntimeException</span> <span class="token punctuation">(</span>运行异常<span class="token punctuation">)</span>
 
-<span class="token annotation punctuation">@version</span> 标明该类模块的版本
+ClassCastException
 
-<span class="token annotation punctuation">@see</span> 参考转向，也就是相关主题
+ArrayIndexOutOfBoundsException
 
-<span class="token annotation punctuation">@since</span> 从哪个版本开始增加的
+NullPointerException
 
-<span class="token annotation punctuation">@param</span> 对方法中某参数的说明，如果没有参数就不能写
+ArithmeticException
 
-@<span class="token keyword">return</span> 对方法返回值的说明，如果方法的返回值类型是<span class="token keyword">void</span>就不能写
+NumberFormatException
 
-<span class="token annotation punctuation">@exception</span> 对方法可能抛出的异常进行说明，如果没有用<span class="token keyword">throws</span>显式抛出的异常就不能写
+InputMismatchException
 
-其中
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 
-<span class="token annotation punctuation">@param</span> @<span class="token keyword">return</span> 和<span class="token annotation punctuation">@exception</span> 这三个标记都是只用于方法的。
+java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOExeption
 
-<span class="token annotation punctuation">@param</span>的格式要求：<span class="token annotation punctuation">@param</span> 形参名形参类型形参说明
+FileNotFoundException
 
-@<span class="token keyword">return</span> 的格式要求：@<span class="token keyword">return</span> 返回值类型返回值说明
+EOFException
 
-<span class="token annotation punctuation">@exception</span>的格式要求：<span class="token annotation punctuation">@exception</span> 异常类型异常说明
+java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>ClassNotFoundException
 
-<span class="token annotation punctuation">@param</span>和<span class="token annotation punctuation">@exception</span>可以并列多个
+java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>InterruptedException
+
+java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileNotFoundException
+
+java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>SQLException
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/df0df4eaa159df410ae8f7a738e5d945.png"></p>
-<p>示例二：在编译时进行格式检查(JDK内置的三个基本注解)</p>
-<pre class=" language-jaca"><code class="language-jaca">@Override: 限定重写父类方法, 该注解只能用于方法
-
-@Deprecated: 用于表示所修饰的元素(类, 方法等)已过时。通常是因为所修饰的结构危险或存在更好的选择
-
-@SuppressWarnings: 抑制编译器警告
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/ec2780a0a554659af1142a760506674d.png"></p>
-<p>示例三：跟踪代码依赖性，实现替代配置文件功能</p>
-<p>Servlet3.0提供了注解,使得不再需要在web.xml文件中进行Servlet的部署。</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/e50a36402caf94bb90b82d16505f157c.png"></p>
-<p>spring框架中关于“事务”的管理</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/d78c3c5ae03ac27f3f36169232949396.png"></p>
-<h2 id="自定义-1"><a href="#自定义-1" class="headerlink" title="自定义"></a>自定义</h2><p>A.定义新的Annotation 类型使用@interface 关键字</p>
-<p>B.自定义注解自动继承了java.lang.annotation.Annotation接口</p>
-<p>C.Annotation 的成员变量在Annotation 定义中以无参数方法的形式来声明。其方法名和返回值定义了该成员的名字和类型。我们称为配置参数。类型只能是八种基本数据类型、String类型、Class类型、enum类型、Annotation类型、以上所有类型的数组。</p>
-<p>D.可以在定义Annotation 的成员变量时为其指定初始值, 指定成员变量的初始值可使用default 关键字</p>
-<p>E.如果只有一个参数成员，建议使用参数名为value</p>
-<p>F.如果定义的注解含有配置参数，那么使用时必须指定参数值，除非它有默认值。格式是“参数名 &#x3D; 参数值”，如果只有一个参数成员，且名称为value，可以省略“value&#x3D;”</p>
-<p>G.没有成员定义的Annotation 称为标记; 包含成员变量的Annotation 称为元数据Annotation</p>
-<p>注意：自定义注解必须配上注解的信息处理流程才有意义。</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/fd74a963746898e2fc85bd86573cd7ef.png"></p>
+<h2 id="Java异常处理的方式"><a href="#Java异常处理的方式" class="headerlink" title="Java异常处理的方式"></a>Java异常处理的方式</h2><p>方式一：try-catch-finally</p>
+<p>方式二：throws + 异常类型</p>
+<ol>
+<li><p>Java提供的是异常处理的抓抛模型。</p>
+</li>
+<li><p>Java程序的执行过程中如出现异常，会生成一个异常类对象，该异常对象将被提交给Java运行时系统，这个过程称为抛出(throw)异常。</p>
+</li>
+<li><p>异常对象的生成</p>
+</li>
+</ol>
+<p>A.由虚拟机自动生成：程序运行过程中，虚拟机检测到程序发生了问题，如果在当前代码中没有找到相应的处理程序，就会在后台自动创建一个对应异常类的实例对象并抛出——自动抛出</p>
+<p>B.由开发人员手动创建：Exception exception &#x3D; new ClassCastException();——创建好的异常对象不抛出对程序没有任何影响，和创建一个普通对象一样</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/4dcda331c21388c8c8ec4c23abbeaa4d.png"></p>
+<ol>
+<li><p>如果一个方法内抛出异常，该异常对象会被抛给调用者方法中处理。如果异常没有在调用者方法中处理，它继续被抛给这个调用方法的上层方法。这个过程将一直继续下去，直到异常被处理。这一过程称为捕获(catch)异常。</p>
+</li>
+<li><p>如果一个异常回到main()方法，并且main()也不处理，则程序运行终止。</p>
+</li>
+<li><p>程序员通常只能处理Exception，而对Error无能为力。</p>
+</li>
+</ol>
+<h1 id="try-catch-finally"><a href="#try-catch-finally" class="headerlink" title="try-catch-finally"></a>try-catch-finally</h1><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/f5c7e8bd544afb7d29aed2a4cbb5932d.png"></p>
+<p>捕获异常的有关信息：</p>
+<p>与其它对象一样，可以访问一个异常对象的成员变量或调用它的方法。</p>
+<p>getMessage() 获取异常信息，返回字符串</p>
+<p>printStackTrace() 获取异常类名和信息，以及异常出现在程序中的位置。返回值void。</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/c0e86e67aafe0fbd71a403bc64677034.png"></p>
+<p>finally:捕获异常的最后一步是通过finally语句为异常处理提供一个统一的出口，使得在控制流转到程序的其它部分以前，能够对程序的状态作统一的管理。</p>
+<h1 id="throws"><a href="#throws" class="headerlink" title="throws"></a>throws</h1><p>声明抛出异常是Java中处理异常的第二种方式</p>
+<p>如果一个方法(中的语句执行时)可能生成某种异常，但是并不能确定如何处理这种异常，则此方法应显示地声明抛出异常，表明该方法将不对这些异常进行处理，而由该方法的调用者负责处理。</p>
+<p>在方法声明中用throws语句可以声明抛出异常的列表，throws后面的异常类型可以是方法中产生的异常类型，也可以是它的父类。</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/3c47db2f7e0a5a593a2cd98a4c309682.png"></p>
+<p>重写方法不能抛出比被重写方法范围更大的异常类型。</p>
+<p>在多态的情况下，对methodA()方法的调用-异常的捕获按父类声明的异常处理。</p>
+<h1 id="手动抛出异常"><a href="#手动抛出异常" class="headerlink" title="手动抛出异常"></a>手动抛出异常</h1><p>首先要生成异常类对象，然后通过throw语句实现抛出操作(提交给Java运行环境)。</p>
+<p>IOException e &#x3D; new IOException();</p>
+<p>throw e;</p>
+<p>可以抛出的异常必须是Throwable或其子类的实例。下面语句在编译时将会产生语法错误：</p>
+<p>throw new String(“want to throw”);</p>
+<h1 id="自定义异常类"><a href="#自定义异常类" class="headerlink" title="自定义异常类"></a>自定义异常类</h1><ol>
+<li><p>一般地，用户自定义异常类都是RuntimeException的子类。</p>
+</li>
+<li><p>通常需要编写几个重载的构造器。</p>
+</li>
+<li><p>需要提供serialVersionUID</p>
+</li>
+<li><p>通过throw抛出。</p>
+</li>
+<li><p>最重要的是异常类的名字，当异常出现时，可以根据名字判断异常类型。</p>
+</li>
+<li><p>用户自己的异常类必须继承现有的异常类。</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/e65c851dbbef2850c3047383a8e4554c.png"></p>
 
                 
             </div>
@@ -460,7 +493,7 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luan-bx.github.io/2022/06/05/java9/">https://luan-bx.github.io/2022/06/05/java9/</a>
+                    <a href="https://luan-bx.github.io/2022/05/22/java7/">https://luan-bx.github.io/2022/05/22/java7/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -553,13 +586,13 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/06/17/java10/">
+                <a href="/2022/05/28/java8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java（十）集合">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java（八）多线程">
                         
-                        <span class="card-title">Java（十）集合</span>
+                        <span class="card-title">Java（八）多线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -570,7 +603,7 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-28
                         </span>
                         <span class="publish-author">
                             
@@ -606,13 +639,13 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/03/javacodemysql/">
+                <a href="/2022/05/15/java6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="数据库相关操作">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Java（六）面向对象（下）">
                         
-                        <span class="card-title">数据库相关操作</span>
+                        <span class="card-title">Java（六）面向对象（下）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -623,14 +656,14 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                    数据库
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -640,16 +673,12 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Code/">
-                        <span class="chip bg-color">Code</span>
-                    </a>
-                    
                     <a href="/tags/Java/">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Java笔记</span>
                     </a>
                     
                 </div>
@@ -844,7 +873,7 @@ JDK 1.5 新增的enum 关键字用于定义枚举类
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.5k</span>
+                        class="white-color">32k</span>
             
             
             

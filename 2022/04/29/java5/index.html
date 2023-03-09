@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java（六）面向对象（下）, lbx">
-    <meta name="description" content="static类属性、类方法类属性作为该类各个对象之间共享的变量。在设计类时,分析哪些属性不因对象的不同而改变，将这些属性设置为类属性。相应的方法设置为类方法。类变量（类属性）由该类的所有实例共享.如果方法与调用者无关，则这样的方法通常被声明">
+    <meta name="keywords" content="Java（五）面向对象中, lbx">
+    <meta name="description" content="继承性为什么要有继承多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承那个类即可。
+此处的多个类称为子类(派生类)，单独的这个类称为父类(基类或超类)。
+类继承语法规则class Sub">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java（六）面向对象（下） | MyBlog</title>
+    <title>Java（五）面向对象中 | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -267,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java（六）面向对象（下）</h1>
+                    <h1 class="description center-align post-title">Java（五）面向对象中</h1>
                 </div>
             </div>
         </div>
@@ -325,7 +327,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-25
+                    2022-04-29
                 </div>
                 
 
@@ -334,7 +336,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    3.5k
                 </div>
                 
 
@@ -351,196 +353,278 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><h2 id="类属性、类方法"><a href="#类属性、类方法" class="headerlink" title="类属性、类方法"></a>类属性、类方法</h2><p>类属性作为该类各个对象之间共享的变量。在设计类时,分析哪些属性不因对象的不同而改变，将这些属性设置为类属性。相应的方法设置为类方法。<br>类变量（类属性）由该类的所有实例共享.<br>如果方法与调用者无关，则这样的方法通常被声明为类方法，由于不需要创建对象就可以调用类方法，从而简化了方法的调用。</p>
-<h2 id="使用范围"><a href="#使用范围" class="headerlink" title="使用范围"></a>使用范围</h2><p>在Java类中，可用static修饰：属性、方法、代码块、内部类 </p>
-<h2 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h2><p>A.随着类的加载而加载 </p>
-<p>B.优先于对象存在 </p>
-<p>C.修饰的成员，被所有对象所共享 </p>
-<p>D.访问权限允许时，可不创建对象，直接被类调用(如Person.id、Person.add(int num) )</p>
-<p>E.调用时，在一处修改了static的变量或方法，所有调用该static的均同步变化。</p>
-<p>F.在static方法内部只能访问类的static修饰的属性或方法，不能访问类的非static结构。</p>
-<p>G.因为不需要实例就可访问static方法，因此static方法内部不能有this,也不能有super 。</p>
-<p>H.static修饰的方法不能被重写。</p>
-<h1 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h1><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><p>设计模式是在大量的实践中总结和理论化之后优选的代码结构、编程风格、以及解决问题的思考方式。“套路” </p>
-<h2 id="单例设计模式-1"><a href="#单例设计模式-1" class="headerlink" title="单例设计模式"></a>单例设计模式</h2><p>所谓类的单例设计模式，就是采取一定的方法保证在整个的软件系统中，对某个类只能存在一个对象实例，并且该类只提供一个取得其对象实例的方法。如果我们要让类在一个虚拟机中只能产生一个对象，我们首先必须将类的构造器的访问权限设置为private，这样，就不能用new操作符在类的外部产生类的对象了，但在类内部仍可以产生该类的对象。因为在类的外部开始还无法得到类的对象，只能调用该类的某个静态方法以返回类内部创建的对象，静态方法只能访问类中的静态成员变量，所以，指向类内部产生的该类对象的变量也必须定义成静态的。</p>
-<h2 id="单例-饿汉式"><a href="#单例-饿汉式" class="headerlink" title="单例-饿汉式"></a>单例-饿汉式</h2><p>一加载类就new好了，等待调用。</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/000000000000.png"></p>
-<h2 id="单例-懒汉式"><a href="#单例-懒汉式" class="headerlink" title="单例-懒汉式"></a>单例-懒汉式</h2><p>用的时候再new</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/111.png"></p>
-<h2 id="单例模式的优点"><a href="#单例模式的优点" class="headerlink" title="单例模式的优点"></a>单例模式的优点</h2><p>由于单例模式只生成一个实例，减少了系统性能开销，当一个对象的产生需要比较多的资源时，如读取配置、产生其他依赖对象时，则可以通过在应用启动时直接产生一个单例对象，然后永久驻留内存的方式来解决。</p>
-<h2 id="单例设计模式应用"><a href="#单例设计模式应用" class="headerlink" title="单例设计模式应用"></a>单例设计模式应用</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/131.png"></p>
-<h1 id="main"><a href="#main" class="headerlink" title="main"></a>main</h1><p>因为main() 方法是静态的，我们不能直接访问该类中的非静态成员，必须创建该类的一个实例对象后，才能通过这个对象去访问类中的非静态成员。</p>
-<h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>对Java类或对象进行初始化</p>
-<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>一个类中代码块若有修饰符，则只能被static修饰，称为静态代码块(static block)，没有使用static修饰的，为非静态代码块。</p>
-<p>static代码块通常用于初始化static的属性</p>
-<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p>A.静态代码块：用static 修饰的代码块</p>
-<ol>
-<li><p>可以有输出语句。</p>
+                <h1 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h1><h2 id="为什么要有继承"><a href="#为什么要有继承" class="headerlink" title="为什么要有继承"></a>为什么要有继承</h2><p>多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承那个类即可。</p>
+<p>此处的多个类称为子类(派生类)，单独的这个类称为父类(基类或超类)。</p>
+<h2 id="类继承语法规则"><a href="#类继承语法规则" class="headerlink" title="类继承语法规则"></a>类继承语法规则</h2><p><code>class Subclass extends SuperClass&#123; &#125;</code></p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ol>
+<li><p>减少了代码冗余，提高了代码的复用性。</p>
 </li>
-<li><p>可以对类的属性、类的声明进行初始化操作。</p>
+<li><p>更有利于功能的扩展。</p>
 </li>
-<li><p>不可以对非静态的属性初始化。即：不可以调用非静态的属性和方法。</p>
-</li>
-<li><p>若有多个静态的代码块，那么按照从上到下的顺序依次执行。</p>
-</li>
-<li><p>静态代码块的执行要先于非静态代码块。</p>
-</li>
-<li><p>静态代码块随着类的加载而加载，且只执行一次。</p>
+<li><p>让类与类之间产生了关系，提供了多态的前提。</p>
 </li>
 </ol>
-<p>B.非静态代码块：没有static修饰的代码块</p>
-<ol>
-<li><p>可以有输出语句。</p>
+<p>注意：不要仅为了获取其他类中某个功能而去继承</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
+<li><p>子类继承了父类，就继承了父类的方法和属性。</p>
 </li>
-<li><p>可以对类的属性、类的声明进行初始化操作。</p>
+<li><p>在子类中，可以使用父类中定义的方法和属性，也可以创建新的数据和方法。</p>
 </li>
-<li><p>除了调用非静态的结构外，还可以调用静态的变量或方法。</p>
+<li><p>在Java 中，继承的关键字用的是“extends”，即子类不是父类的子集，而是对父类的“扩展”。</p>
 </li>
-<li><p>若有多个非静态的代码块，那么按照从上到下的顺序依次执行。</p>
-</li>
-<li><p>每次创建对象的时候，都会执行一次。且先于构造器执行。</p>
+<li><p>关于继承的规则：</p>
 </li>
 </ol>
-<h2 id="分析运行顺序"><a href="#分析运行顺序" class="headerlink" title="分析运行顺序"></a>分析运行顺序</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/sssss.png"></p>
-<p>先执行的是father的static代码块，然后son的static代码块，才是打印“777777777”，因为main方法的运行，需要son类的加载，又继承了father，所以从father开始打印。</p>
-<h2 id="属性赋值的位置"><a href="#属性赋值的位置" class="headerlink" title="属性赋值的位置"></a>属性赋值的位置</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/sdafafafa.png"></p>
-<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>声明类、变量和方法时，可使用关键字final来修饰,表示“最终的”。</p>
-<p>A.final标记的类不能被继承。提高安全性，提高程序的可读性。</p>
-<p>如：String类、System类、StringBuffer类</p>
-<p>B.final标记的方法不能被子类重写。</p>
-<p>如：Object类中的getClass()。</p>
-<p>C.final标记的变量(成员变量或局部变量)称为常量。名称大写，且只能被赋值一次,不可修改。final标记的成员变量必须在声明时或在每个构造器中或代码块中显式赋值，然后才能使用。</p>
-<p>如：final double MY_PI &#x3D; 3.14;</p>
-<p>static final：全局常量</p>
-<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><p>第一题：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Something</span> <span class="token punctuation">{</span>
-
-<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">addOne</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-<span class="token keyword">return</span> <span class="token operator">++</span>x<span class="token punctuation">;</span> 错误，对x进行修改了
-
-<span class="token keyword">return</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> 正确，对x没有变化，只是用x进行运算。
-
-<span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-</code></pre>
-<p>第二题：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Something</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        Other o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Other</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">new</span> <span class="token class-name">Something</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addOne</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addOne</span><span class="token punctuation">(</span><span class="token keyword">final</span> Other o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Other</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 错误，对象o重新赋值。
-
-        o<span class="token punctuation">.</span>i<span class="token operator">++</span><span class="token punctuation">;</span> 正确，对象o的属性依然可以重新改写。
-
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Other</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">int</span> i<span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span>
-</code></pre>
-<h2 id="final属性赋值位置"><a href="#final属性赋值位置" class="headerlink" title="final属性赋值位置"></a>final属性赋值位置</h2><p>加载类之前一定要赋值,否则此属性不能再赋值了。</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/faaa.png"></p>
-<h1 id="抽象类、抽象方法"><a href="#抽象类、抽象方法" class="headerlink" title="抽象类、抽象方法"></a>抽象类、抽象方法</h1><p>有时将一个父类设计得非常抽象，以至于它没有具体的实例，这样的类叫做抽象类。</p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>A.用abstract关键字来修饰一个类，这个类叫做抽象类。</p>
-<p>B.用abstract来修饰一个方法，该方法叫做抽象方法。</p>
-<p>抽象方法：只有方法的声明，没有方法的实现。以分号结束：</p>
-<p>比如：public abstract void talk();</p>
-<p>C.含有抽象方法的类必须被声明为抽象类。</p>
-<p>D.抽象类不能被实例化。抽象类是用来被继承的，抽象类的子类必须重写父类的抽象方法，并提供方法体。若没有重写全部的抽象方法，仍为抽象类。</p>
-<p>E.不能用abstract修饰变量、代码块、构造器；</p>
-<p>F.不能用abstract修饰私有方法、静态方法、final的方法、final的类。</p>
-<p>个人理解：相当于规定了子类应该有哪些方法，各个子类根据实际情况执行自己的代码。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>超类声明一个方法但不提供实现，该方法的实现由子类提供。这样的方法称为抽象方法。有一个或更多抽象方法的类称为抽象类。</p>
-<h2 id="模板方法设计模式（多态的应用）"><a href="#模板方法设计模式（多态的应用）" class="headerlink" title="模板方法设计模式（多态的应用）"></a>模板方法设计模式（多态的应用）</h2><p>抽象类体现的就是一种模板模式的设计，抽象类作为多个子类的通用模板，子类在抽象类的基础上进行扩展、改造，但子类总体上会保留抽象类的行为方式。</p>
-<p>解决的问题：</p>
-<p>当功能内部一部分实现是确定的，一部分实现是不确定的。这时可以把不确定的部分暴露出去，让子类去实现。</p>
-<p>换句话说，在软件开发中实现一个算法时，整体步骤很固定、通用，这些步骤已经在父类中写好了。但是某些部分易变，易变部分可以抽象出来，供不同子类实现。这就是一种模板模式。</p>
-<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h2 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h2><p>一方面，有时必须从几个类中派生出一个子类，继承它们所有的属性和方法。但是，Java不支持多重继承。有了接口，就可以得到多重继承的效果。</p>
-<p>另一方面，有时必须从几个类中抽取出一些共同的行为特征，而它们之间又没有is-a的关系，仅仅是具有相同的行为特征而已。例如：鼠标、键盘、打印机、扫描仪、摄像头、充电器、MP3机、手机、数码相机、移动硬盘等都支持USB连接。</p>
-<p>接口就是规范，定义的是一组规则，体现了现实世界中“如果你是&#x2F;要…则必须能…”的思想。继承是一个”是不是”的关系，而接口实现则是 “能不能”的关系。</p>
-<p>接口的本质是契约，标准，规范，就像我们的法律一样。制定好后大家都要遵守。</p>
-<p>接口(interface)是抽象方法和常量值定义的集合。</p>
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>A.用interface来定义。</p>
-<p>B.接口中的所有成员变量都默认是由public static final修饰的。</p>
-<p>C.接口中的所有抽象方法都默认是由public abstract修饰的。</p>
-<p>D.接口中没有构造器。</p>
-<p>E.接口采用多继承机制。</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/sfxgx.png"></p>
-<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><p>A.定义Java类的语法格式：先写extends，后写implements</p>
-<p>class SubClass extends SuperClass implements InterfaceA{ }</p>
-<p>B.一个类可以实现多个接口，接口也可以继承其它接口。</p>
-<p>C.实现接口的类必须提供接口中所有方法的具体实现内容，方可实例化。否则，仍为抽象类。</p>
-<p>D.接口的主要用途就是被实现类实现。（面向接口编程）</p>
-<p>E.与继承关系类似，接口与实现类之间存在多态性</p>
-<p>F.接口和类是并列关系，或者可以理解为一种特殊的类。从本质上讲，接口是一种特殊的抽象类，这种抽象类中只包含常量和方法的定义(JDK7.0及之前)，而没有变量和方法的实现。</p>
-<p>G.分别介绍本类、父类、接口的调用：</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/ffegsgs.png"></p>
-<h1 id="代理模式（接口的应用）"><a href="#代理模式（接口的应用）" class="headerlink" title="代理模式（接口的应用）"></a>代理模式（接口的应用）</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>代理模式是Java开发中使用较多的一种设计模式。代理设计就是为其他对象提供一种代理以控制对这个对象的访问。</p>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><pre><code>A.安全代理：屏蔽对真实角色的直接访问。
-B.远程代理：通过代理类处理远程方法调用（RMI）
-C.延迟加载：先加载轻量级的代理对象，真正需要再加载真实对象
-</code></pre>
-<p>比如你要开发一个大文档查看软件，大文档中有大的图片，有可能一个图片有100MB，在打开文件时，不可能将所有的图片都显示出来，这样就可以使用代理模式，当需要查看图片时，用proxy来进行大图片的打开。</p>
-<p>分类:</p>
-<pre><code>静态代理（静态定义代理类）
-动态代理（动态生成代理类）
-JDK自带的动态代理，需要反射等知识
-</code></pre>
-<h1 id="接口与抽象类对比"><a href="#接口与抽象类对比" class="headerlink" title="接口与抽象类对比"></a>接口与抽象类对比</h1><h2 id="对比-1"><a href="#对比-1" class="headerlink" title="对比"></a>对比</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/aegsah.png"></p>
-<p>在开发中，常看到一个类不是去继承一个已经实现好的类，而是要么继承抽象类，要么实现接口。</p>
-<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/agag.png"></p>
-<p>编译错误，接口和继承一个优先级，所以不确定此时x是哪个。</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/aggafzxb.png"></p>
-<p>编译错误：The final field Rollable.ball cannot be assigned</p>
-<p>任何在interface里声明的interface variable (接口变量，也可称成员变量)，默认为public static final。不可修改参数</p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/agagwfjy.png"></p>
-<h2 id="java-8的改进"><a href="#java-8的改进" class="headerlink" title="java 8的改进"></a>java 8的改进</h2><p>Java 8中，你可以为接口添加静态方法和默认方法。从技术角度来说，这是完全合法的，只是它看起来违反了接口作为一个抽象定义的理念。</p>
-<p>静态方法：使用static 关键字修饰。可以通过接口直接调用静态方法，并执行其方法体。我们经常在相互一起使用的类中使用静态方法。你可以在标准库中找到像Collection&#x2F;Collections或者Path&#x2F;Paths这样成对的接口和类。</p>
-<p>默认方法：默认方法使用default 关键字修饰。可以通过实现类对象来调用。我们在已有的接口中提供新方法的同时，还保持了与旧版本代码的兼容性。比如：java 8 API中对Collection、List、Comparator等接口提供了丰富的默认方法。</p>
-<h2 id="默认方法"><a href="#默认方法" class="headerlink" title="默认方法"></a>默认方法</h2><p>若一个接口中定义了一个默认方法，而另外一个接口中也定义了一个同名同参数的方法（不管此方法是否是默认方法），在实现类同时实现了这两个接口时，会出现：接口冲突。</p>
-<p>解决办法：实现类必须覆盖接口中同名同参数的方法，来解决冲突。</p>
-<p>若一个接口中定义了一个默认方法，而父类中也定义了一个同名同参数的非抽象方法，则不会出现冲突问题。因为此时遵守：类优先原则。接口中具有相同名称和参数的默认方法会被忽略。</p>
-<h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h2 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h2><p>成员内部类作为类的成员的角色：</p>
-<p>A.和外部类不同，Inner class还可以声明为private或protected；</p>
-<p>B.可以调用外部类的结构;</p>
-<p>C.可以声明为static的，但此时就不能再使用外层类的非static的成员变量；</p>
-<p>成员内部类作为类的角色：</p>
-<p>A.可以在内部定义属性、方法、构造器等结构</p>
-<p>B.可以声明为abstract类，因此可以被其它的内部类继承</p>
-<p>C.可以声明为final的</p>
-<p>D.编译以后生成OuterClass$InnerClass.class字节码文件（也适用于局部内部类）</p>
-<p>【注意】</p>
-<ol>
-<li><p>非static的成员内部类中的成员不能声明为static的，只有在外部类或static的成员内部类中才可声明static成员。</p>
+<p>子类不能直接访问父类中私有的(private)的成员变量和方法。但此时，依然继承了这个私有的变量、方法。</p>
+<ol start="5">
+<li>Java只支持单继承和多层继承，不允许多重继承</li>
+</ol>
+<p>一个子类只能有一个父类</p>
+<p>一个父类可以派生出多个子类</p>
+<p><code>class SubDemo extends Demo&#123; &#125; //ok</code></p>
+<p><code>class SubDemo extends Demo1,Demo2...//error</code></p>
+<ol start="6">
+<li>如果没有显示生命一个父类，则继承java.lang.object类。</li>
+</ol>
+<p>且所有类直接或间接继承java.lang.object类</p>
+<h2 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h2><p>第一次打印定义base类，运行的是base2类，所以相当于在base2类要找base类重写的方法。</p>
+<p>第二次打印定义base2类，运行的也是base2类，所以直接在base2里找方法，优先匹配形式一致的方法。</p>
+<h1 id="方法的重写"><a href="#方法的重写" class="headerlink" title="方法的重写"></a>方法的重写</h1><h2 id="定义：-override-x2F-overwrite"><a href="#定义：-override-x2F-overwrite" class="headerlink" title="定义：(override&#x2F;overwrite)"></a>定义：(override&#x2F;overwrite)</h2><p>在子类中可以根据需要对从父类中继承来的方法进行改造，也称为方法的重置、覆盖。在程序执行时，子类的方法将覆盖父类的方法。</p>
+<h2 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h2><ol>
+<li><p>子类重写的方法必须和父类被重写的方法具有相同的方法名称、参数列表</p>
 </li>
-<li><p>外部类访问成员内部类的成员，需要“内部类.成员”或“内部类对象.成员”的方式</p>
+<li><p>子类重写的方法的返回值类型不能大于父类被重写的方法的返回值类型</p>
 </li>
-<li><p>成员内部类可以直接使用外部类的所有成员，包括私有的数据</p>
-</li>
-<li><p>当想要在外部类的静态成员部分使用内部类时，可以考虑内部类声明为静态的</p>
+<li><p>子类重写的方法使用的访问权限不能小于父类被重写的方法的访问权限</p>
 </li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/hkuilllhl.png"></p>
-<h2 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h2><p>A.内部类仍然是一个独立的类，在编译之后内部类会被编译成独立的.class文件，但是前面冠以外部类的类名和$符号，以及数字编号。</p>
-<p>B.只能在声明它的方法或代码块中使用，而且是先声明后使用。除此之外的任何地方都不能使用该类。</p>
-<p>C.局部内部类可以使用外部类的成员，包括私有的。</p>
-<p>D.局部内部类可以使用外部方法的局部变量，但是必须是final的。由局部内部类和局部变量的声明周期不同所致。</p>
-<p>E.局部内部类和局部变量地位类似，不能使用public,protected,缺省,private</p>
-<p>F.局部内部类不能使用static修饰，因此也不能包含静态成员</p>
+<p>子类不能重写父类中声明为private权限的方法</p>
+<p>子类方法抛出的异常不能大于父类被重写方法的异常</p>
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>子类与父类中同名同参数的方法必须同时声明为非static的(即为重写)，或者同时声明为 static的（不是重写）。因为static方法是属于类的，子类无法覆盖父类的方法。</p>
+<h1 id="super"><a href="#super" class="headerlink" title="super"></a>super</h1><h2 id="在Java类中使用super来调用父类中的指定操作："><a href="#在Java类中使用super来调用父类中的指定操作：" class="headerlink" title="在Java类中使用super来调用父类中的指定操作："></a>在Java类中使用super来调用父类中的指定操作：</h2><ol>
+<li><p>super可用于访问父类中定义的属性</p>
+</li>
+<li><p>super可用于调用父类中定义的成员方法</p>
+</li>
+<li><p>super可用于在子类构造器中调用父类的构造器</p>
+</li>
+</ol>
+<h2 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h2><ol>
+<li><p>尤其当子父类出现同名成员时，可以用super表明调用的是父类中的成员</p>
+</li>
+<li><p>super的追溯不仅限于直接父类</p>
+</li>
+<li><p>super和this的用法相像，this代表本类对象的引用，super代表父类内存空间的标识</p>
+</li>
+</ol>
+<h2 id="调用父类的构造器："><a href="#调用父类的构造器：" class="headerlink" title="调用父类的构造器："></a>调用父类的构造器：</h2><ol>
+<li><p>子类中所有的构造器默认都会访问父类中空参数的构造器</p>
+</li>
+<li><p>当父类中没有空参数的构造器时，子类的构造器必须通过this(参数列表)或者super(参数列表)语句指定调用本类或者父类中相应的构造器。同时，只能”二选一”，且必须放在构造器的首行</p>
+</li>
+<li><p>如果子类构造器中既未显式调用父类或本类的构造器，且父类中又没有无参的构造器，则编译出错</p>
+</li>
+</ol>
+<h2 id="this和super的区别"><a href="#this和super的区别" class="headerlink" title="this和super的区别"></a>this和super的区别</h2><h1 id="多态性"><a href="#多态性" class="headerlink" title="多态性"></a>多态性</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ol>
+<li><p>多态性，是面向对象中最重要的概念，在Java中的体现：</p>
+</li>
+<li><p>对象的多态性：父类的引用指向子类的对象。可以直接应用在抽象类和接口上</p>
+</li>
+<li><p>Java引用变量有两个类型：编译时类型和运行时类型。编译时类型由声明该变量时使用的类型决定，运行时类型由实际赋给该变量的对象决定。简称：编译时，看左边；运行时，看右边。</p>
+</li>
+</ol>
+<p>若编译时类型和运行时类型不一致，就出现了对象的多态性(Polymorphism)</p>
+<p>多态情况下，“看左边”：看的是父类的引用（父类中不具备子类特有的方法）</p>
+<p>“看右边”：看的是子类的对象（实际运行的是子类重写父类的方法）</p>
+<h2 id="对象的多态"><a href="#对象的多态" class="headerlink" title="对象的多态"></a>对象的多态</h2><ol>
+<li>在Java中,子类的对象可以替代父类的对象使用</li>
+</ol>
+<p>一个变量只能有一种确定的数据类型</p>
+<p>一个引用类型变量可能指向(引用)多种不同类型的对象</p>
+<p>Person p &#x3D; new Student();</p>
+<p>Object o &#x3D; new Person();&#x2F;&#x2F;Object类型的变量o，指向Person类型的对象</p>
+<p>o &#x3D; new Student(); &#x2F;&#x2F;Object类型的变量o，指向Student类型的对象</p>
+<ol start="2">
+<li><p>子类可看做是特殊的父类，所以父类类型的引用可以指向子类的对象：向上转型(upcasting)。</p>
+</li>
+<li><p>一个引用类型变量如果声明为父类的类型，但实际引用的是子类对象，那么该变量就不能再访问子类中添加的属性和方法</p>
+</li>
+</ol>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h2 id="方法的重载与重写"><a href="#方法的重载与重写" class="headerlink" title="方法的重载与重写"></a>方法的重载与重写</h2><p>从编译和运行的角度看：</p>
+<p>重载，是指允许存在多个同名方法，而这些方法的参数不同。编译器根据方法不同的参数表，对同名方法的名称做修饰。对于编译器而言，这些同名方法就成了不同的方法。它们的调用地址在编译期就绑定了。Java的重载是可以包括父类和子类的，即子类可以重载父类的同名不同参数的方法。</p>
+<p>所以：对于重载而言，在方法调用之前，编译器就已经确定了所要调用的方法，这称为“早绑定”或“静态绑定”；</p>
+<p>而对于多态，只有等到方法调用的那一刻，解释运行器才会确定所要调用的具体方法，这称为“晚绑定”或“动态绑定”。</p>
+<h2 id="多态小结"><a href="#多态小结" class="headerlink" title="多态小结"></a>多态小结</h2><p>多态作用：</p>
+<p>提高了代码的通用性，常称作接口重用</p>
+<p>前提：</p>
+<p>需要存在继承或者实现关系</p>
+<p>有方法的重写</p>
+<p>成员方法：</p>
+<p>编译时：要查看引用变量所声明的类中是否有所调用的方法。</p>
+<p>运行时：调用实际new的对象所属的类中的重写方法。</p>
+<p>成员变量：</p>
+<p>不具备多态性，只看引用变量所声明的类。</p>
+<h2 id="子类继承父类"><a href="#子类继承父类" class="headerlink" title="子类继承父类"></a>子类继承父类</h2><p>若子类重写了父类方法，就意味着子类里定义的方法彻底覆盖了父类里的同名方法，系统将不可能把父类里的方法转移到子类中。</p>
+<p>对于实例变量则不存在这样的现象，即使子类里定义了与父类完全相同的实例变量，这个实例变量依然不可能覆盖父类中定义的实例变量</p>
+<p>即：多态性，把父类和子类的属性和方法都加载在堆中，运行的是父类的属性（子类的属性加载进来但不能调用）和子类重写的方法（此方法父类中必须包含）。</p>
+<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>x instanceof A：检验变量x是否为类A的对象，返回值为boolean型。</p>
+<p>要求x所属的类与类A必须是子类和父类的关系，否则编译错误。</p>
+<p>如果x属于类A的子类B，x instanceof A值也为true。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token keyword">extends</span> <span class="token class-name">Object</span> <span class="token punctuation">{</span>…<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>…<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Graduate</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>…<span class="token punctuation">}</span>
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">method1</span><span class="token punctuation">(</span>Person e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token keyword">instanceof</span> <span class="token class-name">Person</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// 处理Person类及其子类对象</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token keyword">instanceof</span> <span class="token class-name">Student</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//处理Student类及其子类对象</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token keyword">instanceof</span> <span class="token class-name">Graduate</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//处理Graduate类及其子类对象</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="对象类型转换-Casting"><a href="#对象类型转换-Casting" class="headerlink" title="对象类型转换(Casting )"></a>对象类型转换(Casting )</h2><p>1.基本数据类型的Casting：</p>
+<p>自动类型转换：小的数据类型可以自动转换成大的数据类型</p>
+<p>如long g&#x3D;20; double d&#x3D;12.0f</p>
+<p>强制类型转换：可以把大的数据类型强制转换(casting)成小的数据类型</p>
+<p>如float f&#x3D;(float)12.0; int a&#x3D;(int)1200L</p>
+<p>2.对Java对象的强制类型转换称为造型</p>
+<p>从子类到父类的类型转换可以自动进行</p>
+<p>从父类到子类的类型转换必须通过造型(强制类型转换)实现</p>
+<p>无继承关系的引用类型间的转换是非法的</p>
+<p>在造型前可以使用instanceof操作符测试一个对象的类型</p>
+<h1 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h1><p>在方法名上面加入@Test注解，然后add导包，即可对其中一个方法进行测试。</p>
+<p>要求：类为public、有public无参构造器、方法名public且无返回值无形参。</p>
+<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><p>Object类是所有Java类的根父类</p>
+<p>如果在类的声明中未使用extends关键字指明其父类，则默认父类为java.lang.Object类</p>
+<h2 id="x3D-x3D"><a href="#x3D-x3D" class="headerlink" title="&#x3D;&#x3D;"></a>&#x3D;&#x3D;</h2><p>A.基本类型比较值:只要两个变量的值相等，即为true。</p>
+<p>int a&#x3D;5; if(a&#x3D;&#x3D;6){…}</p>
+<p>B.引用类型比较引用(是否指向同一个对象)：只有指向同一个对象时，&#x3D;&#x3D;才返回true。</p>
+<p>Person p1&#x3D;new Person();</p>
+<p>Person p2&#x3D;new Person();</p>
+<p>if (p1&#x3D;&#x3D;p2){…}</p>
+<p>此时比较的是p1、p2是否是同一地址。用“&#x3D;&#x3D;”进行比较时，符号两边的数据类型必须兼容(可自动转换的基本数据类型除外)，否则编译出错。</p>
+<h2 id="equals"><a href="#equals" class="headerlink" title="equals()"></a>equals()</h2><p>A.所有类都继承了Object，也就获得了equals()方法。还可以重写。</p>
+<p>B.只能比较引用类型，其作用与“&#x3D;&#x3D;”相同,比较是否指向同一个对象。（地址值）</p>
+<p>格式:obj1.equals(obj2)</p>
+<p>C.特例：</p>
+<p>当用equals()方法进行比较时，对类File、String、Date及包装类（Wrapper Class）来说，是比较类型及内容而不考虑引用的是否是同一个对象；</p>
+<p>原因：</p>
+<p>在这些类中重写了Object类的equals()方法。当自定义使用equals()时，可以重写。用于比较两个对象的“内容”是否都相等</p>
+<p>D.任何情况下</p>
+<p>x.equals(null)，永远返回是“false”；</p>
+<p>x.equals(和x不同类型的对象)永远返回是“false”。</p>
+<h2 id="x3D-x3D-和equals的区别"><a href="#x3D-x3D-和equals的区别" class="headerlink" title="&#x3D;&#x3D;和equals的区别"></a>&#x3D;&#x3D;和equals的区别</h2><ol>
+<li><p>&#x3D;&#x3D; 既可以比较基本类型也可以比较引用类型。对于基本类型就是比较值，对于引用类型就是比较内存地址</p>
+</li>
+<li><p>equals的话，它是属于java.lang.Object类里面的方法，如果该方法没有被重写过默认也</p>
+</li>
+</ol>
+<p>是&#x3D;&#x3D;;我们可以看到String等类的equals方法是被重写过的，而且String类在日常开发中用的比较多，久而久之，形成了equals是比较值的错误观点。</p>
+<ol start="3">
+<li><p>具体要看自定义类里有没有重写Object的equals方法来判断。</p>
+</li>
+<li><p>通常情况下，重写equals方法，会比较类中的相应属性是否都相等。</p>
+</li>
+</ol>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> it <span class="token operator">=</span> <span class="token number">65</span><span class="token punctuation">;</span>
+
+<span class="token keyword">float</span> fl <span class="token operator">=</span> <span class="token number">65.0f</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>“<span class="token number">65</span>和<span class="token number">65.0f</span>是否相等？” <span class="token operator">+</span> <span class="token punctuation">(</span>it <span class="token operator">==</span> fl<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//true</span>
+
+<span class="token keyword">char</span> ch1 <span class="token operator">=</span> <span class="token string">'A'</span><span class="token punctuation">;</span> <span class="token keyword">char</span> ch2 <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"65和'A'是否相等？"</span> <span class="token operator">+</span> <span class="token punctuation">(</span>it <span class="token operator">==</span> ch1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>“<span class="token number">12</span>和ch2是否相等？" <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">12</span> <span class="token operator">==</span> ch2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+</code></pre>
+<h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h2><ol>
+<li><p>toString()方法在Object类中定义，其返回值是String类型，返回类名和它的引用地址。</p>
+</li>
+<li><p>在进行String与其它类型数据的连接操作时，自动调用toString()方法</p>
+</li>
+</ol>
+<p>Date now&#x3D;new Date();</p>
+<p>System.out.println(“now&#x3D;”+now); 相当于System.out.println(“now&#x3D;”+now.toString());</p>
+<ol start="3">
+<li>可以根据需要在用户自定义类型中重写toString()方法</li>
+</ol>
+<p>如String 类重写了toString()方法，返回字符串的值。</p>
+<p>s1&#x3D;“hello”;</p>
+<p>System.out.println(s1);&#x2F;&#x2F;相当于System.out.println(s1.toString());</p>
+<p>基本类型数据转换为String类型时，调用了对应包装类的toString()方法</p>
+<p>int a&#x3D;10; System.out.println(“a&#x3D;”+a);</p>
+<p>面试题：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//abc</span>
+
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//[I@1c655221</span>
+
+<span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> <span class="token number">1.1</span><span class="token punctuation">,</span> <span class="token number">2.2</span><span class="token punctuation">,</span> <span class="token number">3.3</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//[D@58d25a40</span>
+</code></pre>
+<h1 id="包装类的使用"><a href="#包装类的使用" class="headerlink" title="包装类的使用"></a>包装类的使用</h1><h2 id="装箱拆箱"><a href="#装箱拆箱" class="headerlink" title="装箱拆箱"></a>装箱拆箱</h2><p>JDK1.5之后，支持自动装箱，自动拆箱。但类型必须匹配。</p>
+<p>A.基本数据类型包装成包装类的实例—装箱</p>
+<p>通过包装类的构造器实现：</p>
+<p><code>int i = 500; Integer t = new Integer(i);</code></p>
+<p>还可以通过字符串参数构造包装类对象：</p>
+<p><code>Float f = new Float(“4.56”);</code></p>
+<p><code>Long l = new Long(“asdf”); //NumberFormatException</code></p>
+<p>B.获得包装类对象中包装的基本类型变量—拆箱</p>
+<p>调用包装类的.xxxValue()方法：</p>
+<p><code>boolean b = flag.booleanValue();</code></p>
+<h2 id="字符串、基本数据类型转换"><a href="#字符串、基本数据类型转换" class="headerlink" title="字符串、基本数据类型转换"></a>字符串、基本数据类型转换</h2><p>A.字符串转换成基本数据类型</p>
+<p>通过包装类的构造器实现：</p>
+<p><code>int i = new Integer(“12”);</code></p>
+<p>通过包装类的parseXxx(String s)静态方法：</p>
+<p><code>Float f = Float.parseFloat(“12.1”);</code></p>
+<p>B.基本数据类型转换成字符串</p>
+<p>调用字符串重载的valueOf()方法：</p>
+<p><code>String fstr = String.valueOf(2.34f);</code></p>
+<p>更直接的方式：</p>
+<p><code>String intStr = 5 + “”</code></p>
+<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><pre class=" language-java"><code class="language-java">Object o1 <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token operator">?</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Double</span><span class="token punctuation">(</span><span class="token number">2.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1.0</span>
+
+执行三元判断时，都运行了，所以<span class="token keyword">int</span>型，类型提升
+
+Integer i <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Integer j <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i <span class="token operator">==</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false （两个地址值不一样）</span>
+
+Integer m <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+Integer n <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>m <span class="token operator">==</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// true</span>
+
+（为快速加载，该类提前定义数组<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">128</span>，<span class="token number">127</span><span class="token punctuation">]</span>，所以没有经过<span class="token keyword">new</span>，两个<span class="token number">1</span>均从数组里取值）
+
+Integer x <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>
+
+Integer y <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x <span class="token operator">==</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// false （超过127，需要重新new）</span>
+</code></pre>
 
                 
             </div>
@@ -567,7 +651,7 @@ JDK自带的动态代理，需要反射等知识
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luan-bx.github.io/2022/04/25/java6/">https://luan-bx.github.io/2022/04/25/java6/</a>
+                    <a href="https://luan-bx.github.io/2022/04/29/java5/">https://luan-bx.github.io/2022/04/29/java5/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -660,13 +744,13 @@ JDK自带的动态代理，需要反射等知识
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/05/12/java7/">
+                <a href="/2022/05/15/java6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Java（七）异常处理">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Java（六）面向对象（下）">
                         
-                        <span class="card-title">Java（七）异常处理</span>
+                        <span class="card-title">Java（六）面向对象（下）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -677,7 +761,7 @@ JDK自带的动态代理，需要反射等知识
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-15
                         </span>
                         <span class="publish-author">
                             
@@ -713,13 +797,13 @@ JDK自带的动态代理，需要反射等知识
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/12/java3/">
+                <a href="/2022/04/20/java4/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Java（三）数组">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Java（四）面向对象上">
                         
-                        <span class="card-title">Java（三）数组</span>
+                        <span class="card-title">Java（四）面向对象上</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -730,7 +814,7 @@ JDK自带的动态代理，需要反射等知识
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-20
                             </span>
                         <span class="publish-author">
                             
@@ -947,7 +1031,7 @@ JDK自带的动态代理，需要反射等知识
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.5k</span>
+                        class="white-color">32k</span>
             
             
             
