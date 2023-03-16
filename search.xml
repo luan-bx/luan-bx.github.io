@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>实习面经</title>
-      <link href="/2023/03/16/secret/meeting/"/>
-      <url>/2023/03/16/secret/meeting/</url>
-      
-        <content type="html"><![CDATA[<h1 id="x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-美团-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D"><a href="#x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-美团-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 美团 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;"></a>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 美团 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</h1><h2 id="3-11-笔试"><a href="#3-11-笔试" class="headerlink" title="3.11 笔试"></a>3.11 笔试</h2><p>五道算法题，写出来 1 + 0.5 + 0.5</p><h2 id="3-16-一面"><a href="#3-16-一面" class="headerlink" title="3.16 一面"></a>3.16 一面</h2><blockquote><p>全程40分钟，聊了20min项目，10min算法题，10项目</p><ol><li>每个项目都问了一遍，主要是业务逻辑，夹带基础知识和解决方案</li><li>思考五分钟，讲了一下思路，考官说可以的，写代码的时候没写出来</li><li>还有哪块你做的比较好的我没问到的？讲了一下视频处理的部分（rtsp转rtmp、视频快&gt; 照、接入算法、存h264、识别结果base64编码成图片）</li></ol></blockquote><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ol><li>jvm   </li><li>垃圾处理怎么机制  </li><li>对象是什么时候被销毁</li></ol><h3 id="AIO"><a href="#AIO" class="headerlink" title="AIO"></a>AIO</h3><ol><li>数据上报</li></ol><blockquote><p>一秒达到多少数据量传输</p></blockquote><h3 id="PMS"><a href="#PMS" class="headerlink" title="PMS"></a>PMS</h3><ol><li>登陆状态</li></ol><p>cookie</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 面经 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 面经 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>接口继承</title>
       <link href="/2022/08/14/javacodeimplements/"/>
       <url>/2022/08/14/javacodeimplements/</url>
