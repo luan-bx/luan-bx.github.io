@@ -1,0 +1,1433 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java（八）多线程, lbx">
+    <meta name="description" content="概述程序(program)是为完成特定任务、用某种语言编写的一组指令的集合。即指一段静态的代码，静态对象。
+进程(process)是程序的一次执行过程，或是正在运行的一个程序。是一个动态的过程：有它自身的产生、存在和消亡的过程。——生命周期">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Java（八）多线程 | MyBlog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">MyBlog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">MyBlog</div>
+        <div class="logo-desc">
+            
+            记录成长历程
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java（八）多线程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">Java笔记</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-05-28
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.7k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="程序-program"><a href="#程序-program" class="headerlink" title="程序(program)"></a>程序(program)</h2><p>是为完成特定任务、用某种语言编写的一组指令的集合。即指一段静态的代码，静态对象。</p>
+<h2 id="进程-process"><a href="#进程-process" class="headerlink" title="进程(process)"></a>进程(process)</h2><p>是程序的一次执行过程，或是正在运行的一个程序。是一个动态的过程：有它自身的产生、存在和消亡的过程。——生命周期</p>
+<ol>
+<li><p>如：运行中的QQ，运行中的MP3播放器</p>
+</li>
+<li><p>程序是静态的，进程是动态的</p>
+</li>
+<li><p>进程作为资源分配的单位，系统在运行时会为每个进程分配不同的内存区域</p>
+</li>
+</ol>
+<h2 id="线程-thread"><a href="#线程-thread" class="headerlink" title="线程(thread)"></a>线程(thread)</h2><p>进程可进一步细化为线程，是一个程序内部的一条执行路径。</p>
+<ol>
+<li><p>若一个进程同一时间并行执行多个线程，就是支持多线程的</p>
+</li>
+<li><p>线程作为调度和执行的单位，每个线程拥有独立的运行栈和程序计数器(pc)，线程切换的开销小。</p>
+</li>
+<li><p>一个进程中的多个线程共享相同的内存单元&#x2F;内存地址空间——它们从同一堆中分配对象，可以访问相同的变量和对象。这就使得线程间通信更简便、高效。但多个线程操作共享的系统资源可能就会带来安全的隐患。</p>
+</li>
+</ol>
+<h2 id="单核CPU和多核CPU"><a href="#单核CPU和多核CPU" class="headerlink" title="单核CPU和多核CPU"></a>单核CPU和多核CPU</h2><ol>
+<li><p>单核CPU，其实是一种假的多线程，因为在一个时间单元内，也只能执行一个线程的任务。例如：虽然有多车道，但是收费站只有一个工作人员在收费，只有收了费才能通过，那么CPU就好比收费人员。如果有某个人不想交钱，那么收费人员可以把他“挂起”（晾着他，等他想通了，准备好了钱，再去收费）。但是因为CPU时间单元特别短，因此感觉不出来。</p>
+</li>
+<li><p>如果是多核的话，才能更好的发挥多线程的效率。（现在的服务器都是多核的）</p>
+</li>
+<li><p>一个Java应用程序java.exe，其实至少有三个线程：main()主线程，gc()垃圾回收线程，异常处理线程。当然如果发生异常，会影响主线程。</p>
+</li>
+</ol>
+<h2 id="并行与并发"><a href="#并行与并发" class="headerlink" title="并行与并发"></a>并行与并发</h2><p>并行：多个CPU同时执行多个任务。比如：多个人同时做不同的事。</p>
+<p>并发：一个CPU(采用时间片)同时执行多个任务。比如：秒杀、多个人做同一件事。</p>
+<h2 id="使用多线程的优点"><a href="#使用多线程的优点" class="headerlink" title="使用多线程的优点"></a>使用多线程的优点</h2><p>背景：以单核CPU为例，只使用单个线程先后完成多个任务（调用多个方法），肯定比用多个线程来完成用的时间更短，为何仍需多线程呢？</p>
+<p>多线程程序的优点：</p>
+<ol>
+<li><p>提高应用程序的响应。对图形化界面更有意义，可增强用户体验。</p>
+</li>
+<li><p>提高计算机系统CPU的利用率</p>
+</li>
+<li><p>改善程序结构。将既长又复杂的进程分为多个线程，独立运行，利于理解和修改</p>
+</li>
+</ol>
+<h2 id="何时需要多线程"><a href="#何时需要多线程" class="headerlink" title="何时需要多线程"></a>何时需要多线程</h2><ol>
+<li><p>程序需要同时执行两个或多个任务。</p>
+</li>
+<li><p>程序需要实现一些需要等待的任务时，如用户输入、文件读写操作、网络操作、搜索等。</p>
+</li>
+<li><p>需要一些后台运行的程序时。</p>
+</li>
+</ol>
+<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>Java语言的JVM允许程序运行多个线程，它通过java.lang.Thread类来体现。</p>
+<h2 id="Thread类"><a href="#Thread类" class="headerlink" title="Thread类"></a>Thread类</h2><p>特性：</p>
+<ol>
+<li><p>每个线程都是通过某个特定Thread对象的run()方法来完成操作的，经常把run()方法的主体称为线程体</p>
+</li>
+<li><p>通过该Thread对象的start()方法来启动这个线程，而非直接调用run()</p>
+</li>
+</ol>
+<pre class=" language-java"><code class="language-java">构造器：
+
+<span class="token function">Thread</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：创建新的Thread对象
+
+<span class="token function">Thread</span><span class="token punctuation">(</span>String threadname<span class="token punctuation">)</span>：创建线程并指定线程实例名
+
+<span class="token function">Thread</span><span class="token punctuation">(</span>Runnable target<span class="token punctuation">)</span>：指定创建线程的目标对象，它实现了Runnable接口中的run方法
+
+<span class="token function">Thread</span><span class="token punctuation">(</span>Runnable target<span class="token punctuation">,</span> String name<span class="token punctuation">)</span>：创建新的Thread对象
+</code></pre>
+<h2 id="线程的创建"><a href="#线程的创建" class="headerlink" title="线程的创建"></a>线程的创建</h2><p>JDK1.5之前创建新执行线程有两种方法：</p>
+<p>继承Thread类的方式</p>
+<p>实现Runnable接口的方式</p>
+<p>方式一：继承Thread类</p>
+<ol>
+<li><p>定义子类继承Thread类。</p>
+</li>
+<li><p>子类中重写Thread类中的run方法。</p>
+</li>
+<li><p>创建Thread子类对象，即创建了线程对象。</p>
+</li>
+<li><p>调用线程对象start方法：启动线程，调用run方法。</p>
+</li>
+</ol>
+<p>注意点：</p>
+<ol>
+<li><p>如果自己手动调用run()方法，那么就只是普通方法，没有启动多线程模式。</p>
+</li>
+<li><p>run()方法由JVM调用，什么时候调用，执行的过程控制都有操作系统CPU调度决定。</p>
+</li>
+<li><p>想要启动多线程，必须调用start方法。</p>
+</li>
+<li><p>一个线程对象只能调用一次start()方法启动，如果重复调用了，则将抛出以上的异常 “IllegalThreadStateException”。</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/47e4d123b9ee6068ddc5492f7443cb9b.png"></p>
+<p>方式二：实现Runnable接口</p>
+<ol>
+<li><p>定义子类，实现Runnable接口。</p>
+</li>
+<li><p>子类中重写Runnable接口中的run方法。</p>
+</li>
+<li><p>通过Thread类含参构造器创建线程对象。</p>
+</li>
+<li><p>将Runnable接口的子类对象作为实际参数传递给Thread类的构造器中。</p>
+</li>
+<li><p>调用Thread类的start方法：开启线程，调用Runnable子类接口的run方法。</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/ed21a78a26850abcd5709d4ec0131953.png"></p>
+<p>区别：</p>
+<p>继承Thread：线程代码存放Thread子类run方法中。</p>
+<p>实现Runnable：线程代码存在接口的子类的run方法。</p>
+<p>实现方式的好处：</p>
+<ol>
+<li><p>避免了单继承的局限性</p>
+</li>
+<li><p>多个线程可以共享同一个接口实现类的对象，非常适合多个相同线程来处理同一份资源。</p>
+</li>
+</ol>
+<h2 id="Thread类的有关方法"><a href="#Thread类的有关方法" class="headerlink" title="Thread类的有关方法"></a>Thread类的有关方法</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> 启动线程，并执行对象的<span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>方法
+
+<span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> 线程在被调度时执行的操作
+
+String <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> 返回线程的名称
+
+<span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token operator">:</span>设置该线程名称
+
+<span class="token keyword">static</span> Thread <span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> 返回当前线程。在Thread子类中就是<span class="token keyword">this</span>，通常用于主线程和 Runnable实现类
+
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">yield</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：线程让步
+
+暂停当前正在执行的线程，把执行机会让给优先级相同或更高的线程
+
+若队列中没有同优先级的线程，忽略此方法
+
+<span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：当某个程序执行流中调用其他线程的<span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 方法时，调用线程将被阻塞，直到<span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 方法加入的join 线程执行完为止
+
+低优先级的线程也可以获得执行
+
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token keyword">long</span> millis<span class="token punctuation">)</span>：<span class="token punctuation">(</span>指定时间<span class="token operator">:</span>毫秒<span class="token punctuation">)</span>
+
+令当前线程在指定时间段放弃对CPU控制<span class="token punctuation">,</span>使其他线程有机会被执行<span class="token punctuation">,</span>时间到后重排队。
+
+抛出InterruptedException异常
+
+<span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> 强制线程生命期结束，不推荐使用
+
+<span class="token keyword">boolean</span> <span class="token function">isAlive</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：返回<span class="token keyword">boolean</span>，判断线程是否还活着
+</code></pre>
+<p>（5）线程的调度<br>调度策略：</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/2ab141e9e55cf4e9a58c0f8658994186.png"></p>
+<p>Java的调度方法：</p>
+<p>同优先级线程组成先进先出队列（先到先服务），使用时间片策略</p>
+<p>对高优先级，使用优先调度的抢占式策略</p>
+<h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a>线程的优先级</h2><p>线程的优先级等级</p>
+<p>MAX_PRIORITY：10</p>
+<p>MIN _PRIORITY：1</p>
+<p>NORM_PRIORITY：5</p>
+<p>涉及的方法</p>
+<p>getPriority() ：返回线程优先值</p>
+<p>setPriority(int newPriority) ：改变线程的优先级</p>
+<p>说明</p>
+<p>线程创建时继承父线程的优先级</p>
+<p>低优先级只是获得调度的概率低，并非一定是在高优先级线程之后才被调用</p>
+<h2 id="补充：线程的分类"><a href="#补充：线程的分类" class="headerlink" title="补充：线程的分类"></a>补充：线程的分类</h2><p>Java中的线程分为两类：一种是守护线程，一种是用户线程。</p>
+<ol>
+<li><p>它们在几乎每个方面都是相同的，唯一的区别是判断JVM何时离开。</p>
+</li>
+<li><p>守护线程是用来服务用户线程的，通过在start()方法前调用thread.setDaemon(true)可以把一个用户线程变成一个守护线程。</p>
+</li>
+<li><p>Java垃圾回收就是一个典型的守护线程。</p>
+</li>
+<li><p>若JVM中都是守护线程，当前JVM将退出。</p>
+</li>
+<li><p>形象理解：兔死狗烹，鸟尽弓藏</p>
+</li>
+</ol>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><p>五个状态</p>
+<p>A.新建：</p>
+<p>当一个Thread类或其子类的对象被声明并创建时，新生的线程对象处于新建状态</p>
+<p>B.就绪：</p>
+<p>处于新建状态的线程被start()后，将进入线程队列等待CPU时间片，此时它已具备了 运行的条件，只是没分配到CPU资源</p>
+<p>C.运行：</p>
+<p>当就绪的线程被调度并获得CPU资源时,便进入运行状态，run()方法定义了线程的操 作和功能</p>
+<p>D.阻塞：</p>
+<p>在某种特殊情况下，被人为挂起或执行输入输出操作时，让出CPU 并临时中止自己的 执行，进入阻塞状态</p>
+<p>E.死亡：</p>
+<p>线程完成了它的全部工作或线程被提前强制性地中止或出现异常导致结束</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/5eccdb02a448b7b568a383da378c6566.png"></p>
+<h1 id="线程的同步"><a href="#线程的同步" class="headerlink" title="线程的同步"></a>线程的同步</h1><h2 id="Synchronized同步代码块"><a href="#Synchronized同步代码块" class="headerlink" title="Synchronized同步代码块"></a>Synchronized同步代码块</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">synchronized</span> <span class="token punctuation">(</span>同步监视器<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token comment" spellcheck="true">// 需要被同步的代码；</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p>同步监视器可自定义，但需要保证每个线程调用时，该对象是同一个。</p>
+<p>A.使用实现Runnable接口的方法：</p>
+<p>只会创建一个对象，所以监视器可以用this，即刚创建的该类的对象。</p>
+<p>B.使用继承Thread类的方法：</p>
+<p>由于创建多线程会创建出多个对象，就拥有了多个监视器，所以此时用把监视器设置为：该类.calss，因为一个类只有一个，且类也是对象。</p>
+<h2 id="Synchronized同步方法"><a href="#Synchronized同步方法" class="headerlink" title="Synchronized同步方法"></a>Synchronized同步方法</h2><p>如果整个方法均需要同步，synchronized还可以放在方法声明中，表示整个方法为同步方法。</p>
+<pre class=" language-java"><code class="language-java">例如：
+
+<span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">show</span> <span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+…<span class="token punctuation">.</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p>A.使用实现Runnable接口的方法：</p>
+<p>只会创建一个对象，所以可以直接用上面的形势，此时也是有监视器的，是this，即刚创建的该类的对象。</p>
+<p>B.使用继承Thread类的方法：</p>
+<p>由于创建多线程会创建出多个对象，就拥有了多个监视器，所以此时用把该方法设置为static，此时的监视器为：该类.calss，因为一个类只有一个</p>
+<p>synchronized的锁是什么？</p>
+<ol>
+<li><p>任意对象都可以作为同步锁。所有对象都自动含有单一的锁（监视器）。</p>
+</li>
+<li><p>同步方法的锁：静态方法（类名.class）、非静态方法（this）</p>
+</li>
+<li><p>同步代码块：自己指定，很多时候也是指定为this或类名.class</p>
+</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li><p>必须确保使用同一个资源的多个线程共用一把锁，这个非常重要，否则就无法保证共享资源的安全</p>
+</li>
+<li><p>一个线程类中的所有静态方法共用同一把锁（类名.class），所有非静态方法共用同一把锁（this），同步代码块（指定需谨慎）</p>
+</li>
+</ol>
+<h2 id="同步的范围"><a href="#同步的范围" class="headerlink" title="同步的范围"></a>同步的范围</h2><ol>
+<li>如何找问题，即代码是否存在线程安全？（非常重要）</li>
+</ol>
+<p>明确哪些代码是多线程运行的代码</p>
+<p>明确多个线程是否有共享数据</p>
+<p>明确多线程运行代码中是否有多条语句操作共享数据</p>
+<ol start="2">
+<li>如何解决呢？（非常重要）</li>
+</ol>
+<p>对多条操作共享数据的语句，一个线程执行过程中，其他线程不可以参与执行。</p>
+<p>即所有操作共享数据的这些语句都要放在同步范围中</p>
+<ol start="3">
+<li>切记：</li>
+</ol>
+<p>范围太小：没锁住所有有安全问题的代码</p>
+<p>范围太大：没发挥多线程的功能。</p>
+<h2 id="释放锁的操作"><a href="#释放锁的操作" class="headerlink" title="释放锁的操作"></a>释放锁的操作</h2><p>A.当前线程的同步方法、同步代码块执行结束。</p>
+<p>B.当前线程在同步代码块、同步方法中遇到break、return终止该代码块、该方法的继续执行。</p>
+<p>C.当前线程在同步代码块、同步方法中出现了未处理的Error或Exception，导致异常结束。</p>
+<p>D.当前线程在同步代码块、同步方法中执行线程对象的wait()方法，当前线程暂停并释放锁。</p>
+<h2 id="不会释放锁的操作"><a href="#不会释放锁的操作" class="headerlink" title="不会释放锁的操作"></a>不会释放锁的操作</h2><p>A.线程执行同步代码块或同步方法时，程序调用Thread.sleep()、</p>
+<p>Thread.yield()方法暂停当前线程的执行</p>
+<p>B.线程执行同步代码块时，其他线程调用了该线程的suspend()方法将该线程挂起，该线程不会释放锁（同步监视器）。</p>
+<p>应尽量避免使用suspend()和resume()来控制线程</p>
+<h2 id="线程的死锁问题"><a href="#线程的死锁问题" class="headerlink" title="线程的死锁问题"></a>线程的死锁问题</h2><p>死锁：</p>
+<p>不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源</p>
+<p>出现死锁后，不会出现异常，不会出现提示，只是所有的线程都处于阻塞状态，无法继续</p>
+<p>解决方法：</p>
+<p>专门的算法、原则</p>
+<p>尽量减少同步资源的定义</p>
+<p>尽量避免嵌套同步</p>
+<h2 id="Lock-锁"><a href="#Lock-锁" class="headerlink" title="Lock(锁)"></a>Lock(锁)</h2><p>从JDK 5.0开始，Java提供了更强大的线程同步机制——通过显式定义同步锁对象来实现同步。同步锁使用Lock对象充当。</p>
+<p>java.util.concurrent.locks.Lock接口是控制多个线程对共享资源进行访问的工具。锁提供了对共享资源的独占访问，每次只能有一个线程对Lock对象加锁，线程开始访问共享资源之前应先获得Lock对象。</p>
+<p>ReentrantLock 类实现了 Lock ，它拥有与 synchronized 相同的并发性和内存语义，在实现线程安全的控制中，比较常用的是ReentrantLock，可以显式加锁、释放锁。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
+
+<span class="token keyword">private</span> <span class="token keyword">final</span> ReentrantLock lock <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ReenTrantLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">m</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+lock<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">try</span><span class="token punctuation">{</span>
+
+证线程安全的代码<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span> <span class="token keyword">finally</span><span class="token punctuation">{</span>
+
+lock<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p>注意：如果同步代码有异常，要将unlock()写入finally语句块</p>
+<h2 id="synchronized-与-Lock-的对比"><a href="#synchronized-与-Lock-的对比" class="headerlink" title="synchronized 与 Lock 的对比"></a>synchronized 与 Lock 的对比</h2><ol>
+<li><p>Lock是显式锁（手动开启和关闭锁，别忘记关闭锁），synchronized是隐式锁，出了作用域自动释放</p>
+</li>
+<li><p>Lock只有代码块锁，synchronized有代码块锁和方法锁</p>
+</li>
+<li><p>使用Lock锁，JVM将花费较少的时间来调度线程，性能更好。并且具有更好的扩展性（提供更多的子类）</p>
+</li>
+</ol>
+<p>优先使用顺序：</p>
+<p>Lock —— 同步代码块（已经进入了方法体，分配了相应资源）—— 同步方法</p>
+<p>（在方法体之外）</p>
+<h1 id="线性的通信"><a href="#线性的通信" class="headerlink" title="线性的通信"></a>线性的通信</h1><h2 id="wait-与notify-和notifyAll"><a href="#wait-与notify-和notifyAll" class="headerlink" title="wait() 与notify() 和notifyAll()"></a>wait() 与notify() 和notifyAll()</h2><p>wait()：令当前线程挂起并放弃CPU、同步资源并等待，使别的线程可访问并修改共享资源，而当前线程排队等候其他线程调用notify()或notifyAll()方法唤醒，唤醒后等待重新获得对监视器的所有权后才能继续执行。</p>
+<p>notify()：唤醒正在排队等待同步资源的线程中优先级最高者结束等待</p>
+<p>notifyAll ()：唤醒正在排队等待资源的所有线程结束等待.</p>
+<p>这三个方法只有在synchronized方法或synchronized代码块中才能使用，否则会报</p>
+<p>java.lang.IllegalMonitorStateException异常。</p>
+<p>因为这三个方法必须有锁对象调用，而任意对象都可以作为synchronized的同步锁，因此这三个方法只能在Object类中声明。</p>
+<h2 id="wait-方法"><a href="#wait-方法" class="headerlink" title="wait() 方法"></a>wait() 方法</h2><p>在当前线程中调用方法：对象名.wait()</p>
+<p>使当前线程进入等待（某对象）状态，直到另一线程对该对象发出notify(notifyAll) 为止。</p>
+<p>调用方法的必要条件：当前线程必须具有对该对象的监控权（加锁）</p>
+<p>调用此方法后，当前线程将释放对象监控权，然后进入等待</p>
+<p>在当前线程被notify后，要重新获得监控权，然后从断点处继续代码的执行。</p>
+<h2 id="notify-x2F-notifyAll"><a href="#notify-x2F-notifyAll" class="headerlink" title="notify()&#x2F;notifyAll()"></a>notify()&#x2F;notifyAll()</h2><p>当前线程调用方法：对象名.notify()，对象名一般设置为同步代码块（方法）的同步监控器</p>
+<p>功能：唤醒等待该对象监控权的一个&#x2F;所有线程。</p>
+<p>调用方法的必要条件：当前线程必须具有对该对象的监控权（加锁）</p>
+<p>面试题: sleep() 和wait()的异同?</p>
+<p>A. 相同点:一旦执行方法， 都可以使得当前的线程进入阻塞状态。</p>
+<p>B. 不同点: </p>
+<ol>
+<li><p>两个方法声明的位置不同: Thread类 中声明sleep()，object类中声明wait()</p>
+</li>
+<li><p>调用的要求不同: sleep()可以在任何需要的场景下调用。 wait()必须使用在同步代</p>
+</li>
+<li><p>关于是否释放同步监视器:|如果两个方法都使用在同步代码块或同步方法中，sleep()不会释放锁，wait()会。</p>
+</li>
+</ol>
+<h1 id="实现Callable接口"><a href="#实现Callable接口" class="headerlink" title="实现Callable接口"></a>实现Callable接口</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><p>JDK5.0 新增线程创建方式</p>
+<p>与使用Runnable相比， Callable功能更强大些</p>
+<ol>
+<li><p>相比run()方法，可以有返回值</p>
+</li>
+<li><p>方法可以抛出异常</p>
+</li>
+<li><p>支持泛型的返回值</p>
+</li>
+<li><p>需要借助FutureTask类，比如获取返回结果</p>
+</li>
+</ol>
+<p>Future接口</p>
+<p>可以对具体Runnable、Callable任务的执行结果进行取消、查询是否完成、获取结果等。</p>
+<p>FutrueTask是Futrue接口的唯一的实现类</p>
+<p>FutureTask 同时实现了Runnable, Future接口。它既可以作为</p>
+<p>Runnable被线程执行，又可以作为Future得到Callable的返回值</p>
+<h2 id="创建流程"><a href="#创建流程" class="headerlink" title="创建流程"></a>创建流程</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1.创建一个实现Callable的实现类</span>
+
+<span class="token keyword">class</span> <span class="token class-name">NumThread</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//2.实现call方法，将此线程需要执行的操作声明在call（）中</span>
+
+<span class="token annotation punctuation">@Override</span>
+
+Public Object call（）<span class="token keyword">throws</span> Exception<span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+在调用类中：
+
+<span class="token comment" spellcheck="true">//3.创建Callable接口实现类的对象</span>
+
+NumThread numThread <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">NumThread</span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//4.将Callable接口实现类的对象作为参数传到FutureTask构造器，创建FutureTask的对象</span>
+
+FutureTask futureTask <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FutureTask</span><span class="token punctuation">(</span> numThread<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//5.将FutureTask的对象作为参数侍送到Thread美的构造器中创建Thread.象， 并调用start(）</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>futureTask<span class="token punctuation">)</span> <span class="token punctuation">.</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Try<span class="token punctuation">{</span>
+
+<span class="token comment" spellcheck="true">//6.获取Callable中dplL方法的返回值</span>
+
+<span class="token comment" spellcheck="true">//get()返回值即为Future Task构造器参数Callable实现类重写的call()的返回値。</span>
+
+object sum <span class="token operator">=</span> futureTask<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span> out <span class="token punctuation">.</span> <span class="token function">println</span><span class="token punctuation">(</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+e<span class="token punctuation">.</span> <span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ExecutionException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+e<span class="token punctuation">.</span> <span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><h2 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h2><p>背景：经常创建和销毁、使用量特别大的资源，比如并发情况下的线程，对性能影响很大。</p>
+<p>思路：提前创建好多个线程，放入线程池中，使用时直接获取，使用完放回池中。可以避免频繁创建销毁、实现重复利用。类似生活中的公共交通工具。</p>
+<p>好处：</p>
+<p>A.提高响应速度（减少了创建新线程的时间）</p>
+<p>B.降低资源消耗（重复利用线程池中线程，不需要每次都创建）</p>
+<p>C.便于线程管理</p>
+<p>corePoolSize：核心池的大小</p>
+<p>maximumPoolSize：最大线程数</p>
+<p>keepAliveTime：线程没有任务时最多保持多长时间后会终止</p>
+<p>…</p>
+<h2 id="线程池相关API"><a href="#线程池相关API" class="headerlink" title="线程池相关API"></a>线程池相关API</h2><p>JDK 5.0起提供了线程池相关API：ExecutorService 和 Executors</p>
+<p>ExecutorService：真正的线程池接口。常见子类ThreadPoolExecutor</p>
+<p>void execute(Runnable command) ：执行任务&#x2F;命令，没有返回值，一般用来执行Runnable</p>
+<p><T> Future<T> submit(Callable<T> task)：执行任务，有返回值，一般又来执行Callable</p>
+<p>void shutdown() ：关闭连接池</p>
+<p>Executors：工具类、线程池的工厂类，用于创建并返回不同类型的线程池</p>
+<p>Executors.newCachedThreadPool()：创建一个可根据需要创建新线程的线程池</p>
+<p>Executors.newFixedThreadPool(n); 创建一个可重用固定线程数的线程池</p>
+<p>Executors.newSingleThreadExecutor() ：创建一个只有一个线程的线程池</p>
+<p>Executors.newScheduledThreadPool(n)：创建一个线程池，它可安排在给定延迟后运行命令或者定期地执行。</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/8b98e5e44e4309a1d487db7683a0f4d7.png"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Luan-bx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://luan-bx.github.io/2022/05/28/javanotes/java8/">https://luan-bx.github.io/2022/05/28/javanotes/java8/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Luan-bx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">Java笔记</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/06/03/javacodemysql/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="数据库相关操作">
+                        
+                        <span class="card-title">数据库相关操作</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/22/javanotes/java7/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Java（七）异常处理">
+                        
+                        <span class="card-title">Java（七）异常处理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Java笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('true'),
+            headingSelector: 'h1, h2'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.6'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/about" target="_blank">Luan-bx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">32.5k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/luan-bx" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:836106309@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=836106309" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 836106309" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

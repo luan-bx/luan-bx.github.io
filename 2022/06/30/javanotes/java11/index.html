@@ -1,0 +1,1291 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java（十一）IO流, lbx">
+    <meta name="description" content="File类说明
+java.io.File类：文件和文件目录路径的抽象表示形式，与平台无关
+
+File 能新建、删除、重命名文件和目录，但 File 不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入&amp;#x2F;输出流。
+
+想要在">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Java（十一）IO流 | MyBlog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">MyBlog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">MyBlog</div>
+        <div class="logo-desc">
+            
+            记录成长历程
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java（十一）IO流</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">Java笔记</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-06-30
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.5k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ol>
+<li><p>java.io.File类：文件和文件目录路径的抽象表示形式，与平台无关</p>
+</li>
+<li><p>File 能新建、删除、重命名文件和目录，但 File 不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入&#x2F;输出流。</p>
+</li>
+<li><p>想要在Java程序中表示一个真实存在的文件或目录，那么必须有一个File对象，但是Java程序中的一个File对象，可能没有一个真实存在的文件或目录。</p>
+</li>
+<li><p>File对象可以作为参数传递给流的构造器</p>
+</li>
+</ol>
+<h2 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h2><p>public File(String pathname)</p>
+<p>以pathname为路径创建File对象，可以是绝对路径或者相对路径，相对路径的当前路径在系统属性user.dir中存储。</p>
+<p>public File(String parent,String child)</p>
+<p>以parent为父路径，child为子路径创建File对象。</p>
+<p>public File(File parent,String child)</p>
+<p>根据一个父File对象和子文件路径创建File对象</p>
+<h2 id="路径分隔符"><a href="#路径分隔符" class="headerlink" title="路径分隔符"></a>路径分隔符</h2><p>路径分隔符和系统有关：</p>
+<p>windows和DOS系统默认使用“\”来表示</p>
+<p>UNIX和URL使用“&#x2F;”来表示</p>
+<p>File类提供了一个常量解决分隔符统一：</p>
+<p>public static final String separator。根据操作系统，动态的提供分隔符</p>
+<p>File file2 &#x3D; new File(“d:” + File.separator + “atguigu” + File.separator + “info.txt”);</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>File类的获取功能</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> String <span class="token function">getAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：获取绝对路径
+
+<span class="token keyword">public</span> String <span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：获取路径
+
+<span class="token keyword">public</span> String <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：获取名称
+
+<span class="token keyword">public</span> String <span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：获取上层文件目录路径。若无，返回null
+
+<span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：获取文件长度（即：字节数）。不能获取目录的长度。
+
+<span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">lastModified</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：获取最后一次的修改时间，毫秒值
+
+<span class="token keyword">public</span> String<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：获取指定目录下的所有文件或者文件目录的名称数组
+
+<span class="token keyword">public</span> File<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">listFiles</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：获取指定目录下的所有文件或者文件目录的File数组
+</code></pre>
+<p>File类的重命名功能</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">renameTo</span><span class="token punctuation">(</span>File dest<span class="token punctuation">)</span><span class="token operator">:</span>把文件重命名为指定的文件路径
+</code></pre>
+<p>File类的判断功能</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：判断是否是文件目录
+
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：判断是否是文件
+
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：判断是否存在
+
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">canRead</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：判断是否可读
+
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">canWrite</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：判断是否可写
+
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isHidden</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：判断是否隐藏
+</code></pre>
+<p>File类的创建功能</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">createNewFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：创建文件。若文件存在，则不创建，返回<span class="token boolean">false</span>
+
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">mkdir</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：创建文件目录。如果此文件目录存在，就不创建了。
+
+如果此文件目录的上层目录不存在，也不创建。
+
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">mkdirs</span><span class="token punctuation">(</span><span class="token punctuation">)</span> ：创建文件目录。如果上层文件目录不存在，一并创建
+
+注意事项：如果你创建文件或者文件目录没有写盘符路径，那么，默认在项目路径下。
+</code></pre>
+<p>File类的删除功能</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：删除文件或者文件夹
+
+删除注意事项：Java中的删除不走回收站。
+
+要删除一个文件目录，请注意该文件目录内不能包含文件或者文件目录
+</code></pre>
+<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><p>Google I&#x2F;O 寓为“开放中创新” (Innovation in the Open)</p>
+<p>Input&#x2F;Output</p>
+<p>二进制1,0</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>按操作数据单位不同分为：字节流(8 bit)，字符流(16 bit)</p>
+<p>按数据流的流向不同分为：输入流，输出流</p>
+<p>按流的角色的不同分为：节点流，处理流</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/316100407aa8385a026a4f59d91df93e.png"></p>
+<ol>
+<li><p>Java的IO流共涉及40多个类，实际上非常规则，都是从如下4个抽象基类派生的。</p>
+</li>
+<li><p>由这四个类派生出来的子类名称都是以其父类名作为子类名后缀</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/61e415145864302949ba6ce4794ec4ea.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/2f5264b726a10e6fbc077407b94c86c0.png"></p>
+<h2 id="节点流和处理流"><a href="#节点流和处理流" class="headerlink" title="节点流和处理流"></a>节点流和处理流</h2><p>节点流：直接从数据源或目的地读写数据</p>
+<p>处理流：不直接连接到数据源或目的地，而是“连接”在已存在的流（节点流或处理流）之上，通过对数据的处理为程序提供更为强大的读写功能。</p>
+<h2 id="InputStream-amp-Reader"><a href="#InputStream-amp-Reader" class="headerlink" title="InputStream &amp; Reader"></a>InputStream &amp; Reader</h2><pre class=" language-java"><code class="language-java">InputStream 和Reader 是所有输入流的基类。
+
+InputStream（典型实现：FileInputStream）
+
+<span class="token keyword">int</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">int</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b<span class="token punctuation">)</span>
+
+<span class="token keyword">int</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> off<span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span>
+
+Reader（典型实现：FileReader）
+
+<span class="token keyword">int</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">int</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> c<span class="token punctuation">)</span>
+
+<span class="token keyword">int</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> c<span class="token punctuation">,</span> <span class="token keyword">int</span> off<span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span>
+</code></pre>
+<p>程序中打开的文件IO 资源不属于内存里的资源，垃圾回收机制无法回收该资源，所以应该显式关闭文件IO 资源。</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/719a8f161c1c2b4bcd8133b69a5e7796.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/8e4d1e66ddbf877ab0b458375da79cb3.png"></p>
+<h2 id="OutputStream-amp-Writer"><a href="#OutputStream-amp-Writer" class="headerlink" title="OutputStream &amp; Writer"></a>OutputStream &amp; Writer</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">int</span> b<span class="token operator">/</span><span class="token keyword">int</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b<span class="token operator">/</span><span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> cbuf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b<span class="token operator">/</span><span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buff<span class="token punctuation">,</span> <span class="token keyword">int</span> off<span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 需要先刷新，再关闭此流
+</code></pre>
+<p>因为字符流以字符作为操作单位，所以Writer可以用字符串来替换字符数组</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">write</span><span class="token punctuation">(</span>String str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">write</span><span class="token punctuation">(</span>String str<span class="token punctuation">,</span> <span class="token keyword">int</span> off<span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/03fc7bb05747235d79921841bbe2128f.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/0531f464a3899191306c4ab57f81878e.png"></p>
+<h2 id="read的理解"><a href="#read的理解" class="headerlink" title="read的理解"></a>read的理解</h2><p>Java 下 IO 中 FileReader 和 FileInputStream 分别是以字符和字节的形式来完成数据的读取的，然而返回值确是 int 类型的数据，这样做的核心目的只是要取到到一个 int 类型下的 -1 来表示数据流的末尾。为什么要这样做？又是怎么实现的呢？</p>
+<p>首先看FileReader ：</p>
+<pre class=" language-java"><code class="language-java">FileReader fr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">"src.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> ch <span class="token operator">=</span> fr<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>如上面的代码，FileReader 的 read 方法返回值是一个 int 类型的变量来接收的，然而 read 方法在实际中却是以字符形式来进行数据的读取的。通过上面的基本数据类型的取值范围我们能发现 char 类型数据的取值范围为 0 ~ 65535 ，也就是说 char 类型数据是取不到负值的；int 类型数据的取值范围为 -2147483648 ~ 2147483647 ，可以取到负值；同时 int 的取值范围又包含 char 的取值范围，这就为使用 int 作为返回值类型提供了可能，因为流需要一个特殊的值来表示流末尾，这个值不应该在 char 的取值范围内，如果使用 char 取值范围内的值作为流末尾标志，那么这个值同样有可能出现在数据流中间作为数据来传输，流在读到这个值的时候会认为已经到达流末尾，后面未读取的数据将被截断。所以 Java 中选择了使用 -1 来作为流末尾，这个值不在 char 的取值范围内，所以不存在数据截断，然而 -1 又在 int 的取值范围内，同时 int 的取值范围包含 char 的取值范围，所以 FileReader 下 read 方法返回的 char 类型数据直接转为了 int 类型。</p>
+<p>再看FileInputStream ：</p>
+<pre class=" language-java"><code class="language-java">FileInputStream fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"src.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> b <span class="token operator">=</span> fis<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>同理FileInputStream 也需要一个自己取不到的值来作为流末尾的标志，Java 同样使用 -1 来作为字节流的流末尾，从上面基本数据类型的取值范围我们可以看到 byte 的取值范围为 -128 ~ 127 ，这就意味走着 byte 可以取到 -1 ，如果把 -1 直接当作 int 作为流末尾，那么就无法区分这个读到的结果是流末尾还是流中的数据了，那么 Java 是如何实现取值 -1 的呢？在 Java 内部，Java 通过高位补 0 来实现数据从 byte 到 int 的转换，举个例子：</p>
+<p>-1 在 byte 类型和 int 类型中都可以取到，-1 在 byte 类型下的二进制存储形式为 11111111 ，然而使用 read 方法的时候，Java 内部将 byte 的高位补 0 将 byte 转为 int 类型，所以 byte 类型的 -1 在 int 类型下的二进制存储形式为 00000000 00000000 00000000 11111111，对应的 int 值为 255，通过高位补 0 ，所有 byte 类型的负数都转为了正数。然而在使用这些读到的 byte 数据时，只要将这些数据从 int 强转回 byte 即可得到原有的数据。所以就可以使用 -1 来作为流末尾的标志，因为 Java 内部将 byte 的负数通过高位补 0 将其转换为了正数。</p>
+<h1 id="节点流（或文件流）"><a href="#节点流（或文件流）" class="headerlink" title="节点流（或文件流）"></a>节点流（或文件流）</h1><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/f9a4ba3ee91cb2833b7879f6526015d3.png"></p>
+<ol>
+<li><p>可以省略new File，因为FileReader会自动封装</p>
+</li>
+<li><p>1024是因为通常设置10位二进制</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/84b733d03c03021483b8c035c0d6cc38.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/e6472489740e0c25ad77871a705a8225.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/cbbf74cb9f48eb905c713f613535fd2d.png"></p>
+<ol>
+<li><p>定义文件路径时，注意：可以用“&#x2F;”或者“\”。</p>
+</li>
+<li><p>写入一个文件时，如果使用构造器FileOutputStream(file)，则目录下有同名文件将被覆盖。</p>
+</li>
+<li><p>如果使用FileOutputStream(file,true)，则同名文件不会被覆盖，在文件内容末尾追加内容。</p>
+</li>
+<li><p>在读取文件时，必须保证该文件已存在，否则报异常。</p>
+</li>
+<li><p>字节流操作字节，比如：.mp3，.avi，.rmvb，mp4，.jpg，.doc，.ppt</p>
+</li>
+</ol>
+<p>字符流操作字符，只能操作普通文本文件。最常见的文本文件：.txt，.java，.c，.cpp 等语言的源代码。尤其注意.doc,excel,ppt这些不是文本文件。</p>
+<ol start="6">
+<li>可以用stream复制文本，但是不能中途查看会乱码,其他操作不可以.</li>
+</ol>
+<h1 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h1><ol>
+<li><p>为了提高数据读写的速度，Java API提供了带缓冲功能的流类，在使用这些流类时，会创建一个内部缓冲区数组，缺省使用8192个字节(8Kb)的缓冲区。</p>
+</li>
+<li><p>缓冲流要“套接”在相应的节点流之上，根据数据操作单位可以把缓冲流分为：</p>
+</li>
+</ol>
+<p>BufferedInputStream 和 BufferedOutputStream</p>
+<p>BufferedReader 和 BufferedWriter</p>
+<ol start="3">
+<li><p>当读取数据时，数据按块读入缓冲区，其后的读操作则直接访问缓冲区</p>
+</li>
+<li><p>当使用BufferedInputStream读取字节文件时，BufferedInputStream会一次性从文件中读取8192个(8Kb)，存在缓冲区中，直到缓冲区装满了，才重新从文件中读取下一个8192个字节数组。</p>
+</li>
+<li><p>向流中写入字节时，不会直接写到文件，先写到缓冲区中直到缓冲区写满， BufferedOutputStream才会把缓冲区中的数据一次性写到文件里。使用方法flush()可以强制将缓冲区的内容全部写入输出流</p>
+</li>
+<li><p>关闭流的顺序和打开流的顺序相反。只要关闭最外层流即可，关闭最外层流也会相应关闭内层节点流</p>
+</li>
+<li><p>flush()方法的使用：手动将buffer中内容写入文件</p>
+</li>
+<li><p>如果是带缓冲区的流对象的close()方法，不但会关闭流，还会在关闭流之前刷新缓冲区，关闭后不能再写出</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/4238ec72917d56c104c74a202b5f22b1.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/042e7caf26a4fb6a0eccc7ac39c75844.png"></p>
+<h1 id="转换流"><a href="#转换流" class="headerlink" title="转换流"></a>转换流</h1><p>转换流提供了在字节流和字符流之间的转换</p>
+<p>Java API提供了两个转换流：</p>
+<pre class=" language-java"><code class="language-java">InputStreamReader：将InputStream转换为Reader
+
+OutputStreamWriter：将Writer转换为OutputStream
+</code></pre>
+<p>字节流中的数据都是字符时，转成字符流操作更高效。</p>
+<p>很多时候我们使用转换流来处理文件乱码问题。实现编码和解码的功能</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/94c8156627bb3b71fec2f0b700e7e832.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/0494f669553662b317169df54756eaa0.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/e469d12671ba6f45a197d85636a2c482.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/195e459d424acc2c261069572a787369.png"></p>
+<p>6.输入、输出流<br>System.in和System.out分别代表了系统标准的输入和输出设备</p>
+<p>默认输入设备是：键盘，输出设备是：显示器</p>
+<p>System.in的类型是InputStream</p>
+<p>System.out的类型是PrintStream，其是OutputStream的子类FilterOutputStream 的子类</p>
+<p>重定向：通过System类的setIn，setOut方法对默认设备进行改变。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">setIn</span><span class="token punctuation">(</span>InputStream in<span class="token punctuation">)</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">setOut</span><span class="token punctuation">(</span>PrintStream out<span class="token punctuation">)</span>
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/8a394b669d5c46abbaefa40fb01d4c8c.png"></p>
+<h1 id="打印流"><a href="#打印流" class="headerlink" title="打印流"></a>打印流</h1><p>实现将基本数据类型的数据格式转化为字符串输出</p>
+<p>打印流：PrintStream和PrintWriter</p>
+<p>提供了一系列重载的print()和println()方法，用于多种数据类型的输出</p>
+<p>PrintStream和PrintWriter的输出不会抛出IOException异常</p>
+<p>PrintStream和PrintWriter有自动flush功能</p>
+<p>PrintStream 打印的所有字符都使用平台的默认字符编码转换为字节。</p>
+<p>在需要写入字符而不是写入字节的情况下，应该使用 PrintWriter 类。</p>
+<p>System.out返回的是PrintStream的实例</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/2133f12b40c1760a71cb8bae2a51367e.png"></p>
+<h1 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h1><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/8dab044182d962f8079902ec1d024760.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/ba7fdba0e392a2acebe04f7b67d5866e.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/7968fa2c8beb42b69da60f5874b28cd9.png"></p>
+<h1 id="对象流"><a href="#对象流" class="headerlink" title="对象流"></a>对象流</h1><p>ObjectInputStream和OjbectOutputSteam</p>
+<p>用于存储和读取基本数据类型数据或对象的处理流。它的强大之处就是可以把Java中的对象写入到数据源中，也能把对象从数据源中还原回来。</p>
+<p>序列化：用ObjectOutputStream类保存基本类型数据或对象的机制</p>
+<p>反序列化：用ObjectInputStream类读取基本类型数据或对象的机制</p>
+<p>ObjectOutputStream和ObjectInputStream不能序列化static和transient修饰的成员变量</p>
+<p>对象序列化机制允许把内存中的Java对象转换成平台无关的二进制流，从而允许把这种二进制流持久地保存在磁盘上，或通过网络将这种二进制流传输到另一个网络节点。&#x2F;&#x2F;当其它程序获取了这种二进制流，就可以恢复成原来的Java对象</p>
+<p>序列化的好处在于可将任何实现了Serializable接口的对象转化为字节数据，使其在保存和传输时可被还原</p>
+<p>序列化是RMI（Remote Method Invoke – 远程方法调用）过程的参数和返回值都必须实现的机制，而RMI 是JavaEE 的基础。因此序列化机制是JavaEE 平台的基础</p>
+<p>如果需要让某个对象支持序列化机制，则必须让对象所属的类及其属性是可序列化的，为了让某个类是可序列化的，该类必须实现如下两个接口之一。</p>
+<p>否则，会抛出NotSerializableException异常</p>
+<p>Serializable</p>
+<p>Externalizable</p>
+<p>凡是实现Serializable接口的类都有一个表示序列化版本标识符的静态变量：</p>
+<p>private static final long serialVersionUID;</p>
+<p>serialVersionUID用来表明类的不同版本间的兼容性。简言之，其目的是以序列化对象</p>
+<p>进行版本控制，有关各版本反序列化时是否兼容。</p>
+<p>如果类没有显示定义这个静态常量，它的值是Java运行时环境根据类的内部细节自</p>
+<p>动生成的。若类的实例变量做了修改，serialVersionUID 可能发生变化。故建议，</p>
+<p>显式声明。</p>
+<p>简单来说，Java的序列化机制是通过在运行时判断类的serialVersionUID来验证版本一致性的。在进行反序列化时，JVM会把传来的字节流中的serialVersionUID与本地相应实体类的serialVersionUID进行比较，如果相同就认为是一致的，可以进行反序列化，否则就会出现序列化版本不一致的异常(InvalidCastException)。防止序列化后，该类被修改了，反序列找不到类了。</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/0413e4f64caa48fcec1eef20dc4eee91.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/d4ab1948fadb22fa06e86b1ece16a7e7.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/e0724a866a037cdadc3fc756e79ad904.png"></p>
+<h1 id="path"><a href="#path" class="headerlink" title="path"></a>path</h1><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/266fc5a7fce86ec387842c66c93b56d2.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/8b289e3029e4514abd9f1ecf5806d5fc.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/7dae905e2edb94c7192a68ff9c8b3f4d.png"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Luan-bx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://luan-bx.github.io/2022/06/30/javanotes/java11/">https://luan-bx.github.io/2022/06/30/javanotes/java11/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Luan-bx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">Java笔记</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/07/10/javacodefile/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="文件相关操作">
+                        
+                        <span class="card-title">文件相关操作</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%96%87%E4%BB%B6/" class="post-category">
+                                    文件
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/06/20/javacodetcp/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="TCP收发测试">
+                        
+                        <span class="card-title">TCP收发测试</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/TCP/" class="post-category">
+                                    TCP
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/TCP/">
+                        <span class="chip bg-color">TCP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('true'),
+            headingSelector: 'h1, h2'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.6'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/about" target="_blank">Luan-bx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">32.5k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/luan-bx" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:836106309@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=836106309" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 836106309" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
