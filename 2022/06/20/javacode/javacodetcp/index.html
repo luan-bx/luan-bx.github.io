@@ -4,10 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java（四）面向对象上, lbx">
-    <meta name="description" content="基本概念面向过程(POP) 与 面向对象(OOP)二者都是一种思想，面向对象是相对于面向过程而言的。
-面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。
-面向对象，将功能封装进对象，强调具备了功能的对象，以类&amp;#x2F;对象为最小单">
+    <meta name="keywords" content="TCP收发测试, lbx">
+    <meta name="description" content="接收import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.InetSocketAddress">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java（四）面向对象上 | MyBlog</title>
+    <title>TCP收发测试 | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -269,12 +270,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java（四）面向对象上</h1>
+                    <h1 class="description center-align post-title">TCP收发测试</h1>
                 </div>
             </div>
         </div>
@@ -302,8 +303,12 @@
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">Java笔记</span>
+                            <a href="/tags/Code/">
+                                <span class="chip bg-color">Code</span>
+                            </a>
+                        
+                            <a href="/tags/TCP/">
+                                <span class="chip bg-color">TCP</span>
                             </a>
                         
                     </div>
@@ -314,8 +319,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
+                            <a href="/categories/TCP/" class="post-category">
+                                TCP
                             </a>
                         
                     </div>
@@ -327,7 +332,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-20
+                    2022-06-20
                 </div>
                 
 
@@ -336,7 +341,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    498
                 </div>
                 
 
@@ -353,192 +358,111 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="面向过程-POP-与-面向对象-OOP"><a href="#面向过程-POP-与-面向对象-OOP" class="headerlink" title="面向过程(POP) 与 面向对象(OOP)"></a>面向过程(POP) 与 面向对象(OOP)</h2><p>二者都是一种思想，面向对象是相对于面向过程而言的。</p>
-<p>面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。</p>
-<p>面向对象，将功能封装进对象，强调具备了功能的对象，以类&#x2F;对象为最小单位，考虑谁来做。</p>
-<h2 id="面向对象的三大特征"><a href="#面向对象的三大特征" class="headerlink" title="面向对象的三大特征"></a>面向对象的三大特征</h2><p>封装(Encapsulation)</p>
-<p>继承(Inheritance)</p>
-<p>多态(Polymorphism)</p>
-<h2 id="面向对象的思想概述"><a href="#面向对象的思想概述" class="headerlink" title="面向对象的思想概述"></a>面向对象的思想概述</h2><p>类(Class)和对象(Object)是面向对象的核心概念。</p>
-<p>类是对一类事物的描述，是抽象的、概念上的定义</p>
-<p>对象是实际存在的该类事物的每个个体，因而也称为实例(instance)。</p>
-<h2 id="常见的类的成员"><a href="#常见的类的成员" class="headerlink" title="常见的类的成员"></a>常见的类的成员</h2><p>属性：对应类中的成员变量</p>
-<p>行为：对应类中的成员方法</p>
-<p>Field &#x3D; 属性&#x3D; 成员变量，Method &#x3D; (成员)方法&#x3D; 函数</p>
-<h2 id="自定义类"><a href="#自定义类" class="headerlink" title="自定义类"></a>自定义类</h2><p>步骤：</p>
-<ol>
-<li><p>定义类（考虑修饰符、类名）</p>
-</li>
-<li><p>编写类的属性（考虑修饰符、属性类型、属性名、初始化值）</p>
-</li>
-<li><p>编写类的方法（考虑修饰符、返回值类型、方法名、形参等）</p>
-</li>
-</ol>
-<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>语法：类名 对象名&#x3D; new 类名();</p>
-<p>使用 “对象名.对象成员” 的方式访问对象成员（包括属性和方法）</p>
-<h2 id="类的访问机制："><a href="#类的访问机制：" class="headerlink" title="类的访问机制："></a>类的访问机制：</h2><p>在一个类中的访问机制：类中的方法可以直接访问类中的成员变量。（例外：static方法访问非static，编译不通过。）</p>
-<p>在不同类中的访问机制：先创建要访问类的对象，再用对象访问类中定义的成员。</p>
-<h2 id="内存解析"><a href="#内存解析" class="headerlink" title="内存解析"></a>内存解析</h2><p>堆（Heap），此内存区域的唯一目的就是存放对象实例，几乎所有的对象实例都在这里分配内存。在Java虚拟机规范中的描述是：所有的对象实例以及数组都要在堆上分配。</p>
-<p>栈（Stack），是指虚拟机栈。虚拟机栈用于存储局部变量等。局部变量表存放了编译期可知长度的各种基本数据类型（boolean、byte、char 、short 、int 、float 、long 、double）、对象引用（reference类型，它不等同于对象本身，是对象在堆内存的首地址）。方法执行完，自动释放。</p>
-<p>方法区（Method Area），用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。</p>
-<h2 id="匿名对象"><a href="#匿名对象" class="headerlink" title="匿名对象"></a>匿名对象</h2><p>我们也可以不定义对象的句柄，而直接调用这个对象的方法。这样的对象叫做匿名对象。</p>
-<p>如：new Person().shout();</p>
-<p>使用情况：如果对一个对象只需要进行一次方法调用，那么就可以使用匿名对象。我们经常将匿名对象作为实参传递给一个方法调用。</p>
-<h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><h2 id="语法格式："><a href="#语法格式：" class="headerlink" title="语法格式："></a>语法格式：</h2><p>修饰符 数据类型 属性名&#x3D; 初始化值;</p>
-<p>说明1: 修饰符</p>
-<p>常用的权限修饰符有：private、缺省、protected、public</p>
-<p>其他修饰符：static、final (暂不考虑)</p>
-<p>说明2：数据类型</p>
-<p>任何基本数据类型(如int、Boolean) 或任何引用数据类型。</p>
-<p>说明3：属性名</p>
-<p>属于标识符，符合命名规则和规范即可。</p>
-<h2 id="变量的分类"><a href="#变量的分类" class="headerlink" title="变量的分类"></a>变量的分类</h2><p>在方法体外，类体内声明的变量称为 成员变量。</p>
-<p>在方法体内部声明的变量称为 局部变量。</p>
-<h2 id="赋值的位置："><a href="#赋值的位置：" class="headerlink" title="赋值的位置："></a>赋值的位置：</h2><p>① 默认初始化</p>
-<p>② 显式初始化</p>
-<p>③ 构造器中初始化</p>
-<p>④ 通过“对象.属性“或“对象.方法”的方式赋值</p>
-<p>赋值的先后顺序：</p>
-<p>① - ② - ③ - ④</p>
-<h2 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h2><p>如果循环体外还想用变量，可以把变量的声明放在外面，复制在循环体里面，这样循环完还可以继续用这个变量</p>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>方法是类或对象行为特征的抽象，用来完成某个功能操作。在某些语言中也称为函数或过程。将功能封装为方法的目的是，可以实现代码重用，简化代码</p>
-<p>Java里的方法不能独立存在，所有的方法必须定义在类里。</p>
-<h2 id="声明格式"><a href="#声明格式" class="headerlink" title="声明格式"></a>声明格式</h2><p>修饰符 返回值 类型 方法名（参数类型形参1, 参数类型形参2, ….）｛</p>
-<p>方法体 程序代码</p>
-<p>return 返回值;</p>
-<p>｝</p>
-<p>方法中只能调用方法或属性，不可以在方法内部定义方法。</p>
-<h2 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h2><p>概念：</p>
-<p>在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或者参数类型不同。</p>
-<p>特点：</p>
-<p>与返回值类型无关，只看参数列表，且参数列表必须不同。(参数个数或参数类型)。调用时，根据方法参数列表的不同来区别。</p>
-<h2 id="可变个数的形参"><a href="#可变个数的形参" class="headerlink" title="可变个数的形参"></a>可变个数的形参</h2><p>&#x2F;&#x2F;JDK 5.0以前：采用数组形参来定义方法，传入多个同一类型变量</p>
-<p>public static void test(int a ,String[] books);</p>
-<p>&#x2F;&#x2F;JDK5.0：采用可变个数形参来定义方法，传入多个同一类型变量</p>
-<p>public static void test(int a ,String…books);</p>
-<p>说明：</p>
-<ol>
-<li><p>声明格式：方法名(参数的类型名 …参数名)</p>
-</li>
-<li><p>可变参数：方法参数部分指定类型的参数个数是可变多个：0个，1个或多个</p>
-</li>
-<li><p>可变个数形参的方法与同名的方法之间，彼此构成重载</p>
-</li>
-<li><p>可变参数方法的使用与方法参数部分使用数组是一致的</p>
-</li>
-<li><p>方法的参数部分有可变形参，需要放在形参声明的最后</p>
-</li>
-<li><p>在一个方法的形参位置，最多只能声明一个可变个数形参</p>
-</li>
-</ol>
-<h2 id="方法参数的值传递机制"><a href="#方法参数的值传递机制" class="headerlink" title="方法参数的值传递机制"></a>方法参数的值传递机制</h2><p>形参是基本数据类型：将实参基本数据类型变量的“数据值”传递给形参</p>
-<p>形参是引用数据类型：将实参引用数据类型变量的“地址值”传递给形参</p>
-<p>失败：change会新创建一个变量放在栈里，两个x各走各的。</p>
-<p>成功：change和main共用一个对象，放在堆里，修改的是一个对象。</p>
-<p>拓展题目：</p>
-<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>一个方法体内调用它自身。</p>
-<p>方法递归包含了一种隐式的循环，它会重复执行某段代码，但这种重复执行无须循环控制。</p>
-<p>递归一定要向已知方向递归，否则这种递归就变成了无穷递归，类似于死循环。</p>
-<h2 id="封装和隐藏"><a href="#封装和隐藏" class="headerlink" title="封装和隐藏"></a>封装和隐藏</h2><p>我们程序设计追求“高内聚，低耦合”。</p>
-<p>高内聚：类的内部数据操作细节自己完成，不允许外部干涉；</p>
-<p>低耦合：仅对外暴露少量的方法用于使用。</p>
-<p>隐藏对象内部的复杂性，只对外公开简单的接口。便于外界调用，从而提高系统的可扩展性、可维护性。通俗的说，把该隐藏的隐藏起来，该暴露的暴露出来。这就是封装性的设计思想。</p>
-<p>通过将数据声明为私有的(private)，再提供公共的（public）方法:getXxx()和setXxx()实现对该属性的操作，以实现下述目的：</p>
-<p>隐藏一个类中不需要对外提供的实现细节；</p>
-<p>便于修改，增强代码的可维护性；</p>
-<p>只能通过事先定制好的方法来访问数据，可以加入控制逻辑，限制对属性的不合理操作；</p>
-<h1 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h1><h2 id="语法格式：-1"><a href="#语法格式：-1" class="headerlink" title="语法格式："></a>语法格式：</h2><p>修饰符类名(参数列表) {</p>
-<p>初始化语句；</p>
-<p>}</p>
-<h2 id="构造器的特征："><a href="#构造器的特征：" class="headerlink" title="构造器的特征："></a>构造器的特征：</h2><ol>
-<li><p>它具有与类相同的名称</p>
-</li>
-<li><p>它不声明返回值类型。（与声明为void不同）</p>
-</li>
-<li><p>不能被static、final、synchronized、abstract、native修饰，不能有return语句返回值</p>
-</li>
-</ol>
-<h2 id="构造器的作用："><a href="#构造器的作用：" class="headerlink" title="构造器的作用："></a>构造器的作用：</h2><ol>
-<li><p>创建对象；</p>
-</li>
-<li><p>给对象进行初始化</p>
-</li>
-</ol>
-<p>如：Order o &#x3D; new Order(); Person p &#x3D; new Person(“Peter”,15);</p>
-<p>如同我们规定每个“人”一出生就必须先洗澡，我们就可以在“人”的构造器中加入完成“洗澡”的程序代码，于是每个“人”一出生就会自动完成“洗澡”，程序就不必再在每个人刚出生时一个一个地告诉他们要“洗澡”了。</p>
-<p>创建Animal类的实例：Animal a &#x3D; new Animal(); 调用构造器，将legs初始化为4。</p>
-<p>根据参数不同，构造器可以分为如下两类：</p>
-<ol>
-<li><p>隐式无参构造器（系统默认提供）</p>
-</li>
-<li><p>显式定义一个或多个构造器（无参、有参）</p>
-</li>
-</ol>
-<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><ol>
-<li><p>Java语言中，每个类都至少有一个构造器</p>
-</li>
-<li><p>默认构造器的修饰符与所属类的修饰符一致</p>
-</li>
-<li><p>一旦显式定义了构造器，则系统不再提供默认构造器</p>
-</li>
-<li><p>一个类可以创建多个重载的构造器</p>
-</li>
-<li><p>父类的构造器不可被子类继承</p>
-</li>
-</ol>
-<h1 id="JavaBean"><a href="#JavaBean" class="headerlink" title="JavaBean"></a>JavaBean</h1><p>JavaBean是一种Java语言写成的可重用组件。</p>
-<p>所谓javaBean，是指符合如下标准的Java类：</p>
-<ol>
-<li><p>类是公共的</p>
-</li>
-<li><p>有一个无参的公共的构造器</p>
-</li>
-<li><p>有属性，且有对应的get、set方法</p>
-</li>
-</ol>
-<p>用户可以使用JavaBean将功能、处理、值、数据库访问和其他任何可以用Java代码创造的对象进行打包，并且其他的开发者可以通过内部的JSP页面、Servlet、其他JavaBean、applet程序或者应用来使用这些对象。用户可以认为JavaBean提供了一种随时随地的复制和粘贴的功能，而不用关心任何改变。</p>
-<h1 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h1><ol>
-<li><p>+表示public 类型，- 表示private 类型，#表示protected类型</p>
-</li>
-<li><p>方法的写法: 方法的类型(+、-) 方法名(参数名：参数类型)：返回值类型</p>
-</li>
-</ol>
-<h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ol>
-<li><p>它在方法内部使用，即这个方法所属对象的引用；<br>它在构造器内部使用，表示该构造器正在初始化的对象。</p>
-</li>
-<li><p>this可以调用类的属性、方法和构造器</p>
-</li>
-<li><p>当在方法内需要用到调用该方法的对象时，就用this。</p>
-</li>
-</ol>
-<p>具体的：我们可以用this来区分属性和局部变量。</p>
-<p>比如：this.name &#x3D; name;</p>
-<h2 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h2><ol>
-<li><p>在任意方法或构造器内，如果使用当前类的成员变量或成员方法可以在其前面添加this，增强程序的阅读性。不过，通常我们都习惯省略this。</p>
-</li>
-<li><p>当形参与成员变量同名时，如果在方法内或构造器内需要使用成员变量，必须添加this来表明该变量是类的成员变量</p>
-</li>
-<li><p>使用this访问属性和方法时，如果在本类中未找到，会从父类中查找</p>
-</li>
-<li><p>this可以作为一个类中构造器相互调用的特殊格式</p>
-</li>
-</ol>
-<p>(3)注意（构造器相互调用）：<br>1.可以在类的构造器中使用”this(形参列表)”的方式，调用本类中重载的其他的构造器！</p>
-<p>2.明确：构造器中不能通过”this(形参列表)”的方式调用自身构造器</p>
-<p>3.如果一个类中声明了n个构造器，则最多有 n - 1个构造器中使用了”this(形参列表)”</p>
-<p>4.”this(形参列表)”必须声明在类的构造器的首行！</p>
-<p>5.在类的一个构造器中，最多只能声明一个”this(形参列表)”</p>
-<h1 id="package"><a href="#package" class="headerlink" title="package"></a>package</h1><p>package语句作为Java源文件的第一条语句，指明该文件中定义的类所在的包。(若缺省该语句，则指定为无名包)。它的格式为：</p>
-<p>package 顶层包名.子包名;</p>
-<p>包对应于文件系统的目录，package语句中，用“.” 来指明包(目录)的层次；</p>
-<p>包通常用小写单词标识。通常使用所在公司域名的倒置：com.atguigu.xxx</p>
-<p>举例：pack1\pack2\PackageTest.java</p>
-<p>package pack1.pack2; &#x2F;&#x2F;指定类PackageTest属于包pack1.pack2</p>
-<h1 id="MVC设计模式"><a href="#MVC设计模式" class="headerlink" title="MVC设计模式"></a>MVC设计模式</h1><p> 192 节 课后练习4</p>
-<p>定义类Student，包含三个属性：学号number(int)，年级state(int)，成绩score(int)。创建20个学生对象，学号为1到20，年级和成绩都由随机数确定。</p>
-<p>问题一：打印出3年级(state值为3）的学生信息。</p>
-<p>问题二：使用冒泡排序按学生成绩排序，并遍历所有学生信息
- </p>
+                <h1 id="接收"><a href="#接收" class="headerlink" title="接收"></a>接收</h1><pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>InputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>OutputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>InetSocketAddress<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>ServerSocket<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>Socket<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Tcp</span> <span class="token punctuation">{</span>
+
+ <span class="token comment" spellcheck="true">/*
+  * TCP接收
+  */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception<span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"12345678"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> port <span class="token operator">=</span> <span class="token number">8081</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//创建服务器端的Socket对象(ServerSocket)</span>
+            ServerSocket serverSocket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServerSocket</span><span class="token punctuation">(</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//serverSocket.bind(new InetSocketAddress(port));</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//监听客户端连接，返回一个Socket对象</span>
+            Socket socket <span class="token operator">=</span> serverSocket<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//设置阻塞的超时时间</span>
+            <span class="token comment" spellcheck="true">//socket.setSoTimeout(5000);</span>
+            <span class="token comment" spellcheck="true">//输出流</span>
+            OutputStream output <span class="token operator">=</span> socket<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//获取输入流，读数据，并把数据显示在控制台</span>
+            InputStream input <span class="token operator">=</span> socket<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//打印连接IP</span>
+            String IP <span class="token operator">=</span> serverSocket<span class="token punctuation">.</span><span class="token function">getInetAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getHostAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>IP <span class="token operator">+</span> <span class="token string">"......connected"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>socket<span class="token punctuation">.</span><span class="token function">isConnected</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token keyword">int</span> len <span class="token operator">=</span> input<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                
+                <span class="token comment" spellcheck="true">// 把一个字节数组str从0取到len，取出来之后转换成String类型</span>
+                String str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"数据为"</span> <span class="token operator">+</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                output<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//output.write("okok".getBytes());//可删</span>
+                i<span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            
+            <span class="token punctuation">}</span>
+            socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//serverSocket.close();</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h1 id="发送"><a href="#发送" class="headerlink" title="发送"></a>发送</h1><pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>BufferedReader<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>InputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>InputStreamReader<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>OutputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>InetAddress<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>Socket<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>UnknownHostException<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*
+ * 客户端向服务器发送数据
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TcpSend</span> <span class="token punctuation">{</span>
+ 
+ <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//接受控制台数据的输入流</span>
+        BufferedReader buff<span class="token operator">=</span>null<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//定义保存服务器地址的对象【String】</span>
+        InetAddress serverip<span class="token operator">=</span>null<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//定义连接服务器的端口号</span>
+        <span class="token keyword">int</span> serverport<span class="token operator">=</span><span class="token number">38700</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//定义创建客户端对象的Socket</span>
+        Socket client<span class="token operator">=</span>null<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//定义发送信息的输出流对象</span>
+        OutputStream out<span class="token operator">=</span>null<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//定义保存被发送的数据</span>
+        String info<span class="token operator">=</span>null<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//返回包含有本机IP地址的InetAddress对象,花生壳透传公网IP</span>
+        serverip<span class="token operator">=</span>InetAddress<span class="token punctuation">.</span><span class="token function">getByName</span><span class="token punctuation">(</span><span class="token string">"454585x8l0.qicp.vip"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"接收方： "</span> <span class="token operator">+</span> serverip<span class="token punctuation">.</span><span class="token function">getHostName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"接收IP： "</span> <span class="token operator">+</span> serverip<span class="token punctuation">.</span><span class="token function">getHostAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//Socket(InetAddress address,int prot)---创建流套接字并将其连接到指定IP地址的指定端口号</span>
+        client<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Socket</span><span class="token punctuation">(</span>serverip<span class="token punctuation">,</span>serverport<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// getOutputStream()---返回客户端的输出流。【与服务器的输入流连接】</span>
+        out<span class="token operator">=</span>client<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入发送的数据"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                buff<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            info<span class="token operator">=</span>buff<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            out<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>info<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        
+        out<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        buff<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        client<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span>
+</code></pre>
 
                 
             </div>
@@ -565,7 +489,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luan-bx.github.io/2022/04/20/javanotes/java4/">https://luan-bx.github.io/2022/04/20/javanotes/java4/</a>
+                    <a href="https://luan-bx.github.io/2022/06/20/javacode/javacodetcp/">https://luan-bx.github.io/2022/06/20/javacode/javacodetcp/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -607,8 +531,12 @@
                                     <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">Java笔记</span>
+                                <a href="/tags/Code/">
+                                    <span class="chip bg-color">Code</span>
+                                </a>
+                            
+                                <a href="/tags/TCP/">
+                                    <span class="chip bg-color">TCP</span>
                                 </a>
                             
                         </div>
@@ -658,13 +586,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/29/javanotes/java5/">
+                <a href="/2022/06/30/javanotes/java11/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Java（五）面向对象中">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Java（十一）IO流">
                         
-                        <span class="card-title">Java（五）面向对象中</span>
+                        <span class="card-title">Java（十一）IO流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -675,7 +603,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-30
                         </span>
                         <span class="publish-author">
                             
@@ -711,13 +639,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/12/javanotes/java3/">
+                <a href="/2022/06/17/javanotes/java10/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Java（三）数组">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java（十）集合">
                         
-                        <span class="card-title">Java（三）数组</span>
+                        <span class="card-title">Java（十）集合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -728,7 +656,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-17
                             </span>
                         <span class="publish-author">
                             
