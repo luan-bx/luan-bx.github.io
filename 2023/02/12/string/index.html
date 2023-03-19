@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java（三）数组, lbx">
-    <meta name="description" content="二维数组
+    <meta name="keywords" content="String类常用方法, lbx">
+    <meta name="description" content="replacemsg.replace(&#34;;CP=&#34;, &#34;&#34;)
 
-
-打印二维数组的外层数组，其实相当于打印一个一维数组，只会打印出这个数组存放的地址。其中“[I@15db…”的‘[’表示一维，‘I’ 表示int型。
-倒数第二行为null，即使二维数组是double，但里面的元素数组还未定义类型">
+replace将此字符串中与目标序列匹配的每个子字符串替换为指定的文字替换序列。
+替换从字符串的开始一直进行到结束
+例如，在字符串“aaa”中，将“aa”替换为“b”将导致“b">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java（三）数组 | MyBlog</title>
+    <title>String类常用方法 | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java（三）数组</h1>
+                    <h1 class="description center-align post-title">String类常用方法</h1>
                 </div>
             </div>
         </div>
@@ -304,8 +304,8 @@
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">Java笔记</span>
+                            <a href="/tags/String%E7%B1%BB/">
+                                <span class="chip bg-color">String类</span>
                             </a>
                         
                     </div>
@@ -316,8 +316,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
+                            <a href="/categories/String%E7%B1%BB/" class="post-category">
+                                String类
                             </a>
                         
                     </div>
@@ -329,7 +329,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-12
+                    2023-02-12
                 </div>
                 
 
@@ -338,7 +338,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    298
                 </div>
                 
 
@@ -355,68 +355,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h1><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/77767409030bc88b31f380d640998dda.png"></p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/c6bcc7a0e0f6b15c390869c63f27c32b.png"></p>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/a5c4aaf447f8b313c04a2439efd43e3d.png"></p>
-<p>打印二维数组的外层数组，其实相当于打印一个一维数组，只会打印出这个数组存放的地址。其中“[I@15db…”的‘[’表示一维，‘I’ 表示int型。</p>
-<p>倒数第二行为null，即使二维数组是double，但里面的元素数组还未定义类型，而数组的为初始化为null。报错是因为未初始化就取值会报错。</p>
-<h1 id="数组的赋值与复制"><a href="#数组的赋值与复制" class="headerlink" title="数组的赋值与复制"></a>数组的赋值与复制</h1><p>（1）数组的赋值：</p>
-<p>慎用array1 &#x3D; array2 来赋值，虽然把array2 赋值给array1，但修改array1同样修改的是array2，只是将array2的地址给了array1，他俩共用一个数组。</p>
-<p>（2）数组的复制：</p>
-<p>开辟一个新的堆，存放新数组</p>
-<pre class=" language-java"><code class="language-java">array1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>array2<span class="token punctuation">.</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> array1<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    array1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> array2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+                <h1 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h1><pre class=" language-java"><code class="language-java">msg<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">";CP="</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span>
 </code></pre>
-<h1 id="打印数组"><a href="#打印数组" class="headerlink" title="打印数组"></a>打印数组</h1><p>将数组转成String：Arrays.toString()</p>
-<p>System.out.println(“等级” + Arrays.toString(abcd));</p>
-<h1 id="数组算法"><a href="#数组算法" class="headerlink" title="数组算法"></a>数组算法</h1><p>（1）衡量排序算法的优劣</p>
-<p>1.时间复杂度：分析关键字的比较次数和记录的移动次数</p>
-<p>2.空间复杂度：分析排序算法中需要多少辅助内存</p>
-<p>3.稳定性：若两个记录A和B的关键字值相等，但排序后A、B的先后次序保持不变，则称这种排序算法是稳定的。</p>
-<p>（2）排序算法分类</p>
-<p>内部排序和外部排序。</p>
-<p>内部排序：整个排序过程不需要借助于外部存储器（如磁盘等），所有排序操作都在内存中完成。</p>
-<p>外部排序：参与排序的数据非常多，数据量非常大，计算机无法把整个排序过程放在内存中完成，必须借助于外部存储器（如磁盘）。外部排序最常见的是多路归并排序。可以认为外部排序是由多次内部排序组成。</p>
-<p>（3）十大内部排序算法</p>
-<p>a选择排序</p>
-<p>直接选择排序、堆排序</p>
-<p>b交换排序</p>
-<p>冒泡排序、快速排序</p>
-<p>c插入排序</p>
-<p>直接插入排序、折半插入排序、Shell排序</p>
-<p>d归并排序</p>
-<p>e桶式排序</p>
-<p>f基数排序</p>
-<p>(3)冒泡排序</p>
-<p>介绍：</p>
-<p>冒泡排序的原理非常简单，它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。</p>
-<p>排序思想：</p>
+<p>replace将此字符串中与目标序列匹配的每个子字符串替换为指定的文字替换序列。</p>
+<p>替换从字符串的开始一直进行到结束</p>
+<p>例如，在字符串“aaa”中，将“aa”替换为“b”将导致“ba”而不是“ab”。</p>
+<p>形参:</p>
+<p>target -要替换的字符值的序列replace -字符值的替换序列</p>
+<h1 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h1><p>substring返回该字符串的子字符串。</p>
+<p>以索引处的字符开始，并扩展到该字符串的末尾。</p>
+<p>例子:</p>
 <ol>
-<li><p>比较相邻的元素。如果第一个比第二个大（升序），就交换他们两个。</p>
-</li>
-<li><p>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</p>
-</li>
-<li><p>针对所有的元素重复以上的步骤，除了最后一个。</p>
-</li>
-<li><p>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较为止。</p>
-</li>
+<li>“unhappy” .substring(2)返回”happy”</li>
+<li>“Harbison”.substring(3)返回”bison”</li>
+<li>“empty”.substring(9)返回””(空字符串)</li>
 </ol>
-<p>(4)快速排序</p>
-<p>介绍：</p>
-<p>快速排序通常明显比同为O(nlogn)的其他算法更快，因此常被采用，而且快排采用了分治法的思想，所以在很多笔试面试中能经常看到快排的影子。可见掌握快排的重要性。</p>
-<p>快速排序（Quick Sort）由图灵奖获得者Tony Hoare发明，被列为20世纪十大算法之一，是迄今为止所有内排序算法中速度最快的一种。冒泡排序的升级版，交换排序的一种。快速排序的时间复杂度为O(nlog(n))。</p>
-<p>排序思想：</p>
+<p>以索引1的字符开始，并扩展到该字符串的索引2,但不包含索引2。</p>
+<p>例子:</p>
 <ol>
-<li><p>从数列中挑出一个元素，称为”基准”（pivot），</p>
-</li>
-<li><p>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。</p>
-</li>
-<li><p>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。</p>
-</li>
-<li><p>递归的最底部情形，是数列的大小是零或一，也就是永远都已经被排序好了。虽然一直递归下去，但是这个算法总会结束，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。</p>
-</li>
+<li>“123456”.substring(2,5)返回”345”</li>
+</ol>
+<h1 id="contains"><a href="#contains" class="headerlink" title="contains"></a>contains</h1><pre class=" language-java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>msg<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"DataTime"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>当且仅当此字符串包含指定的char值序列时返回true。</p>
+<p>形参:</p>
+<p>S -要搜索的序列</p>
+<p>返回值:</p>
+<p>如果字符串包含s则为True，否则为false</p>
+<h1 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h1><pre class=" language-java"><code class="language-java">data<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>返回该字符串中指定子字符串第一次出现的索引。</p>
+<p>返回值:</p>
+<p>指定子字符串的第一个出现项的索引，如果没有出现项，则为-1。</p>
+<p>例子:</p>
+<ol>
+<li>“123456”.indexOf(“2”)返回”1”</li>
 </ol>
 
                 
@@ -444,7 +417,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luan-bx.github.io/2022/04/12/javanotes/java3/">https://luan-bx.github.io/2022/04/12/javanotes/java3/</a>
+                    <a href="https://luan-bx.github.io/2023/02/12/string/">https://luan-bx.github.io/2023/02/12/string/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -486,8 +459,8 @@
                                     <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">Java笔记</span>
+                                <a href="/tags/String%E7%B1%BB/">
+                                    <span class="chip bg-color">String类</span>
                                 </a>
                             
                         </div>
@@ -537,13 +510,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/20/javanotes/java4/">
+                <a href="/2023/02/26/developmentproblem/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Java（四）面向对象上">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="普通java类使用 @Autowired 注入为null">
                         
-                        <span class="card-title">Java（四）面向对象上</span>
+                        <span class="card-title">普通java类使用 @Autowired 注入为null</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -554,14 +527,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-26
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="post-category">
+                                    开发常见问题
                                 </a>
                             
                             
@@ -571,12 +544,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+                        <span class="chip bg-color">开发常见问题</span>
                     </a>
                     
-                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">Java笔记</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -590,13 +563,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/06/javanotes/java2/">
+                <a href="/2022/08/14/javacode/javacodeimplements/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Java（二）基本语法">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="接口继承">
                         
-                        <span class="card-title">Java（二）基本语法</span>
+                        <span class="card-title">接口继承</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -607,14 +580,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E6%8E%A5%E5%8F%A3/" class="post-category">
+                                    接口
                                 </a>
                             
                             
@@ -628,8 +601,16 @@
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">Java笔记</span>
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8E%A5%E5%8F%A3/">
+                        <span class="chip bg-color">接口</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BB%A7%E6%89%BF/">
+                        <span class="chip bg-color">继承</span>
                     </a>
                     
                 </div>
