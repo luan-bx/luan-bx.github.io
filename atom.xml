@@ -6,7 +6,7 @@
   <link href="https://luan-bx.github.io/atom.xml" rel="self"/>
   
   <link href="https://luan-bx.github.io/"/>
-  <updated>2023-03-09T07:10:29.088Z</updated>
+  <updated>2023-03-19T05:29:41.565Z</updated>
   <id>https://luan-bx.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>普通java类使用 @Autowired 注入为null</title>
+    <link href="https://luan-bx.github.io/2023/02/26/developmentproblem/"/>
+    <id>https://luan-bx.github.io/2023/02/26/developmentproblem/</id>
+    <published>2023-02-26T14:03:49.000Z</published>
+    <updated>2023-03-19T05:29:41.565Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在普通类里或工具类里注入service或mapper，那么我们直接使用@Autowired注入，注入的service或mapper在方法里是不能直接使用，会报null。&lt;/p&gt;
+&lt;p&gt;如果是工具类，工具类里一般都是静态方法，更是无法使用。&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="开发常见问题" scheme="https://luan-bx.github.io/categories/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+    <category term="开发常见问题" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>接口继承</title>
@@ -534,31 +563,6 @@
     
     
     <category term="Markdown" scheme="https://luan-bx.github.io/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo</title>
-    <link href="https://luan-bx.github.io/2022/02/15/hexo/"/>
-    <id>https://luan-bx.github.io/2022/02/15/hexo/</id>
-    <published>2022-02-15T07:21:33.000Z</published>
-    <updated>2023-03-08T07:14:22.756Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h1&gt;&lt;h2 id=&quot;清理&quot;&gt;&lt;a href=&quot;#清理&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="框架" scheme="https://luan-bx.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="Hexo" scheme="https://luan-bx.github.io/tags/Hexo/"/>
     
   </entry>
   
