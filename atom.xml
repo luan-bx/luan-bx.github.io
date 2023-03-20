@@ -6,7 +6,7 @@
   <link href="https://luan-bx.github.io/atom.xml" rel="self"/>
   
   <link href="https://luan-bx.github.io/"/>
-  <updated>2023-03-19T05:29:41.565Z</updated>
+  <updated>2023-03-20T13:17:37.186Z</updated>
   <id>https://luan-bx.github.io/</id>
   
   <author>
@@ -17,11 +17,93 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>普通java类使用 @Autowired 注入为null</title>
+    <title>前端加弹窗</title>
+    <link href="https://luan-bx.github.io/2023/03/16/module/frontpopover/"/>
+    <id>https://luan-bx.github.io/2023/03/16/module/frontpopover/</id>
+    <published>2023-03-16T12:06:54.000Z</published>
+    <updated>2023-03-20T13:17:37.186Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前端加弹窗&quot;&gt;&lt;a href=&quot;#前端加弹窗&quot; class=&quot;headerlink&quot; title=&quot;前端加弹窗&quot;&gt;&lt;/a&gt;前端加弹窗&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="前端加弹窗" scheme="https://luan-bx.github.io/categories/%E5%89%8D%E7%AB%AF%E5%8A%A0%E5%BC%B9%E7%AA%97/"/>
+    
+    
+    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
+    
+    <category term="html" scheme="https://luan-bx.github.io/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>视频快照</title>
+    <link href="https://luan-bx.github.io/2023/03/15/module/rtspphoto/"/>
+    <id>https://luan-bx.github.io/2023/03/15/module/rtspphoto/</id>
+    <published>2023-03-15T15:01:15.000Z</published>
+    <updated>2023-03-20T13:18:16.372Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;对rtsp视频流快速截图&quot;&gt;&lt;a href=&quot;#对rtsp视频流快速截图&quot; class=&quot;headerlink&quot; title=&quot;对rtsp视频流快速截图&quot;&gt;&lt;/a&gt;对rtsp视频流快速截图&lt;/h1&gt;&lt;p&gt;可以连续截图，也可以覆盖截图&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="rtsp视频流" scheme="https://luan-bx.github.io/categories/rtsp%E8%A7%86%E9%A2%91%E6%B5%81/"/>
+    
+    
+    <category term="module - rtsp视频流" scheme="https://luan-bx.github.io/tags/module-rtsp%E8%A7%86%E9%A2%91%E6%B5%81/"/>
+    
+    <category term="视频" scheme="https://luan-bx.github.io/tags/%E8%A7%86%E9%A2%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>rtsp视频流存储</title>
+    <link href="https://luan-bx.github.io/2023/03/14/module/rtspsave/"/>
+    <id>https://luan-bx.github.io/2023/03/14/module/rtspsave/</id>
+    <published>2023-03-14T13:29:49.000Z</published>
+    <updated>2023-03-20T13:18:47.619Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;对rtsp视频流存储&quot;&gt;&lt;a href=&quot;#对rtsp视频流存储&quot; class=&quot;headerlink&quot; title=&quot;对rtsp视频流存储&quot;&gt;&lt;/a&gt;对rtsp视频流存储&lt;/h1&gt;&lt;pre class=&quot; language-java&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="rtsp视频流" scheme="https://luan-bx.github.io/categories/rtsp%E8%A7%86%E9%A2%91%E6%B5%81/"/>
+    
+    
+    <category term="module - rtsp视频流" scheme="https://luan-bx.github.io/tags/module-rtsp%E8%A7%86%E9%A2%91%E6%B5%81/"/>
+    
+    <category term="视频" scheme="https://luan-bx.github.io/tags/%E8%A7%86%E9%A2%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>普通类@Autowired注入为null</title>
     <link href="https://luan-bx.github.io/2023/02/26/developmentproblem/"/>
     <id>https://luan-bx.github.io/2023/02/26/developmentproblem/</id>
     <published>2023-02-26T14:03:49.000Z</published>
-    <updated>2023-03-19T05:29:41.565Z</updated>
+    <updated>2023-03-19T05:56:36.942Z</updated>
     
     
       
@@ -42,6 +124,33 @@
     <category term="开发常见问题" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>监听器</title>
+    <link href="https://luan-bx.github.io/2023/02/25/module/filelistener/"/>
+    <id>https://luan-bx.github.io/2023/02/25/module/filelistener/</id>
+    <published>2023-02-25T08:33:56.000Z</published>
+    <updated>2023-03-20T13:18:14.737Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;监听器：文件-x2F-文件夹&quot;&gt;&lt;a href=&quot;#监听器：文件-x2F-文件夹&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="监听器" scheme="https://luan-bx.github.io/categories/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
+    
+    
+    <category term="module - 文件操作" scheme="https://luan-bx.github.io/tags/module-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    
+    <category term="监听器" scheme="https://luan-bx.github.io/tags/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
   </entry>
   
@@ -455,115 +564,6 @@
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
     
     <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java（二）基本语法</title>
-    <link href="https://luan-bx.github.io/2022/04/06/javanotes/java2/"/>
-    <id>https://luan-bx.github.io/2022/04/06/javanotes/java2/</id>
-    <published>2022-04-06T08:52:19.000Z</published>
-    <updated>2023-03-08T07:14:24.710Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;关键字-keyword&quot;&gt;&lt;a href=&quot;#关键字-keyword&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/categories/Java/"/>
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java零碎知识</title>
-    <link href="https://luan-bx.github.io/2022/04/05/javanotes/java12/"/>
-    <id>https://luan-bx.github.io/2022/04/05/javanotes/java12/</id>
-    <published>2022-04-05T02:23:19.000Z</published>
-    <updated>2023-03-09T03:28:28.983Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.在字符串“”中，加入双引号，会与方法中的“”混淆。&lt;/p&gt;
-&lt;p&gt;分别在前面加 \ ,即可打印出双引号&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/categories/Java/"/>
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java（一）语言概述</title>
-    <link href="https://luan-bx.github.io/2022/03/28/javanotes/java1/"/>
-    <id>https://luan-bx.github.io/2022/03/28/javanotes/java1/</id>
-    <published>2022-03-28T04:56:44.000Z</published>
-    <updated>2023-03-08T07:14:22.131Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;java语言的特点是什么？&quot;&gt;&lt;a href=&quot;#java语言的特点是什么？&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/categories/Java/"/>
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git常用命令</title>
-    <link href="https://luan-bx.github.io/2022/02/20/git/"/>
-    <id>https://luan-bx.github.io/2022/02/20/git/</id>
-    <published>2022-02-20T11:38:38.000Z</published>
-    <updated>2023-03-08T07:14:23.380Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;h2 id=&quot;初始化本地库&quot;&gt;&lt;a href=&quot;#初始化本地库&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="git" scheme="https://luan-bx.github.io/categories/git/"/>
-    
-    
-    <category term="Git" scheme="https://luan-bx.github.io/tags/Git/"/>
     
   </entry>
   
