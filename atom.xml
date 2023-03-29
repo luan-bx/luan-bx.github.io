@@ -48,7 +48,7 @@
     <link href="https://luan-bx.github.io/2023/03/15/module/rtspphoto/"/>
     <id>https://luan-bx.github.io/2023/03/15/module/rtspphoto/</id>
     <published>2023-03-15T15:01:15.000Z</published>
-    <updated>2023-03-20T13:38:33.379Z</updated>
+    <updated>2023-03-22T06:12:13.835Z</updated>
     
     
       
@@ -65,7 +65,9 @@
     <category term="rtsp视频流" scheme="https://luan-bx.github.io/categories/rtsp%E8%A7%86%E9%A2%91%E6%B5%81/"/>
     
     
-    <category term="module - rtsp视频流" scheme="https://luan-bx.github.io/tags/module-rtsp%E8%A7%86%E9%A2%91%E6%B5%81/"/>
+    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
+    
+    <category term="rtsp视频流" scheme="https://luan-bx.github.io/tags/rtsp%E8%A7%86%E9%A2%91%E6%B5%81/"/>
     
     <category term="视频" scheme="https://luan-bx.github.io/tags/%E8%A7%86%E9%A2%91/"/>
     
@@ -76,7 +78,7 @@
     <link href="https://luan-bx.github.io/2023/03/14/module/rtspsave/"/>
     <id>https://luan-bx.github.io/2023/03/14/module/rtspsave/</id>
     <published>2023-03-14T13:29:49.000Z</published>
-    <updated>2023-03-20T13:18:47.619Z</updated>
+    <updated>2023-03-22T06:12:22.058Z</updated>
     
     
       
@@ -92,7 +94,9 @@
     <category term="rtsp视频流" scheme="https://luan-bx.github.io/categories/rtsp%E8%A7%86%E9%A2%91%E6%B5%81/"/>
     
     
-    <category term="module - rtsp视频流" scheme="https://luan-bx.github.io/tags/module-rtsp%E8%A7%86%E9%A2%91%E6%B5%81/"/>
+    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
+    
+    <category term="rtsp视频流" scheme="https://luan-bx.github.io/tags/rtsp%E8%A7%86%E9%A2%91%E6%B5%81/"/>
     
     <category term="视频" scheme="https://luan-bx.github.io/tags/%E8%A7%86%E9%A2%91/"/>
     
@@ -132,7 +136,7 @@
     <link href="https://luan-bx.github.io/2023/02/25/module/filelistener/"/>
     <id>https://luan-bx.github.io/2023/02/25/module/filelistener/</id>
     <published>2023-02-25T08:33:56.000Z</published>
-    <updated>2023-03-20T13:18:14.737Z</updated>
+    <updated>2023-03-22T06:11:42.358Z</updated>
     
     
       
@@ -148,7 +152,9 @@
     <category term="监听器" scheme="https://luan-bx.github.io/categories/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
     
-    <category term="module - 文件操作" scheme="https://luan-bx.github.io/tags/module-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    <category term="文件操作" scheme="https://luan-bx.github.io/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    
+    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
     
     <category term="监听器" scheme="https://luan-bx.github.io/tags/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
