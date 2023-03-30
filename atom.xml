@@ -188,6 +188,35 @@
   </entry>
   
   <entry>
+    <title>内存磁盘网络参数</title>
+    <link href="https://luan-bx.github.io/2022/10/11/module/system/"/>
+    <id>https://luan-bx.github.io/2022/10/11/module/system/</id>
+    <published>2022-10-11T08:39:53.000Z</published>
+    <updated>2023-03-30T12:15:24.769Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;内存、磁盘&quot;&gt;&lt;a href=&quot;#内存、磁盘&quot; class=&quot;headerlink&quot; title=&quot;内存、磁盘&quot;&gt;&lt;/a&gt;内存、磁盘&lt;/h1&gt;&lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="系统参数" scheme="https://luan-bx.github.io/categories/%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0/"/>
+    
+    
+    <category term="内存" scheme="https://luan-bx.github.io/tags/%E5%86%85%E5%AD%98/"/>
+    
+    <category term="磁盘" scheme="https://luan-bx.github.io/tags/%E7%A3%81%E7%9B%98/"/>
+    
+    <category term="网络" scheme="https://luan-bx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>接口继承</title>
     <link href="https://luan-bx.github.io/2022/08/14/javacode/javacodeimplements/"/>
     <id>https://luan-bx.github.io/2022/08/14/javacode/javacodeimplements/</id>
@@ -333,7 +362,7 @@
     <link href="https://luan-bx.github.io/2022/06/17/javanotes/java10/"/>
     <id>https://luan-bx.github.io/2022/06/17/javanotes/java10/</id>
     <published>2022-06-17T11:56:09.000Z</published>
-    <updated>2023-03-08T07:14:21.524Z</updated>
+    <updated>2023-03-29T15:01:33.263Z</updated>
     
     
       
@@ -532,33 +561,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;h2 id=&quot;面向过程-POP-与-面向对象-OOP&quot;&gt;&lt;a href=&quot;#面向过程-POP-与-面向对象-OOP&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/categories/Java/"/>
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java（三）数组</title>
-    <link href="https://luan-bx.github.io/2022/04/12/javanotes/java3/"/>
-    <id>https://luan-bx.github.io/2022/04/12/javanotes/java3/</id>
-    <published>2022-04-12T11:15:42.000Z</published>
-    <updated>2023-03-08T07:14:24.069Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;二维数组&quot;&gt;&lt;a href=&quot;#二维数组&quot; class=&quot;headerlink&quot; title=&quot;二维数组&quot;&gt;&lt;/a&gt;二维数组&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
         
       
     

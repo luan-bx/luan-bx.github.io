@@ -6,11 +6,17 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Java（十）集合, lbx">
     <meta name="description" content="概述对比数组数组在内存存储方面的特点：（所以安全）
+
 数组初始化以后，长度就确定了。
+
 数组声明的类型，就决定了进行元素初始化时的类型
+
+
 数组在存储数据方面的弊端：
+
 数组初始化以后，长度就不可变了，不便于扩展
-数组中提供的属性和方法少，不便于进行">
+
+数组中提供的属性和方法少">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -357,13 +363,23 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="对比数组"><a href="#对比数组" class="headerlink" title="对比数组"></a>对比数组</h2><p>数组在内存存储方面的特点：（所以安全）</p>
-<p>数组初始化以后，长度就确定了。</p>
-<p>数组声明的类型，就决定了进行元素初始化时的类型</p>
+<ol>
+<li><p>数组初始化以后，长度就确定了。</p>
+</li>
+<li><p>数组声明的类型，就决定了进行元素初始化时的类型</p>
+</li>
+</ol>
 <p>数组在存储数据方面的弊端：</p>
-<p>数组初始化以后，长度就不可变了，不便于扩展</p>
-<p>数组中提供的属性和方法少，不便于进行添加、删除、插入等操作，且效率不高。</p>
-<p>同时无法直接获取存储元素的个数</p>
-<p>数组存储的数据是有序的、可以重复的。—-&gt;存储数据的特点单一</p>
+<ol>
+<li><p>数组初始化以后，长度就不可变了，不便于扩展</p>
+</li>
+<li><p>数组中提供的属性和方法少，不便于进行添加、删除、插入等操作，且效率不高。</p>
+</li>
+<li><p>同时无法直接获取存储元素的个数</p>
+</li>
+<li><p>数组存储的数据是有序的、可以重复的。—-&gt;存储数据的特点单一</p>
+</li>
+</ol>
 <p>Java 集合类可以用于存储数量不等的多个对象，还可用于保存具有映射关系的关联数组。</p>
 <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>Java 集合可分为Collection 和Map 两种体系</p>
 <p>Collection接口：单列数据，定义了存取一组对象的方法的集合</p>
@@ -379,10 +395,9 @@
 </li>
 <li><p>在Java5 之前，Java 集合会丢失容器中所有对象的数据类型，把所有对象都当成Object 类型处理；</p>
 </li>
-<li><p>从JDK 5.0 增加了泛型以后，Java 集合可以记住容</p>
+<li><p>从JDK 5.0 增加了泛型以后，Java 集合可以记住容器中对象的数据类型。</p>
 </li>
 </ol>
-<p>器中对象的数据类型。</p>
 <p>方法：</p>
 <ol>
 <li>添加</li>
@@ -1001,7 +1016,7 @@ TreeSet和后面要讲的TreeMap采用红黑树的存储结构
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">38.1k</span>
+                        class="white-color">39k</span>
             
             
             
