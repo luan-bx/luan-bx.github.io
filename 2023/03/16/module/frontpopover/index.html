@@ -339,7 +339,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    62
+                    53
                 </div>
                 
 
@@ -368,12 +368,14 @@
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 </code></pre>
 <p>后端request方法</p>
-<p>&#96;&#96;&#96;java<br>@RequestMapping(“&#x2F;pollution”)<br>public String pollutionWeb(HttpServletRequest request) {</p>
-<pre><code>request.setAttribute(Constants.MSG, &quot;暂无数据&quot;);
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/pollution"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> String <span class="token function">pollutionWeb</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   
+    request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span>Constants<span class="token punctuation">.</span>MSG<span class="token punctuation">,</span> <span class="token string">"暂无数据"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-return &quot;pollution&quot;;
+    <span class="token keyword">return</span> <span class="token string">"pollution"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>}</p>
 
                 
             </div>
