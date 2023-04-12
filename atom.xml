@@ -6,7 +6,7 @@
   <link href="https://luan-bx.github.io/atom.xml" rel="self"/>
   
   <link href="https://luan-bx.github.io/"/>
-  <updated>2023-04-12T06:58:13.969Z</updated>
+  <updated>2023-04-12T12:36:19.130Z</updated>
   <id>https://luan-bx.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前后端交互</title>
+    <link href="https://luan-bx.github.io/2023/03/30/module/html2/"/>
+    <id>https://luan-bx.github.io/2023/03/30/module/html2/</id>
+    <published>2023-03-30T07:23:06.000Z</published>
+    <updated>2023-04-12T12:36:19.130Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前后端交互&quot;&gt;&lt;a href=&quot;#前后端交互&quot; class=&quot;headerlink&quot; title=&quot;前后端交互&quot;&gt;&lt;/a&gt;前后端交互&lt;/h1&gt;&lt;p&gt;前端显示数据库查询的默认值，并且可以在输入框修改信息并提交&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="前后端交互" scheme="https://luan-bx.github.io/categories/%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/"/>
+    
+    
+    <category term="HTML" scheme="https://luan-bx.github.io/tags/HTML/"/>
+    
+    <category term="标签属性" scheme="https://luan-bx.github.io/tags/%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7/"/>
+    
+    <category term="交互数据" scheme="https://luan-bx.github.io/tags/%E4%BA%A4%E4%BA%92%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML标签属性（后端）</title>
@@ -35,36 +65,6 @@
     
     
     <category term="HTML标签属性" scheme="https://luan-bx.github.io/categories/HTML%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7/"/>
-    
-    
-    <category term="HTML" scheme="https://luan-bx.github.io/tags/HTML/"/>
-    
-    <category term="标签属性" scheme="https://luan-bx.github.io/tags/%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7/"/>
-    
-    <category term="交互数据" scheme="https://luan-bx.github.io/tags/%E4%BA%A4%E4%BA%92%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前后端交互</title>
-    <link href="https://luan-bx.github.io/2023/03/30/module/html2/"/>
-    <id>https://luan-bx.github.io/2023/03/30/module/html2/</id>
-    <published>2023-03-30T06:59:21.000Z</published>
-    <updated>2023-04-12T11:43:00.072Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前后端交互&quot;&gt;&lt;a href=&quot;#前后端交互&quot; class=&quot;headerlink&quot; title=&quot;前后端交互&quot;&gt;&lt;/a&gt;前后端交互&lt;/h1&gt;&lt;p&gt;前端显示数据库查询的默认值，并且可以在输入框修改信息并提交&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="前后端交互" scheme="https://luan-bx.github.io/categories/%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/"/>
     
     
     <category term="HTML" scheme="https://luan-bx.github.io/tags/HTML/"/>
@@ -212,9 +212,9 @@
     <category term="监听器" scheme="https://luan-bx.github.io/categories/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
     
-    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
-    
     <category term="文件操作" scheme="https://luan-bx.github.io/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    
+    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
     
     <category term="监听器" scheme="https://luan-bx.github.io/tags/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
