@@ -6,7 +6,7 @@
   <link href="https://luan-bx.github.io/atom.xml" rel="self"/>
   
   <link href="https://luan-bx.github.io/"/>
-  <updated>2023-04-12T12:36:19.130Z</updated>
+  <updated>2023-04-17T09:18:47.241Z</updated>
   <id>https://luan-bx.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cookie和Session</title>
+    <link href="https://luan-bx.github.io/2023/04/06/module/cookiesession/"/>
+    <id>https://luan-bx.github.io/2023/04/06/module/cookiesession/</id>
+    <published>2023-04-06T06:27:16.000Z</published>
+    <updated>2023-04-17T09:18:47.241Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;相同点&quot;&gt;&lt;a href=&quot;#相同点&quot; class=&quot;headerlink&quot; title=&quot;相同点&quot;&gt;&lt;/a&gt;相同点&lt;/h1&gt;&lt;p&gt;cookie和session都是用来跟踪浏览器用户身份的会话方式。&lt;/p&gt;
+&lt;h1 id=&quot;工作原理&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Cookie和Session" scheme="https://luan-bx.github.io/categories/Cookie%E5%92%8CSession/"/>
+    
+    
+    <category term="Cookie" scheme="https://luan-bx.github.io/tags/Cookie/"/>
+    
+    <category term="Session" scheme="https://luan-bx.github.io/tags/Session/"/>
+    
+  </entry>
   
   <entry>
     <title>前后端交互</title>
@@ -540,33 +568,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;h2 id=&quot;程序-program&quot;&gt;&lt;a href=&quot;#程序-program&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/categories/Java/"/>
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java（七）异常处理</title>
-    <link href="https://luan-bx.github.io/2022/05/22/javanotes/java7/"/>
-    <id>https://luan-bx.github.io/2022/05/22/javanotes/java7/</id>
-    <published>2022-05-22T07:46:28.000Z</published>
-    <updated>2023-03-09T02:33:52.708Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;h2 id=&quot;说明&quot;&gt;&lt;a href=&quot;#说明&quot; class=&quot;headerlink&quot;</summary>
         
       
     
