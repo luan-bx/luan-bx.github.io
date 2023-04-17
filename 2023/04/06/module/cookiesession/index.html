@@ -340,7 +340,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
@@ -395,6 +395,13 @@
 <li>invalidate()：使session立即无效</li>
 <li>setMaxInactiveInterval(int i)：设置session最大的有效时间。注意，这个有效时间是两次访问服务器所间隔的最大时间，如果超过最大的有效时间，那么这个session就失效了。</li>
 </ol>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//得到session</span>
+HttpSession session <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//设置最长访问间隔时间(一天)</span>
+session<span class="token punctuation">.</span><span class="token function">setMaxInactiveInterval</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//将用户名存入session</span>
+session<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">,</span>username<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h1 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h1><ol>
 <li>cookie数据存放在客户的<strong>浏览器</strong>上，session数据放在<strong>服务器</strong>上</li>
 <li>cookie<strong>不是很安全</strong>，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗,如果主要考虑到安全应当使用session</li>
