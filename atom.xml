@@ -6,7 +6,7 @@
   <link href="https://luan-bx.github.io/atom.xml" rel="self"/>
   
   <link href="https://luan-bx.github.io/"/>
-  <updated>2023-04-17T09:22:28.773Z</updated>
+  <updated>2023-04-17T09:27:16.508Z</updated>
   <id>https://luan-bx.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://luan-bx.github.io/2023/04/06/module/cookiesession/"/>
     <id>https://luan-bx.github.io/2023/04/06/module/cookiesession/</id>
     <published>2023-04-06T06:27:16.000Z</published>
-    <updated>2023-04-17T09:22:28.773Z</updated>
+    <updated>2023-04-17T09:27:16.508Z</updated>
     
     
       
@@ -272,6 +272,36 @@
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
     
     <category term="String类" scheme="https://luan-bx.github.io/tags/String%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sokect传输对象</title>
+    <link href="https://luan-bx.github.io/2022/11/23/module/socket/"/>
+    <id>https://luan-bx.github.io/2022/11/23/module/socket/</id>
+    <published>2022-11-23T03:05:13.000Z</published>
+    <updated>2023-04-18T09:49:10.764Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;流程&quot;&gt;&lt;a href=&quot;#流程&quot; class=&quot;headerlink&quot; title=&quot;流程&quot;&gt;&lt;/a&gt;流程&lt;/h1&gt;&lt;p&gt;可以理解为是对TCP的实现。&lt;/p&gt;
+&lt;h2 id=&quot;服务端&quot;&gt;&lt;a href=&quot;#服务端&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Sokect" scheme="https://luan-bx.github.io/categories/Sokect/"/>
+    
+    
+    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
+    
+    <category term="Sokect" scheme="https://luan-bx.github.io/tags/Sokect/"/>
+    
+    <category term="传输对象" scheme="https://luan-bx.github.io/tags/%E4%BC%A0%E8%BE%93%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
@@ -552,33 +582,6 @@
     <category term="Code" scheme="https://luan-bx.github.io/tags/Code/"/>
     
     <category term="数据库" scheme="https://luan-bx.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java（八）多线程</title>
-    <link href="https://luan-bx.github.io/2022/05/28/javanotes/java8/"/>
-    <id>https://luan-bx.github.io/2022/05/28/javanotes/java8/</id>
-    <published>2022-05-28T10:08:56.000Z</published>
-    <updated>2023-03-09T03:34:22.349Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;h2 id=&quot;程序-program&quot;&gt;&lt;a href=&quot;#程序-program&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/categories/Java/"/>
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   

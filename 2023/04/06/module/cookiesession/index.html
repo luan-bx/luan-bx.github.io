@@ -393,7 +393,7 @@
 <li>removeAttribute(String s)：从session中删除s对应的属性</li>
 <li>getId()：得到session所对应的id</li>
 <li>invalidate()：使session立即无效</li>
-<li>setMaxInactiveInterval(int i)：设置session最大的有效时间。注意，这个有效时间是两次访问服务器所间隔的最大时间，如果超过最大的有效时间，那么这个session就失效了。</li>
+<li>setMaxInactiveInterval(int i)：设置session最大的有效时间。注意，这个有效时间是两次访问服务器所间隔的最大时间，如果超过最大的有效时间，那么这个session就失效了。当传一个等于0或小于0的数时，session对象会永远有效，所以尽量不给他设置负值。</li>
 </ol>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//得到session</span>
 HttpSession session <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -821,7 +821,7 @@ session<span class="token punctuation">.</span><span class="token function">setA
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">41k</span>
+                        class="white-color">42.1k</span>
             
             
             
