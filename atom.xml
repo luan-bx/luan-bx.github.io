@@ -105,33 +105,6 @@
   
   <entry>
     <title>Linux下MySQL命令</title>
-    <link href="https://luan-bx.github.io/2023/03/21/mysql/crud/"/>
-    <id>https://luan-bx.github.io/2023/03/21/mysql/crud/</id>
-    <published>2023-03-21T05:23:16.000Z</published>
-    <updated>2023-04-21T05:33:12.953Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;增-Insert&quot;&gt;&lt;a href=&quot;#增-Insert&quot; class=&quot;headerlink&quot; title=&quot;增@Insert&quot;&gt;&lt;/a&gt;增@Insert&lt;/h1&gt;&lt;pre class=&quot; language-sql&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL命令" scheme="https://luan-bx.github.io/categories/MySQL%E5%91%BD%E4%BB%A4/"/>
-    
-    
-    <category term="Linux" scheme="https://luan-bx.github.io/tags/Linux/"/>
-    
-    <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下MySQL命令</title>
     <link href="https://luan-bx.github.io/2023/03/21/mysql/mysql/"/>
     <id>https://luan-bx.github.io/2023/03/21/mysql/mysql/</id>
     <published>2023-03-21T05:23:16.000Z</published>
@@ -152,7 +125,34 @@
     <category term="MySQL命令" scheme="https://luan-bx.github.io/categories/MySQL%E5%91%BD%E4%BB%A4/"/>
     
     
+    <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
+    
     <category term="Linux" scheme="https://luan-bx.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CRUD</title>
+    <link href="https://luan-bx.github.io/2023/03/21/mysql/crud/"/>
+    <id>https://luan-bx.github.io/2023/03/21/mysql/crud/</id>
+    <published>2023-03-21T05:23:10.000Z</published>
+    <updated>2023-04-21T05:41:35.541Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;增-Insert&quot;&gt;&lt;a href=&quot;#增-Insert&quot; class=&quot;headerlink&quot; title=&quot;增@Insert&quot;&gt;&lt;/a&gt;增@Insert&lt;/h1&gt;&lt;pre class=&quot; language-sql&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="CRUD" scheme="https://luan-bx.github.io/categories/CRUD/"/>
+    
+    
+    <category term="CRUD" scheme="https://luan-bx.github.io/tags/CRUD/"/>
     
     <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
     
@@ -267,9 +267,9 @@
     <category term="监听器" scheme="https://luan-bx.github.io/categories/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
     
-    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
-    
     <category term="文件操作" scheme="https://luan-bx.github.io/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    
+    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
     
     <category term="监听器" scheme="https://luan-bx.github.io/tags/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
@@ -324,11 +324,11 @@
     <category term="Sokect" scheme="https://luan-bx.github.io/categories/Sokect/"/>
     
     
+    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
+    
     <category term="Sokect" scheme="https://luan-bx.github.io/tags/Sokect/"/>
     
     <category term="传输对象" scheme="https://luan-bx.github.io/tags/%E4%BC%A0%E8%BE%93%E5%AF%B9%E8%B1%A1/"/>
-    
-    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
     
   </entry>
   
