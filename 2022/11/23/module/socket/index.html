@@ -309,16 +309,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/TCP/">
-                                <span class="chip bg-color">TCP</span>
-                            </a>
-                        
                             <a href="/tags/Sokect/">
                                 <span class="chip bg-color">Sokect</span>
                             </a>
                         
                             <a href="/tags/%E4%BC%A0%E8%BE%93%E5%AF%B9%E8%B1%A1/">
                                 <span class="chip bg-color">传输对象</span>
+                            </a>
+                        
+                            <a href="/tags/TCP/">
+                                <span class="chip bg-color">TCP</span>
                             </a>
                         
                     </div>
@@ -351,7 +351,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.1k
                 </div>
                 
 
@@ -430,7 +430,6 @@ ObjectInputStream ois <span class="token operator">=</span> <span class="token k
 <span class="token comment" spellcheck="true">//必须保证服务端和客户端的 对象 包名一致</span>
 log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"客户端发送的对象："</span> <span class="token operator">+</span> ois<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>注：ObjectOutputStream 和 ObjectInputStream 分别与 FileOutputStream 和 FileInputStream 一起使用时，可以为应用程序提供对对象图形的持久存储。</p>
 <h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><ol>
 <li><p>创建服务端Socket：ServerSocket</p>
 <p>创建客户端Socket：Socket；</p>
@@ -548,6 +547,19 @@ log<span class="token punctuation">.</span><span class="token function">info</sp
         <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<h1 id="注"><a href="#注" class="headerlink" title="注"></a>注</h1><p>ObjectOutputStream 和 ObjectInputStream 分别与 FileOutputStream 和 FileInputStream 一起使用时，可以为应用程序提供对对象图形的持久存储。</p>
+<h2 id="传输多个参数"><a href="#传输多个参数" class="headerlink" title="传输多个参数"></a>传输多个参数</h2><p>分别添加各个参数，可以是同类。但接受方顺序必须保持一致</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//客户端</span>
+oos<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>alarmRecordEntity <span class="token punctuation">)</span><span class="token punctuation">;</span>
+oos<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span><span class="token string">"1"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+oos<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span><span class="token string">"2"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//服务端</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">(</span>AlarmRecordEntity<span class="token punctuation">)</span>ois<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">(</span>String<span class="token punctuation">)</span> ois<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">(</span>String<span class="token punctuation">)</span> ois<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230419153259.png"></p>
 
                 
             </div>
@@ -612,16 +624,16 @@ log<span class="token punctuation">.</span><span class="token function">info</sp
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/TCP/">
-                                    <span class="chip bg-color">TCP</span>
-                                </a>
-                            
                                 <a href="/tags/Sokect/">
                                     <span class="chip bg-color">Sokect</span>
                                 </a>
                             
                                 <a href="/tags/%E4%BC%A0%E8%BE%93%E5%AF%B9%E8%B1%A1/">
                                     <span class="chip bg-color">传输对象</span>
+                                </a>
+                            
+                                <a href="/tags/TCP/">
+                                    <span class="chip bg-color">TCP</span>
                                 </a>
                             
                         </div>
@@ -962,7 +974,7 @@ log<span class="token punctuation">.</span><span class="token function">info</sp
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.1k</span>
+                        class="white-color">42.7k</span>
             
             
             

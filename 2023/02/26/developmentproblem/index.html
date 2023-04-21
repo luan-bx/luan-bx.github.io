@@ -7,7 +7,7 @@
     <meta name="keywords" content="普通类@Autowired注入为null, lbx">
     <meta name="description" content="在普通类里或工具类里注入service或mapper，那么我们直接使用@Autowired注入，注入的service或mapper在方法里是不能直接使用，会报null。
 如果是工具类，工具类里一般都是静态方法，更是无法使用。
-解决方法第一步">
+解决方法方法一">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -336,7 +336,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    300
+                    419
                 </div>
                 
 
@@ -355,7 +355,38 @@
             <div id="articleContent">
                 <p>在普通类里或工具类里注入service或mapper，那么我们直接使用@Autowired注入，注入的service或mapper在方法里是不能直接使用，会报null。</p>
 <p>如果是工具类，工具类里一般都是静态方法，更是无法使用。</p>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>第一步：在java类上添加@Component注解，将java类实例到spring容器中。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><h2 id="方法一：构造器传参"><a href="#方法一：构造器传参" class="headerlink" title="方法一：构造器传参"></a>方法一：构造器传参</h2><p>如果该工具类或普通类是被其他Controller&#x2F;Service层调用的</p>
+<ol>
+<li>可以在Controller&#x2F;Service层@Autowired注入类</li>
+<li>并创造被调用类的构造器</li>
+<li>将对象传到被调用的类</li>
+</ol>
+<p>调用的类</p>
+<pre class=" language-java"><code class="language-java">
+<span class="token annotation punctuation">@Autowired</span>
+<span class="token keyword">protected</span> ReceiveAlarmMapping receiveAlarmMapping<span class="token punctuation">;</span>
+
+Socket socket <span class="token operator">=</span> null<span class="token punctuation">;</span>
+socket <span class="token operator">=</span> serverSocket<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">receiveAlarm</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Thread serverHandleThread <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ServerHandleThread</span><span class="token punctuation">(</span>socket<span class="token punctuation">,</span> receiveAlarmMapping<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    serverHandleThread<span class="token punctuation">.</span><span class="token function">setPriority</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    serverHandleThread<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>被调用的类</p>
+<pre class=" language-java"><code class="language-java">
+Socket socket <span class="token operator">=</span> null<span class="token punctuation">;</span>
+ReceiveAlarmMapping receiveAlarmMapping <span class="token operator">=</span> null<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token function">ServerHandleThread</span><span class="token punctuation">(</span>Socket socket<span class="token punctuation">,</span> ReceiveAlarmMapping receiveAlarmMapping<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>socket <span class="token operator">=</span> socket<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>receiveAlarmMapping <span class="token operator">=</span> receiveAlarmMapping<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="方法二：-PostConstruct"><a href="#方法二：-PostConstruct" class="headerlink" title="方法二：@PostConstruct"></a>方法二：@PostConstruct</h2><p>第一步：在java类上添加@Component注解，将java类实例到spring容器中。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Component<span class="token punctuation">;</span>
 
 <span class="token annotation punctuation">@Component</span>
@@ -644,12 +675,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">
-                        <span class="chip bg-color">文件操作</span>
-                    </a>
-                    
                     <a href="/tags/module/">
                         <span class="chip bg-color">module</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">
+                        <span class="chip bg-color">文件操作</span>
                     </a>
                     
                     <a href="/tags/%E7%9B%91%E5%90%AC%E5%99%A8/">
@@ -848,7 +879,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.1k</span>
+                        class="white-color">42.7k</span>
             
             
             

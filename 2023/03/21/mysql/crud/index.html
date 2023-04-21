@@ -5,17 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Linux下MySQL命令, lbx">
-    <meta name="description" content="注意每条命令后面加上分号“；”，否则认为命令未输完。
-进入MySQLmysql -u root -p
-
-
-查看数据库show databases;
-
-
-创建数据库create database XXXX;
-
-
-执行sql文件（数据库迁移）/">
+    <meta name="description" content="增@Insert@Insert(&#34;INSERT INTO `user`(`user_name`, `password`, `phone`, `email`, `gender`,`icon`, `number`, `post_id`, `po">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -344,7 +334,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    97
+                    413
                 </div>
                 
 
@@ -361,31 +351,68 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>每条命令后面加上分号“；”，否则认为命令未输完。</p>
-<h1 id="进入MySQL"><a href="#进入MySQL" class="headerlink" title="进入MySQL"></a>进入MySQL</h1><pre class=" language-sql"><code class="language-sql">mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p
+                <h1 id="增-Insert"><a href="#增-Insert" class="headerlink" title="增@Insert"></a>增@Insert</h1><pre class=" language-sql"><code class="language-sql"><span class="token variable">@Insert</span><span class="token punctuation">(</span><span class="token string">"INSERT INTO `user`(`user_name`, `password`, `phone`, `email`, `gender`,`icon`, `number`, `post_id`, `post_name`) "</span>
+        <span class="token operator">+</span> "<span class="token keyword">values</span><span class="token punctuation">(</span><span class="token comment" spellcheck="true">#{userName}, #{password}, #{phone}, #{email}, #{gender}, #{icon}, #{number}, #{postId}, #{postName});")</span>
+void <span class="token keyword">insert</span><span class="token punctuation">(</span>UserEntity customerUserEntity<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230411134725.png"></p>
-<h1 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h1><pre class=" language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">databases</span><span class="token punctuation">;</span>
+<h1 id="删-Delete"><a href="#删-Delete" class="headerlink" title="删@Delete"></a>删@Delete</h1><pre class=" language-sql"><code class="language-sql"><span class="token variable">@Delete</span><span class="token punctuation">(</span>"<span class="token keyword">delete</span> <span class="token keyword">from</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span> <span class="token keyword">where</span> user_name <span class="token operator">=</span> <span class="token comment" spellcheck="true">#{userName}")</span>
+void deleteUserByUserName<span class="token punctuation">(</span>String userName<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230411135124.png"></p>
-<h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> XXXX<span class="token punctuation">;</span>
+<h1 id="查-Select"><a href="#查-Select" class="headerlink" title="查@Select"></a>查@Select</h1><h2 id="普通查询"><a href="#普通查询" class="headerlink" title="普通查询"></a>普通查询</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">//查全表</span>
+<span class="token variable">@Select</span><span class="token punctuation">(</span><span class="token string">"SELECT * FROM `alarm_records`"</span><span class="token punctuation">)</span>
+List<span class="token operator">&lt;</span>AlarmRecordEntity<span class="token operator">></span> getAllAlarmRecords<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//查某列（某字段）</span>
+<span class="token variable">@Select</span><span class="token punctuation">(</span><span class="token string">"SELECT name FROM `user`"</span><span class="token punctuation">)</span>
+List<span class="token operator">&lt;</span>AlarmRecordEntity<span class="token operator">></span> getAllAlarmRecords<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//根据某字段查所有符合条件的</span>
+<span class="token variable">@Select</span><span class="token punctuation">(</span>"<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span> <span class="token keyword">WHERE</span> number <span class="token operator">=</span> <span class="token comment" spellcheck="true">#{number};")</span>
+UserEntity queryUserByNumber<span class="token punctuation">(</span><span class="token variable">@Param</span><span class="token punctuation">(</span><span class="token string">"number"</span><span class="token punctuation">)</span> String number<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230411172840.png"></p>
-<h1 id="执行sql文件（数据库迁移）"><a href="#执行sql文件（数据库迁移）" class="headerlink" title="执行sql文件（数据库迁移）"></a>执行sql文件（数据库迁移）</h1><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">//先选择数据库 </span>
-<span class="token keyword">use</span> XXX<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//执行sql文件</span>
-source 绝对路径
+<h2 id="重复的只取一次"><a href="#重复的只取一次" class="headerlink" title="重复的只取一次"></a>重复的只取一次</h2><p>遍历某个字段，重复的只取一个（时间戳最近的一个）</p>
+<p>把company换成*，即取出整条记录</p>
+<p>示例为alarm_records_company表中，company重复的按alarm_time时间最近的取值。</p>
+<h3 id="mapper"><a href="#mapper" class="headerlink" title="mapper"></a>mapper</h3><pre class=" language-sql"><code class="language-sql"><span class="token variable">@Select</span><span class="token punctuation">(</span><span class="token string">" select classtab.company FROM (SELECT company, MAX(alarm_time) alarm_time FROM alarm_records_company GROUP BY company) "</span> <span class="token operator">+</span>
+        <span class="token string">"tmp LEFT JOIN alarm_records_company classtab ON "</span> <span class="token operator">+</span>
+        <span class="token string">"classtab.company = tmp.company AND classtab.alarm_time = tmp.alarm_time;"</span><span class="token punctuation">)</span>
+List<span class="token operator">&lt;</span>String<span class="token operator">></span> getAllCompany<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230411173015.png"></p>
-<h1 id="查看数据库所有表"><a href="#查看数据库所有表" class="headerlink" title="查看数据库所有表"></a>查看数据库所有表</h1><pre class=" language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230421125439.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230421125501.png"></p>
+<h2 id="条件查询-SelectProvider"><a href="#条件查询-SelectProvider" class="headerlink" title="条件查询@SelectProvider"></a>条件查询@SelectProvider</h2><p>前端返回需要查询的参数，AlarmService.class层做逻辑判断，不为空的参数即为要查询的</p>
+<h3 id="mapper-1"><a href="#mapper-1" class="headerlink" title="mapper"></a>mapper</h3><pre class=" language-sql"><code class="language-sql"><span class="token variable">@SelectProvider</span><span class="token punctuation">(</span><span class="token keyword">type</span> <span class="token operator">=</span> AlarmService<span class="token punctuation">.</span>class<span class="token punctuation">,</span> method <span class="token operator">=</span> <span class="token string">"selectRecordsByDynamicSql"</span><span class="token punctuation">)</span>
+List<span class="token operator">&lt;</span>AlarmRecordEntity<span class="token operator">></span> getAlarmRecordsByFeature<span class="token punctuation">(</span>HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> features<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230411173500.png"></p>
-<h1 id="查看表结构"><a href="#查看表结构" class="headerlink" title="查看表结构"></a>查看表结构</h1><pre class=" language-sql"><code class="language-sql"><span class="token keyword">describe</span> 表名<span class="token punctuation">;</span>
+<h3 id="AlarmService-class"><a href="#AlarmService-class" class="headerlink" title="AlarmService.class"></a>AlarmService.class</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> String <span class="token function">selectRecordsByDynamicSql</span><span class="token punctuation">(</span>HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> features<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    String sql <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SQL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">SELECT</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">FROM</span><span class="token punctuation">(</span><span class="token string">"alarm_records"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>ObjectUtil<span class="token punctuation">.</span><span class="token function">isEmptyString</span><span class="token punctuation">(</span>features<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"monitor"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token function">WHERE</span><span class="token punctuation">(</span><span class="token string">"monitor = '"</span><span class="token operator">+</span>features<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"monitor"</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>ObjectUtil<span class="token punctuation">.</span><span class="token function">isEmptyString</span><span class="token punctuation">(</span>features<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"monitorClass"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token function">WHERE</span><span class="token punctuation">(</span><span class="token string">"monitor_class = '"</span><span class="token operator">+</span>features<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"monitorClass"</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>ObjectUtil<span class="token punctuation">.</span><span class="token function">isEmptyString</span><span class="token punctuation">(</span>features<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"monitorValue"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token function">WHERE</span><span class="token punctuation">(</span><span class="token string">"monitor_value = '"</span><span class="token operator">+</span>features<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"monitorValue"</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>ObjectUtil<span class="token punctuation">.</span><span class="token function">isEmptyString</span><span class="token punctuation">(</span>features<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"startTime"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token function">WHERE</span><span class="token punctuation">(</span><span class="token string">"alarm_time >= '"</span><span class="token operator">+</span>features<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"startTime"</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>ObjectUtil<span class="token punctuation">.</span><span class="token function">isEmptyString</span><span class="token punctuation">(</span>features<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"endTime"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token function">WHERE</span><span class="token punctuation">(</span><span class="token string">"alarm_time &lt;= '"</span><span class="token operator">+</span>features<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"endTime"</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> sql<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230411173346.png"></p>
-<h1 id="查看表记录"><a href="#查看表记录" class="headerlink" title="查看表记录"></a>查看表记录</h1><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名<span class="token punctuation">;</span>
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230411173713.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230421130700.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230421131608.png"></p>
+<h1 id="改-Update"><a href="#改-Update" class="headerlink" title="改@Update"></a>改@Update</h1><p>&#96;&#96;&#96;sql<br>&#x2F;&#x2F;根据某个字段更新该记录的另一个字段<br>@Update(“UPDATE <code>user</code> SET <code>icon</code>&#x3D;#{icon} WHERE <code>user_name</code>&#x3D;#{userName};”)<br>void updateIconByUserName(@Param(“userName”) String userName, @Param(“icon”) String icon);</p>
+<p>&#x2F;&#x2F;在整条记录上修改各个字段（id主键不会变）<br>@Update(“UPDATE <code>alarm_settings</code> “ +<br>        “SET “ +<br>        “<code>monitor_class</code> &#x3D; #{monitorClass}, “ +<br>        “<code>monitor_value</code> &#x3D; #{monitorValue}, “ +<br>        “<code>lower_limit</code> &#x3D; #{lowerLimit}, “ +<br>        “<code>upper_limit</code> &#x3D; #{upperLimit}, “ +<br>        “<code>message</code> &#x3D; #{message} “ +<br>        “WHERE <code>id</code>&#x3D;#{id}”)<br>public int updateAlarmSetting(AlarmSettingsEntity alarmSettingsEntity);</p>
 
                 
             </div>
@@ -412,7 +439,7 @@ source 绝对路径
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luan-bx.github.io/2023/03/21/mysql/linuxorder/">https://luan-bx.github.io/2023/03/21/mysql/linuxorder/</a>
+                    <a href="https://luan-bx.github.io/2023/03/21/mysql/crud/">https://luan-bx.github.io/2023/03/21/mysql/crud/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -562,13 +589,13 @@ source 绝对路径
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/15/module/rtspphoto/">
+                <a href="/2023/03/21/mysql/mysql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="rtsp视频流快照">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Linux下MySQL命令">
                         
-                        <span class="card-title">rtsp视频流快照</span>
+                        <span class="card-title">Linux下MySQL命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -579,14 +606,14 @@ source 绝对路径
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/rtsp%E8%A7%86%E9%A2%91%E6%B5%81/" class="post-category">
-                                    rtsp视频流
+                            <a href="/categories/MySQL%E5%91%BD%E4%BB%A4/" class="post-category">
+                                    MySQL命令
                                 </a>
                             
                             
@@ -596,16 +623,12 @@ source 绝对路径
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/module/">
-                        <span class="chip bg-color">module</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/rtsp%E8%A7%86%E9%A2%91%E6%B5%81/">
-                        <span class="chip bg-color">rtsp视频流</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%A7%86%E9%A2%91/">
-                        <span class="chip bg-color">视频</span>
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
@@ -800,7 +823,7 @@ source 绝对路径
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.1k</span>
+                        class="white-color">42.7k</span>
             
             
             
