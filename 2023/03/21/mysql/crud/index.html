@@ -334,7 +334,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    413
+                    519
                 </div>
                 
 
@@ -369,6 +369,10 @@ List<span class="token operator">&lt;</span>AlarmRecordEntity<span class="token 
 <span class="token comment" spellcheck="true">//根据某字段查所有符合条件的</span>
 <span class="token variable">@Select</span><span class="token punctuation">(</span>"<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span> <span class="token keyword">WHERE</span> number <span class="token operator">=</span> <span class="token comment" spellcheck="true">#{number};")</span>
 UserEntity queryUserByNumber<span class="token punctuation">(</span><span class="token variable">@Param</span><span class="token punctuation">(</span><span class="token string">"number"</span><span class="token punctuation">)</span> String number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//多条件查询</span>
+<span class="token variable">@Select</span><span class="token punctuation">(</span>"<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span> <span class="token keyword">WHERE</span> number <span class="token operator">=</span> <span class="token comment" spellcheck="true">#{number} and name = #{name};")</span>
+UserEntity queryUserByNumber<span class="token punctuation">(</span><span class="token variable">@Param</span><span class="token punctuation">(</span><span class="token string">"number"</span><span class="token punctuation">)</span> String number<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="重复的只取一次"><a href="#重复的只取一次" class="headerlink" title="重复的只取一次"></a>重复的只取一次</h2><p>遍历某个字段，重复的只取一个（时间戳最近的一个）</p>
 <p>把company换成*，即取出整条记录</p>
@@ -380,7 +384,8 @@ List<span class="token operator">&lt;</span>String<span class="token operator">>
 </code></pre>
 <p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230421125439.png"></p>
 <p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230421125501.png"></p>
-<h2 id="条件查询-SelectProvider"><a href="#条件查询-SelectProvider" class="headerlink" title="条件查询@SelectProvider"></a>条件查询@SelectProvider</h2><p>前端返回需要查询的参数，AlarmService.class层做逻辑判断，不为空的参数即为要查询的</p>
+<h2 id="条件查询-SelectProvider"><a href="#条件查询-SelectProvider" class="headerlink" title="条件查询@SelectProvider"></a>条件查询@SelectProvider</h2><p>适用不能提前预知哪个条件来查询</p>
+<p>前端返回需要查询的参数，AlarmService.class层做逻辑判断，不为空的参数即为要查询的</p>
 <h3 id="mapper-1"><a href="#mapper-1" class="headerlink" title="mapper"></a>mapper</h3><pre class=" language-sql"><code class="language-sql"><span class="token variable">@SelectProvider</span><span class="token punctuation">(</span><span class="token keyword">type</span> <span class="token operator">=</span> AlarmService<span class="token punctuation">.</span>class<span class="token punctuation">,</span> method <span class="token operator">=</span> <span class="token string">"selectRecordsByDynamicSql"</span><span class="token punctuation">)</span>
 List<span class="token operator">&lt;</span>AlarmRecordEntity<span class="token operator">></span> getAlarmRecordsByFeature<span class="token punctuation">(</span>HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> features<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
@@ -413,6 +418,7 @@ List<span class="token operator">&lt;</span>AlarmRecordEntity<span class="token 
 <p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230421131608.png"></p>
 <h1 id="改-Update"><a href="#改-Update" class="headerlink" title="改@Update"></a>改@Update</h1><p>&#96;&#96;&#96;sql<br>&#x2F;&#x2F;根据某个字段更新该记录的另一个字段<br>@Update(“UPDATE <code>user</code> SET <code>icon</code>&#x3D;#{icon} WHERE <code>user_name</code>&#x3D;#{userName};”)<br>void updateIconByUserName(@Param(“userName”) String userName, @Param(“icon”) String icon);</p>
 <p>&#x2F;&#x2F;在整条记录上修改各个字段（id主键不会变）<br>@Update(“UPDATE <code>alarm_settings</code> “ +<br>        “SET “ +<br>        “<code>monitor_class</code> &#x3D; #{monitorClass}, “ +<br>        “<code>monitor_value</code> &#x3D; #{monitorValue}, “ +<br>        “<code>lower_limit</code> &#x3D; #{lowerLimit}, “ +<br>        “<code>upper_limit</code> &#x3D; #{upperLimit}, “ +<br>        “<code>message</code> &#x3D; #{message} “ +<br>        “WHERE <code>id</code>&#x3D;#{id}”)<br>public int updateAlarmSetting(AlarmSettingsEntity alarmSettingsEntity);</p>
+<h1 id="其他资料"><a href="#其他资料" class="headerlink" title="其他资料"></a>其他资料</h1><p>分组查询：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41885239/article/details/115933896?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168204908516800180666125%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=168204908516800180666125&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-115933896-null-null.142%5Ev86%5Einsert_down1,239%5Ev2%5Einsert_chatgpt&utm_term=sql%20GROUP%20BY&spm=1018.2226.3001.4187">https://blog.csdn.net/weixin_41885239/article/details/115933896?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168204908516800180666125%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=168204908516800180666125&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-115933896-null-null.142^v86^insert_down1,239^v2^insert_chatgpt&amp;utm_term=sql%20GROUP%20BY&amp;spm=1018.2226.3001.4187</a></p>
 
                 
             </div>
@@ -823,7 +829,7 @@ List<span class="token operator">&lt;</span>AlarmRecordEntity<span class="token 
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.7k</span>
+                        class="white-color">46.5k</span>
             
             
             
