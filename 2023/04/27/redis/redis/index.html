@@ -1083,14 +1083,14 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>RDB文件是一个紧凑的二进制压缩文件，是Redis在某个时间点的全部数据快照。所以使用RDB恢复数据的速度远远比AOF的快，非常适合备份、全量复制、灾难恢复等场景。</p>
 <p>适合大规模的数据恢复。</p>
 <p>对数据的完整性要求不高。</p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>每次进行bgsave操作都要执行fork操作创建子经常，属于重量级操作，频繁执行成本过高，所以无法做到实时持久化，或者秒级持久化。</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>每次进行bgsave操作都要执行fork操作创建子进程，属于重量级操作，频繁执行成本过高，所以无法做到实时持久化，或者秒级持久化。</p>
 <p>需要一定的时间间隔进程操作！如果redis意外宕机了，这个最后一次修改数据就没有的了 </p>
-<h2 id="AOF持久化"><a href="#AOF持久化" class="headerlink" title="AOF持久化"></a>AOF持久化</h2><p>AOF（Append Only File）持久化是把每次写命令追加写入日志中，需要恢复数据时重新执行AOF文件中的命令就可以。解决了数据持久化的实时性，是目前主流的Redis持久化方式。</p>
+<h2 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h2><p>AOF（Append Only File）持久化是把每次写命令追加写入日志中，需要恢复数据时重新执行AOF文件中的命令就可以。解决了数据持久化的实时性，是目前主流的Redis持久化方式。</p>
 <p>Redis默认使用的是RDB模式，所以需要手动开启AOF模式！</p>
-<h3 id="手动触发：使用bgrewriteaof命令。"><a href="#手动触发：使用bgrewriteaof命令。" class="headerlink" title="手动触发：使用bgrewriteaof命令。"></a>手动触发：使用bgrewriteaof命令。</h3><h3 id="自动触发：AOF持久化默认是不开启的，需要修改配置文件"><a href="#自动触发：AOF持久化默认是不开启的，需要修改配置文件" class="headerlink" title="自动触发：AOF持久化默认是不开启的，需要修改配置文件"></a>自动触发：AOF持久化默认是不开启的，需要修改配置文件</h3><pre><code># appendonly改为yes，开启AOF
+<h3 id="手动触发：使用bgrewriteaof命令。"><a href="#手动触发：使用bgrewriteaof命令。" class="headerlink" title="手动触发：使用bgrewriteaof命令。"></a>手动触发：使用bgrewriteaof命令。</h3><h3 id="自动触发：AOF持久化默认是不开启的，需要修改配置文件"><a href="#自动触发：AOF持久化默认是不开启的，需要修改配置文件" class="headerlink" title="自动触发：AOF持久化默认是不开启的，需要修改配置文件"></a>自动触发：AOF持久化默认是不开启的，需要修改配置文件</h3><pre class=" language-redis"><code class="language-redis"># appendonly改为yes，开启AOF
 appendonly yes
 # AOF文件的名字
-appendfilename &quot;appendonly.aof&quot;
+appendfilename "appendonly.aof"
 # AOF文件的写入方式
 # everysec 每个一秒将缓存区内容写入文件 默认开启的写入方式
 appendfsync everysec
