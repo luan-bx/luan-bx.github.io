@@ -6,7 +6,7 @@
   <link href="https://luan-bx.github.io/atom.xml" rel="self"/>
   
   <link href="https://luan-bx.github.io/"/>
-  <updated>2023-05-09T02:07:15.056Z</updated>
+  <updated>2023-05-12T14:33:54.100Z</updated>
   <id>https://luan-bx.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>redis监听Key失效</title>
+    <link href="https://luan-bx.github.io/2023/05/03/redis/redislistener/"/>
+    <id>https://luan-bx.github.io/2023/05/03/redis/redislistener/</id>
+    <published>2023-05-03T06:52:15.000Z</published>
+    <updated>2023-05-12T14:33:54.100Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;业务逻辑&quot;&gt;&lt;a href=&quot;#业务逻辑&quot; class=&quot;headerlink&quot; title=&quot;业务逻辑&quot;&gt;&lt;/a&gt;业务逻辑&lt;/h1&gt;&lt;p&gt;监听redis失效的key，在key过期的时刻，做一些列操作。&lt;/p&gt;
+&lt;h1 id=&quot;修改配置&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="redis监听" scheme="https://luan-bx.github.io/categories/redis%E7%9B%91%E5%90%AC/"/>
+    
+    
+    <category term="redis" scheme="https://luan-bx.github.io/tags/redis/"/>
+    
+    <category term="监听" scheme="https://luan-bx.github.io/tags/%E7%9B%91%E5%90%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>redis</title>
@@ -121,9 +149,9 @@
     <category term="MySQL命令" scheme="https://luan-bx.github.io/categories/MySQL%E5%91%BD%E4%BB%A4/"/>
     
     
-    <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
-    
     <category term="Linux" scheme="https://luan-bx.github.io/tags/Linux/"/>
+    
+    <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
     
   </entry>
   
@@ -148,9 +176,9 @@
     <category term="CRUD" scheme="https://luan-bx.github.io/categories/CRUD/"/>
     
     
-    <category term="CRUD" scheme="https://luan-bx.github.io/tags/CRUD/"/>
-    
     <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
+    
+    <category term="CRUD" scheme="https://luan-bx.github.io/tags/CRUD/"/>
     
   </entry>
   
@@ -419,7 +447,7 @@
     <link href="https://luan-bx.github.io/2022/08/14/javacode/javacodeimplements/"/>
     <id>https://luan-bx.github.io/2022/08/14/javacode/javacodeimplements/</id>
     <published>2022-08-14T14:32:51.000Z</published>
-    <updated>2023-03-09T07:10:29.088Z</updated>
+    <updated>2023-05-09T09:17:57.775Z</updated>
     
     
       
@@ -437,11 +465,11 @@
     
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
     
-    <category term="Code" scheme="https://luan-bx.github.io/tags/Code/"/>
-    
     <category term="接口" scheme="https://luan-bx.github.io/tags/%E6%8E%A5%E5%8F%A3/"/>
     
     <category term="继承" scheme="https://luan-bx.github.io/tags/%E7%BB%A7%E6%89%BF/"/>
+    
+    <category term="自启动" scheme="https://luan-bx.github.io/tags/%E8%87%AA%E5%90%AF%E5%8A%A8/"/>
     
   </entry>
   
@@ -552,33 +580,6 @@
     <category term="Code" scheme="https://luan-bx.github.io/tags/Code/"/>
     
     <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java（十）集合</title>
-    <link href="https://luan-bx.github.io/2022/06/17/javanotes/java10/"/>
-    <id>https://luan-bx.github.io/2022/06/17/javanotes/java10/</id>
-    <published>2022-06-17T11:56:09.000Z</published>
-    <updated>2023-03-29T15:01:33.263Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;h2 id=&quot;对比数组&quot;&gt;&lt;a href=&quot;#对比数组&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/categories/Java/"/>
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   

@@ -417,7 +417,7 @@
         }
 
         coverSlider.carousel({
-            duration: Number('120'),
+            duration: Number('50'),
             fullWidth: true,
             indicators: 'true' === 'true',
             onCycleTo() {
@@ -509,6 +509,61 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/05/03/redis/redislistener/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="redis监听Key失效">
+                            
+                            <span class="card-title">redis监听Key失效</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                业务逻辑监听redis失效的key，在key过期的时刻，做一些列操作。
+修改配置将两个文件的notify-keyspace-events &quot; &quot;   改为 notify-keyspace-events “Ex”
+重启re
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-03
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/redis%E7%9B%91%E5%90%AC/" class="post-category">
+                                    redis监听
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/redis/">
+                            <span class="chip bg-color">redis</span>
+                        </a>
+                        
+                        <a href="/tags/%E7%9B%91%E5%90%AC/">
+                            <span class="chip bg-color">监听</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
             
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
@@ -731,12 +786,12 @@ HTMLth:value是input输入框默认值，用来接后端数据。name命名参�
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/MySQL/">
-                            <span class="chip bg-color">MySQL</span>
-                        </a>
-                        
                         <a href="/tags/Linux/">
                             <span class="chip bg-color">Linux</span>
+                        </a>
+                        
+                        <a href="/tags/MySQL/">
+                            <span class="chip bg-color">MySQL</span>
                         </a>
                         
                     </div>
@@ -784,74 +839,12 @@ HTMLth:value是input输入框默认值，用来接后端数据。name命名参�
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/CRUD/">
-                            <span class="chip bg-color">CRUD</span>
-                        </a>
-                        
                         <a href="/tags/MySQL/">
                             <span class="chip bg-color">MySQL</span>
                         </a>
                         
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/03/15/module/rtspphoto/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="rtsp视频流快照">
-                            
-                            <span class="card-title">rtsp视频流快照</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                对rtsp视频流快速截图可以连续截图，也可以覆盖截图
-
-import com.shark.aio.util.Constants;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-15
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/rtsp%E8%A7%86%E9%A2%91%E6%B5%81/" class="post-category">
-                                    rtsp视频流
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/module/">
-                            <span class="chip bg-color">module</span>
-                        </a>
-                        
-                        <a href="/tags/rtsp%E8%A7%86%E9%A2%91%E6%B5%81/">
-                            <span class="chip bg-color">rtsp视频流</span>
-                        </a>
-                        
-                        <a href="/tags/%E8%A7%86%E9%A2%91/">
-                            <span class="chip bg-color">视频</span>
+                        <a href="/tags/CRUD/">
+                            <span class="chip bg-color">CRUD</span>
                         </a>
                         
                     </div>
@@ -963,7 +956,7 @@ import lombok.NoArgsConstructor;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">46.5k</span>
+                        class="white-color">47.1k</span>
             
             
             
