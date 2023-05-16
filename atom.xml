@@ -149,9 +149,9 @@
     <category term="MySQL命令" scheme="https://luan-bx.github.io/categories/MySQL%E5%91%BD%E4%BB%A4/"/>
     
     
-    <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
-    
     <category term="Linux" scheme="https://luan-bx.github.io/tags/Linux/"/>
+    
+    <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
     
   </entry>
   
@@ -176,9 +176,9 @@
     <category term="CRUD" scheme="https://luan-bx.github.io/categories/CRUD/"/>
     
     
-    <category term="CRUD" scheme="https://luan-bx.github.io/tags/CRUD/"/>
-    
     <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
+    
+    <category term="CRUD" scheme="https://luan-bx.github.io/tags/CRUD/"/>
     
   </entry>
   
@@ -291,9 +291,9 @@
     <category term="监听器" scheme="https://luan-bx.github.io/categories/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
     
-    <category term="文件操作" scheme="https://luan-bx.github.io/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
-    
     <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
+    
+    <category term="文件操作" scheme="https://luan-bx.github.io/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
     
     <category term="监听器" scheme="https://luan-bx.github.io/tags/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
