@@ -264,9 +264,9 @@
     <category term="开发常见问题" scheme="https://luan-bx.github.io/categories/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     
     
-    <category term="开发常见问题" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
-    
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+    <category term="开发常见问题" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
@@ -291,9 +291,9 @@
     <category term="监听器" scheme="https://luan-bx.github.io/categories/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
     
-    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
-    
     <category term="文件操作" scheme="https://luan-bx.github.io/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    
+    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
     
     <category term="监听器" scheme="https://luan-bx.github.io/tags/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
@@ -320,9 +320,9 @@
     <category term="String类" scheme="https://luan-bx.github.io/categories/String%E7%B1%BB/"/>
     
     
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
     <category term="String类" scheme="https://luan-bx.github.io/tags/String%E7%B1%BB/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
     
   </entry>
   

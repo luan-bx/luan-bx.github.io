@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="lbx">
-    <meta name="description" content="记录成长历程">
+    <meta name="keywords" content="如何同时关联多个git远程仓库, lbx">
+    <meta name="description" content="查看已有ssh key首先确保能够查看隐藏目录，进入C:\Users\XXXXX.ssh目录，查看是否生成过密钥。
+id_rsa.pub和id_rsa分别为一对公&amp;#x2F;私密钥
+多个账户可再次创建密钥，但默认的名字需要修改，不能相同，否">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MyBlog</title>
+    <title>如何同时关联多个git远程仓库 | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -43,6 +45,8 @@
 
 
 
+
+    
 
 
 
@@ -262,438 +266,472 @@
 </header>
 
     
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                这里是我所热爱的世界！
-                
-            </div>
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "怀揣理想与智慧，迈向诗和远方。",
-                            
-                                "With ideal and wisdom, toward poetry and the distance.",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">如何同时关联多个git远程仓库</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
 
 
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Git/">
+                                <span class="chip bg-color">Git</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/git/" class="post-category">
+                                git
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-02-22
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    557
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="查看已有ssh-key"><a href="#查看已有ssh-key" class="headerlink" title="查看已有ssh key"></a>查看已有ssh key</h1><p>首先确保能够查看<strong>隐藏目录</strong>，进入C:\Users\XXXXX.ssh目录，查看是否生成过密钥。</p>
+<p>id_rsa.pub和id_rsa分别为一对公&#x2F;私密钥</p>
+<p>多个账户可再次创建密钥，但默认的名字需要修改，不能相同，否则会被提示是否重写</p>
+<p>默认为id_rsa，因此第二个密钥我修改了名字为id_rsa_lbx</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/fed2c1f003e72c4df11316926279109a.png"></p>
+<h1 id="生成ssh-key"><a href="#生成ssh-key" class="headerlink" title="生成ssh key"></a>生成ssh key</h1><blockquote>
+<p>ssh-keygen -t rsa -C <strong>“<a href="mailto:&#x79;&#x6f;&#x75;&#x72;&#x65;&#109;&#97;&#x69;&#108;&#x40;&#121;&#x6f;&#x75;&#114;&#x63;&#111;&#109;&#x70;&#97;&#x6e;&#121;&#x2e;&#x63;&#x6f;&#109;">&#x79;&#x6f;&#x75;&#x72;&#x65;&#109;&#97;&#x69;&#108;&#x40;&#121;&#x6f;&#x75;&#114;&#x63;&#111;&#109;&#x70;&#97;&#x6e;&#121;&#x2e;&#x63;&#x6f;&#109;</a>“</strong></p>
+</blockquote>
+<p>蓝色加粗字体为你的<strong>邮箱</strong>，不同ssh key需要绑定<strong>不同</strong>邮箱</p>
+<p>如果已经生成多个ssh key，如上图，则跳过此步</p>
+<h1 id="设置ssh-key的代理"><a href="#设置ssh-key的代理" class="headerlink" title="设置ssh key的代理"></a>设置ssh key的代理</h1><h2 id="首先查看代理"><a href="#首先查看代理" class="headerlink" title="首先查看代理"></a>首先查看代理</h2><blockquote>
+<p>ssh-add -l</p>
+</blockquote>
+<p>如果提示</p>
+<blockquote>
+<p>Could not open a connection to your authentication agent.</p>
+</blockquote>
+<p>则系统代理里没有任何key，执行如下操作</p>
+<blockquote>
+<p>exec ssh-agent bash</p>
+</blockquote>
+<p>若系统已经有ssh-key 代理 ,可以删除</p>
+<blockquote>
+<p>ssh-add -D</p>
+</blockquote>
+<h2 id="添加私钥"><a href="#添加私钥" class="headerlink" title="添加私钥"></a>添加私钥</h2><p>添加两个私钥</p>
+<blockquote>
+<p>ssh-add ~&#x2F;.ssh&#x2F;id_rsa<br>ssh-add ~&#x2F;.ssh&#x2F;id_rsa_lbx</p>
+</blockquote>
+<h2 id="添加公钥"><a href="#添加公钥" class="headerlink" title="添加公钥"></a>添加公钥</h2><p>在目标账户<strong>github</strong>的<strong>ssh管理</strong>页面，添加对应的公钥（刚才生成的ssh key，如id_rsa.pub 等<strong>以.pub</strong>结尾的文件内容）。</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/bda572998d7df66a7ff85fde7d2b783b.png"></p>
+<h2 id="新建并编辑配置文件config"><a href="#新建并编辑配置文件config" class="headerlink" title="新建并编辑配置文件config"></a>新建并编辑配置文件config</h2><p>在 ~&#x2F;.ssh 目录下新建一个config文件</p>
+<blockquote>
+<p>touch ~&#x2F;.ssh&#x2F;config</p>
+</blockquote>
+<p>添加内容</p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><blockquote>
+<p>#github</p>
+<p>Host github.com</p>
+<p>HostName github.com</p>
+<p>PreferredAuthentications publickey</p>
+<p>IdentityFile ~&#x2F;.ssh&#x2F; <strong>id_rsa</strong></p>
+<p>user git</p>
+</blockquote>
+<p>其中，id_rsa 为<strong>你要关联的账户</strong>对应的密钥，电脑需要关联哪个账户，这边就写哪个</p>
+<p>如此，ssh就会根据登陆的不同域，来读取对应的私钥文件</p>
+<p>如需要用到其他账户的远程仓库，则在此处修改目标仓库生成的ssh key即可。</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/1ad8a7aad4e6cb0147e671aafff44cb6.png"></p>
+<p>同时将两个ssh key同时写入，但区分Host名称即可，并且对应的ssh key文件对应好。</p>
+<p>并且以后在github.com前面加上前缀（Host名称），就可以跳转到各个账号的仓库。</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/f7c2af2a074b8ebb153622a5bf178070.png"></p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/6622342838ee544af637a76a724099ee.png"></p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><blockquote>
+<p>ssh -T <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#103;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a></p>
+</blockquote>
+<p>若出现</p>
+<blockquote>
+<p>Hi XXX! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+</blockquote>
+<p>则表示成功。查看XXX是否为关联的账户</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Luan-bx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://luan-bx.github.io/2022/02/22/gitssh/">https://luan-bx.github.io/2022/02/22/gitssh/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Luan-bx</a>
+                    !
+                </span>
+            </div>
+        
     </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Git/">
+                                    <span class="chip bg-color">Git</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
 </div>
 
-
-<main class="content">
+                </div>
+            </div>
+            
+        </div>
+    </div>
 
     
 
     
 
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/04/05/javanotes/java12/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Java零碎知识">
-                            
-                            <span class="card-title">Java零碎知识</span>
-                        </div>
-                    </a>
+    
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                1.在字符串“”中，加入双引号，会与方法中的“”混淆。
-分别在前面加 \ ,即可打印出双引号
+    
 
-2.产生随机数
-int value = (int)(Math.random() * 90 + 10) // [10.0, 100.0)
+    
 
-Mat
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/03/28/javanotes/java1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java（一）语言概述">
+                        
+                        <span class="card-title">Java（一）语言概述</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
                             
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java/" class="post-category">
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
                                     Java
                                 </a>
-                                
-                                
-                            </span>
-                        </div>
+                            
+                            
+                        </span>
                     </div>
-
+                </div>
+                
+                <div class="card-action article-tags">
                     
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Java/">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                        <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                            <span class="chip bg-color">Java笔记</span>
-                        </a>
-                        
-                    </div>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Java笔记</span>
+                    </a>
                     
                 </div>
+                
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/28/javanotes/java1/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java（一）语言概述">
-                            
-                            <span class="card-title">Java（一）语言概述</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                java语言的特点是什么？面向对象性：两个基本概念（要素）：类、对象；三大特性：封装、继承、多态健壮性：吸收了C&#x2F;C++语言的优点，但去掉了其影响程序健壮性的部分（如指针、内存的申请与释放等），提供了一个相对安全的内存管理和访问机
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Java/">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                        <a href="/tags/Java%E7%AC%94%E8%AE%B0/">
-                            <span class="chip bg-color">Java笔记</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/02/22/gitssh/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="如何同时关联多个git远程仓库">
-                            
-                            <span class="card-title">如何同时关联多个git远程仓库</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                查看已有ssh key首先确保能够查看隐藏目录，进入C:\Users\XXXXX.ssh目录，查看是否生成过密钥。
-id_rsa.pub和id_rsa分别为一对公&#x2F;私密钥
-多个账户可再次创建密钥，但默认的名字需要修改，不能相同，否
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-22
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/git/" class="post-category">
-                                    git
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
+            <div class="card">
+                <a href="/2022/02/20/git/">
+                    <div class="card-image">
                         
-                        <a href="/tags/Git/">
-                            <span class="chip bg-color">Git</span>
-                        </a>
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git常用命令">
+                        
+                        <span class="card-title">git常用命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
                         
                     </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/02/20/git/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git常用命令">
-                            
-                            <span class="card-title">git常用命令</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                基本操作
-初始化本地库
-
-git init
-
-
-查看状态
-
-git status
-
-推
-添加到暂缓区
-
-git add .
-
-
-提交至本地库
-
-git commit -m '提交信息'
-
-
-推到远程仓库
-
-git push
-
-拉
-下拉并与本
-                            
-                        </div>
-                        <div class="publish-info">
+                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2022-02-20
                             </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/git/" class="post-category">
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/git/" class="post-category">
                                     git
                                 </a>
-                                
-                                
-                            </span>
-                        </div>
+                            
+                            
+                        </span>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Git/">
-                            <span class="chip bg-color">Git</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/02/16/markdown/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Markdown">
-                            
-                            <span class="card-title">Markdown</span>
-                        </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
                     </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Markdown 是一种轻量级标记语言，它用简洁的语法代替排版，使我们专心于码字。它的目标是实现易读易写，成为一种适用于网络的书写语言。同时，Markdown支持嵌入html标签。注意：符号后面必须跟至少1个空格才有效！
-常用命令标题# 一
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-16
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    语言
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Markdown/">
-                            <span class="chip bg-color">Markdown</span>
-                        </a>
-                        
-                    </div>
                     
                 </div>
+                
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/02/15/hexo/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Hexo">
-                            
-                            <span class="card-title">Hexo</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                常用命令清理hexo clean
-
-构建静态文件hexo g
-
-上传至仓库hexo d
-
-打开本地服务器hexo server //可进行本地调试
-
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-15
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    框架
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Hexo/">
-                            <span class="chip bg-color">Hexo</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
         </div>
-    </article>
+        
+    </div>
+</article>
 
-</main>
+</div>
 
 
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/5/"
-               class="left btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">6 / 6</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a class="right btn-floating btn-large disabled">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
         </div>
     </div>
 </div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('true'),
+            headingSelector: 'h1, h2'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
 
 
 
