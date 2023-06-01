@@ -306,12 +306,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
-                            </a>
-                        
                             <a href="/tags/MySQL/">
                                 <span class="chip bg-color">MySQL</span>
+                            </a>
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -344,7 +344,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    97
+                    741
                 </div>
                 
 
@@ -386,6 +386,85 @@ source 绝对路径
 <h1 id="查看表记录"><a href="#查看表记录" class="headerlink" title="查看表记录"></a>查看表记录</h1><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名<span class="token punctuation">;</span>
 </code></pre>
 <p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230411173713.png"></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43423484/article/details/124408565?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168541701816800184193260%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=168541701816800184193260&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-2-124408565-null-null.142%5Ev88%5Econtrol_2,239%5Ev2%5Einsert_chatgpt&utm_term=windows%E5%AE%89%E8%A3%85mysql&spm=1018.2226.3001.4187">https://blog.csdn.net/weixin_43423484/article/details/124408565?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168541701816800184193260%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=168541701816800184193260&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-2-124408565-null-null.142^v88^control_2,239^v2^insert_chatgpt&amp;utm_term=windows%E5%AE%89%E8%A3%85mysql&amp;spm=1018.2226.3001.4187</a></p>
+<p>错误处理</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/quTMD/article/details/129186741?ops_request_misc=&request_id=&biz_id=102&utm_term=ERROR%201045%20(28000):%20Access%20den&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-129186741.142%5Ev88%5Econtrol_2,239%5Ev2%5Einsert_chatgpt&spm=1018.2226.3001.4187">https://blog.csdn.net/quTMD/article/details/129186741?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=ERROR%201045%20(28000):%20Access%20den&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-129186741.142^v88^control_2,239^v2^insert_chatgpt&amp;spm=1018.2226.3001.4187</a></p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>先切换到root用户下：</p>
+<pre><code>sudo su
+</code></pre>
+<p>本文档中使用的操作系统是ubuntu20.04，默认使用apt下载mysql默认版本可能是mysql5，所以先去官网<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a>下载mysql8的源：<br><img src="/./mysql8%E5%AE%89%E8%A3%851.png" alt="img"><br><img src="/./mysql8%E5%AE%89%E8%A3%852.png" alt="img"><br>我们将下载到的<code>mysql-apt-config_0.8.24-1_all.deb</code>文件放到用户主目录下，执行下面的命令：</p>
+<pre><code>dpkg -i mysql-apt-config_0.8.24-1_all.deb
+</code></pre>
+<p>会出现下面的界面，选择<code>mysql server -&gt; mysql-8.0 -&gt; ok</code><br><img src="/./mysql8%E5%AE%89%E8%A3%853.png" alt="img"><br>之后我们使用下面的命令安装mysql：</p>
+<pre><code>apt-get upgrade
+apt-get install mysql-server
+</code></pre>
+<p>安装过程中会让你设置初始密码：<br><img src="/./mysql8%E5%AE%89%E8%A3%854.png" alt="img"><br>若是没出错就已经安装好了，可以尝试登录一下：</p>
+<pre><code>mysql -u root -p
+</code></pre>
+<p>输入刚才的初始密码即可。<br><img src="/./mysql8%E5%AE%89%E8%A3%855.png" alt="img"></p>
+<h3 id="远程访问"><a href="#远程访问" class="headerlink" title="远程访问"></a>远程访问</h3><p>防火墙这里先不提，需要提前配置好防火墙，开放端口。<br>mysql8默认只有本机可以访问，如果需要从其他机器远程访问数据库，需要进行配置。<br>登录数据库，查看权限表：</p>
+<pre><code>mysql -u root -p
+mysql&gt; use mysql;
+mysql&gt; select user,host from user where user=&#39;root&#39;;
+</code></pre>
+<p>会查询到如下结果：</p>
+<pre><code>+------+-----------------+
+| user | host            |
++------+-----------------+
+|root  | localhost       |
++------+-----------------+
+1 row in set (0.00sec)
+</code></pre>
+<p>这里可以看到root用户的host字段是localhost，代表root用户只有本机可以访问。把它改成%即可远程访问：</p>
+<pre><code>update user set host = &#39;%&#39; where user =&#39;root&#39;;
+flush privileges;
+</code></pre>
+<p>然后mysql就允许远程主机访问了。</p>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>如果安装时未提示创建密码，则用sudo命令，用户root进入密码123456后，可以创建一个新用户，并用root用户赋予新建用户的权限。</p>
+<h3 id="远程连接不上"><a href="#远程连接不上" class="headerlink" title="远程连接不上"></a>远程连接不上</h3><ol>
+<li>修改端口</li>
+</ol>
+<pre class=" language-sql"><code class="language-sql">sudo vim <span class="token operator">/</span>etc<span class="token operator">/</span>mysql<span class="token operator">/</span>mysql<span class="token punctuation">.</span>cnf
+</code></pre>
+<p>&#x2F;etc&#x2F;mysql&#x2F;下面有个mysql.cnf类似的文件。修改端口127.0.0.1为0.0.0.0</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230427160412.png"></p>
+<p>2.修改host</p>
+<pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">use</span> mysql<span class="token punctuation">;</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">select</span> <span class="token keyword">user</span><span class="token punctuation">,</span>host <span class="token keyword">from</span> <span class="token keyword">user</span><span class="token punctuation">;</span>
+
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-----------+</span>
+<span class="token operator">|</span> <span class="token keyword">user</span>             <span class="token operator">|</span> host      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-----------+</span>
+<span class="token operator">|</span> root             <span class="token operator">|</span> localhost<span class="token operator">|</span>
+<span class="token operator">|</span> admin            <span class="token operator">|</span> localhost <span class="token operator">|</span>
+<span class="token operator">|</span> mysql<span class="token punctuation">.</span>infoschema <span class="token operator">|</span> localhost <span class="token operator">|</span>
+<span class="token operator">|</span> mysql<span class="token punctuation">.</span><span class="token keyword">session</span>    <span class="token operator">|</span> localhost <span class="token operator">|</span>
+<span class="token operator">|</span> mysql<span class="token punctuation">.</span>sys        <span class="token operator">|</span> localhost <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-----------+</span>
+ 
+mysql<span class="token operator">></span> <span class="token keyword">update</span> <span class="token keyword">user</span> <span class="token keyword">set</span> host <span class="token operator">=</span><span class="token string">'%'</span> <span class="token keyword">where</span> <span class="token keyword">user</span> <span class="token operator">=</span><span class="token string">'root'</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">select</span> <span class="token keyword">user</span><span class="token punctuation">,</span>host <span class="token keyword">from</span> <span class="token keyword">user</span><span class="token punctuation">;</span>
+
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-----------+</span>
+<span class="token operator">|</span> <span class="token keyword">user</span>             <span class="token operator">|</span> host      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-----------+</span>
+<span class="token operator">|</span> root             <span class="token operator">|</span> <span class="token operator">%</span>         <span class="token operator">|</span>
+<span class="token operator">|</span> admin            <span class="token operator">|</span> localhost <span class="token operator">|</span>
+<span class="token operator">|</span> mysql<span class="token punctuation">.</span>infoschema <span class="token operator">|</span> localhost <span class="token operator">|</span>
+<span class="token operator">|</span> mysql<span class="token punctuation">.</span><span class="token keyword">session</span>    <span class="token operator">|</span> localhost <span class="token operator">|</span>
+<span class="token operator">|</span> mysql<span class="token punctuation">.</span>sys        <span class="token operator">|</span> localhost <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-----------+</span>
+</code></pre>
+<ol start="3">
+<li>修改加密方式</li>
+</ol>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">user</span> <span class="token string">'root'</span>@'<span class="token operator">%</span><span class="token string">' identified with mysql_native_password by '</span>你的密码'<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//刷新权限</span>
+flush <span class="token keyword">privileges</span><span class="token punctuation">;</span>
+</code></pre>
 
                 
             </div>
@@ -450,12 +529,12 @@ source 绝对路径
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
-                                </a>
-                            
                                 <a href="/tags/MySQL/">
                                     <span class="chip bg-color">MySQL</span>
+                                </a>
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                         </div>
@@ -596,12 +675,12 @@ source 绝对路径
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
-                    </a>
-                    
                     <a href="/tags/CRUD/">
                         <span class="chip bg-color">CRUD</span>
+                    </a>
+                    
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
@@ -796,7 +875,7 @@ source 绝对路径
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">47.6k</span>
+                        class="white-color">50.3k</span>
             
             
             

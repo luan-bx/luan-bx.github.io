@@ -132,7 +132,7 @@
     <link href="https://luan-bx.github.io/2023/03/21/mysql/mysql/"/>
     <id>https://luan-bx.github.io/2023/03/21/mysql/mysql/</id>
     <published>2023-03-21T05:23:16.000Z</published>
-    <updated>2023-04-11T09:41:44.199Z</updated>
+    <updated>2023-05-30T04:49:48.113Z</updated>
     
     
       
@@ -149,9 +149,9 @@
     <category term="MySQL命令" scheme="https://luan-bx.github.io/categories/MySQL%E5%91%BD%E4%BB%A4/"/>
     
     
-    <category term="Linux" scheme="https://luan-bx.github.io/tags/Linux/"/>
-    
     <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
+    
+    <category term="Linux" scheme="https://luan-bx.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -176,9 +176,9 @@
     <category term="CRUD" scheme="https://luan-bx.github.io/categories/CRUD/"/>
     
     
-    <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
-    
     <category term="CRUD" scheme="https://luan-bx.github.io/tags/CRUD/"/>
+    
+    <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
     
   </entry>
   
@@ -264,9 +264,9 @@
     <category term="开发常见问题" scheme="https://luan-bx.github.io/categories/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     
     
-    <category term="开发常见问题" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
-    
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+    <category term="开发常见问题" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
@@ -327,6 +327,35 @@
   </entry>
   
   <entry>
+    <title>权限管理</title>
+    <link href="https://luan-bx.github.io/2023/02/11/module/authority/"/>
+    <id>https://luan-bx.github.io/2023/02/11/module/authority/</id>
+    <published>2023-02-11T05:35:47.000Z</published>
+    <updated>2023-05-30T08:12:02.428Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="authority" scheme="https://luan-bx.github.io/categories/authority/"/>
+    
+    
+    <category term="authority" scheme="https://luan-bx.github.io/tags/authority/"/>
+    
+    <category term="java" scheme="https://luan-bx.github.io/tags/java/"/>
+    
+    <category term="web" scheme="https://luan-bx.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HTML标签属性（后端）</title>
     <link href="https://luan-bx.github.io/2023/01/07/module/html/"/>
     <id>https://luan-bx.github.io/2023/01/07/module/html/</id>
@@ -357,6 +386,33 @@
   </entry>
   
   <entry>
+    <title>JVM</title>
+    <link href="https://luan-bx.github.io/2022/12/12/jvm/"/>
+    <id>https://luan-bx.github.io/2022/12/12/jvm/</id>
+    <published>2022-12-12T04:24:15.000Z</published>
+    <updated>2023-06-01T14:08:26.577Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;JVM整体结构&quot;&gt;&lt;a href=&quot;#JVM整体结构&quot; class=&quot;headerlink&quot; title=&quot;JVM整体结构&quot;&gt;&lt;/a&gt;JVM整体结构&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JVM" scheme="https://luan-bx.github.io/categories/JVM/"/>
+    
+    
+    <category term="JVM" scheme="https://luan-bx.github.io/tags/JVM/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Sokect传输对象</title>
     <link href="https://luan-bx.github.io/2022/11/23/module/socket/"/>
     <id>https://luan-bx.github.io/2022/11/23/module/socket/</id>
@@ -378,11 +434,11 @@
     <category term="Sokect" scheme="https://luan-bx.github.io/categories/Sokect/"/>
     
     
-    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
-    
     <category term="Sokect" scheme="https://luan-bx.github.io/tags/Sokect/"/>
     
     <category term="传输对象" scheme="https://luan-bx.github.io/tags/%E4%BC%A0%E8%BE%93%E5%AF%B9%E8%B1%A1/"/>
+    
+    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
     
   </entry>
   
@@ -524,62 +580,6 @@
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
     
     <category term="开发笔记" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java（十一）IO流</title>
-    <link href="https://luan-bx.github.io/2022/06/30/javanotes/java11/"/>
-    <id>https://luan-bx.github.io/2022/06/30/javanotes/java11/</id>
-    <published>2022-06-30T15:28:46.000Z</published>
-    <updated>2023-03-08T07:14:20.985Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;File类&quot;&gt;&lt;a href=&quot;#File类&quot; class=&quot;headerlink&quot; title=&quot;File类&quot;&gt;&lt;/a&gt;File类&lt;/h1&gt;&lt;h2 id=&quot;说明&quot;&gt;&lt;a href=&quot;#说明&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/categories/Java/"/>
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="Java笔记" scheme="https://luan-bx.github.io/tags/Java%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TCP收发测试</title>
-    <link href="https://luan-bx.github.io/2022/06/20/javacode/javacodetcp/"/>
-    <id>https://luan-bx.github.io/2022/06/20/javacode/javacodetcp/</id>
-    <published>2022-06-20T13:06:39.000Z</published>
-    <updated>2023-03-08T09:57:48.818Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;接收&quot;&gt;&lt;a href=&quot;#接收&quot; class=&quot;headerlink&quot; title=&quot;接收&quot;&gt;&lt;/a&gt;接收&lt;/h1&gt;&lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="TCP" scheme="https://luan-bx.github.io/categories/TCP/"/>
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="Code" scheme="https://luan-bx.github.io/tags/Code/"/>
-    
-    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
     
   </entry>
   
