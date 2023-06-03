@@ -291,9 +291,9 @@
     <category term="监听器" scheme="https://luan-bx.github.io/categories/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
     
-    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
-    
     <category term="文件操作" scheme="https://luan-bx.github.io/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    
+    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
     
     <category term="监听器" scheme="https://luan-bx.github.io/tags/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
@@ -352,6 +352,31 @@
     <category term="java" scheme="https://luan-bx.github.io/tags/java/"/>
     
     <category term="web" scheme="https://luan-bx.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>环境配置</title>
+    <link href="https://luan-bx.github.io/2023/02/10/huan-jing-pei-zhi/"/>
+    <id>https://luan-bx.github.io/2023/02/10/huan-jing-pei-zhi/</id>
+    <published>2023-02-10T05:10:42.000Z</published>
+    <updated>2023-06-03T06:59:02.562Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h1&gt;&lt;h1 id=&quot;nginx&quot;&gt;&lt;a href=&quot;#nginx&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="环境配置" scheme="https://luan-bx.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="环境配置" scheme="https://luan-bx.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
@@ -434,11 +459,11 @@
     <category term="Sokect" scheme="https://luan-bx.github.io/categories/Sokect/"/>
     
     
+    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
+    
     <category term="Sokect" scheme="https://luan-bx.github.io/tags/Sokect/"/>
     
     <category term="传输对象" scheme="https://luan-bx.github.io/tags/%E4%BC%A0%E8%BE%93%E5%AF%B9%E8%B1%A1/"/>
-    
-    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
     
   </entry>
   
@@ -553,33 +578,6 @@
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
     
     <category term="Code" scheme="https://luan-bx.github.io/tags/Code/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>企业项目管理系统服务端</title>
-    <link href="https://luan-bx.github.io/2022/07/05/pms/"/>
-    <id>https://luan-bx.github.io/2022/07/05/pms/</id>
-    <published>2022-07-05T08:22:49.000Z</published>
-    <updated>2023-03-17T07:16:00.397Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;企业项目管理系统服务端&quot;&gt;&lt;a href=&quot;#企业项目管理系统服务端&quot; class=&quot;headerlink&quot; title=&quot;企业项目管理系统服务端&quot;&gt;&lt;/a&gt;企业项目管理系统服务端&lt;/h1&gt;&lt;h2 id=&quot;注册&quot;&gt;&lt;a href=&quot;#注册&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="开发笔记" scheme="https://luan-bx.github.io/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="开发笔记" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
