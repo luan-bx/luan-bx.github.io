@@ -336,7 +336,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    596
+                    680
                 </div>
                 
 
@@ -483,6 +483,19 @@ RedisListenerErrorHandle redisListenerErrorHandle<span class="token punctuation"
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
+</code></pre>
+<h3 id="加入对象"><a href="#加入对象" class="headerlink" title="加入对象"></a>加入对象</h3><p>如果加入的value是对象，需要序列化</p>
+<p>Entity实体类继承序列化接口，否则实例化结果为null</p>
+<p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230617233859.png"></p>
+<p>加入jsdis时，序列化</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//加入时</span>
+ jedis<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">(</span>alarmEntity<span class="token punctuation">.</span><span class="token function">getMonitorValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> SerializeUtil<span class="token punctuation">.</span><span class="token function">serialize</span><span class="token punctuation">(</span>alarmEntity<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//取value时</span>
+ AlarmEntity alarmEntity <span class="token operator">=</span> <span class="token punctuation">(</span>AlarmEntity<span class="token punctuation">)</span> SerializeUtil<span class="token punctuation">.</span><span class="token function">deserialize</span><span class="token punctuation">(</span>jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//取之前最好先判断是否存在</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>jedis<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span> key <span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
 
                 
@@ -888,7 +901,7 @@ RedisListenerErrorHandle redisListenerErrorHandle<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">52.4k</span>
+                        class="white-color">52.5k</span>
             
             
             
