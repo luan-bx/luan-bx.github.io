@@ -336,7 +336,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    680
+                    819
                 </div>
                 
 
@@ -487,7 +487,7 @@ RedisListenerErrorHandle redisListenerErrorHandle<span class="token punctuation"
 <h3 id="加入对象"><a href="#加入对象" class="headerlink" title="加入对象"></a>加入对象</h3><p>如果加入的value是对象，需要序列化</p>
 <p>Entity实体类继承序列化接口，否则实例化结果为null</p>
 <p><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230617233859.png"></p>
-<p>加入jsdis时，序列化</p>
+<p>加入jedis时，序列化</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//加入时</span>
  jedis<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">(</span>alarmEntity<span class="token punctuation">.</span><span class="token function">getMonitorValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> SerializeUtil<span class="token punctuation">.</span><span class="token function">serialize</span><span class="token punctuation">(</span>alarmEntity<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -496,6 +496,42 @@ RedisListenerErrorHandle redisListenerErrorHandle<span class="token punctuation"
 
 <span class="token comment" spellcheck="true">//取之前最好先判断是否存在</span>
  <span class="token keyword">if</span> <span class="token punctuation">(</span>jedis<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span> key <span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><h2 id="自定义线程池类"><a href="#自定义线程池类" class="headerlink" title="自定义线程池类"></a>自定义线程池类</h2><pre class=" language-java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JedisConnectionFactory</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">static</span> JedisPool jedisPool<span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        JedisPoolConfig jedisPoolConfig <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JedisPoolConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        jedisPoolConfig<span class="token punctuation">.</span><span class="token function">setMaxTotal</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//最大空闲连接</span>
+        jedisPoolConfig<span class="token punctuation">.</span><span class="token function">setMaxIdle</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//最小空闲连接</span>
+        jedisPoolConfig<span class="token punctuation">.</span><span class="token function">setMinIdle</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//设置最长等待时间， ms</span>
+        jedisPoolConfig<span class="token punctuation">.</span><span class="token function">setMaxWaitMillis</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedisPool <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JedisPool</span><span class="token punctuation">(</span>jedisPoolConfig<span class="token punctuation">,</span> <span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span> <span class="token number">6379</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//获取 Jedis 对象</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Jedis <span class="token function">getJedis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        Jedis jedis <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>jedisPool <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//从连接池中获取Jedis对象</span>
+            jedis <span class="token operator">=</span> jedisPool<span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> jedis<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h2><p>注意：一定要嵌套在try里调用，这样会自动释放资源</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">try</span> <span class="token punctuation">(</span>Jedis jedis <span class="token operator">=</span> JedisConnectionFactory<span class="token punctuation">.</span><span class="token function">getJedis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">//相关操作</span>
+
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"redis加入失败！"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
                 
@@ -901,7 +937,7 @@ RedisListenerErrorHandle redisListenerErrorHandle<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">52.5k</span>
+                        class="white-color">52.8k</span>
             
             
             

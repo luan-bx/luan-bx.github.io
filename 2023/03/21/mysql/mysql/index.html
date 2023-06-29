@@ -344,7 +344,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    733
+                    772
                 </div>
                 
 
@@ -464,6 +464,21 @@ mysql<span class="token operator">></span> <span class="token keyword">select</s
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">user</span> <span class="token string">'root'</span>@'<span class="token operator">%</span><span class="token string">' identified with mysql_native_password by '</span>你的密码'<span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//刷新权限</span>
 flush <span class="token keyword">privileges</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h2><pre class=" language-sql"><code class="language-sql">sudo cat <span class="token operator">/</span>etc<span class="token operator">/</span>mysql<span class="token operator">/</span>debian<span class="token punctuation">.</span>cnf
+</code></pre>
+<p>复制密码<br><img src="https://raw.githubusercontent.com/luan-bx/PicGO/main/java/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230622143904(1)(1).png"></p>
+<pre class=" language-sql"><code class="language-sql">sudo service mysql <span class="token keyword">start</span>
+
+mysql <span class="token operator">-</span>udebian<span class="token operator">-</span>sys<span class="token operator">-</span>maint <span class="token operator">-</span>刚才复制的密码
+
+<span class="token keyword">use</span> mysql<span class="token punctuation">;</span>
+
+<span class="token keyword">grant</span> <span class="token keyword">all</span> <span class="token keyword">on</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">to</span> <span class="token string">'root'</span><span class="token variable">@'%'</span><span class="token punctuation">;</span>
+
+flush <span class="token keyword">privileges</span><span class="token punctuation">;</span>
+
+<span class="token keyword">exit</span>
 </code></pre>
 
                 
@@ -875,7 +890,7 @@ flush <span class="token keyword">privileges</span><span class="token punctuatio
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">52.5k</span>
+                        class="white-color">52.8k</span>
             
             
             
