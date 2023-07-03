@@ -264,9 +264,9 @@
     <category term="开发常见问题" scheme="https://luan-bx.github.io/categories/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     
     
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
     <category term="开发常见问题" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
     
   </entry>
   
@@ -431,9 +431,9 @@
     <category term="JVM" scheme="https://luan-bx.github.io/categories/JVM/"/>
     
     
-    <category term="JVM" scheme="https://luan-bx.github.io/tags/JVM/"/>
-    
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+    <category term="JVM" scheme="https://luan-bx.github.io/tags/JVM/"/>
     
   </entry>
   
