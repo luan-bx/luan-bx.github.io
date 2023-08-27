@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="内存磁盘网络参数, lbx">
-    <meta name="description" content="内存、磁盘 /**
+    <meta name="description" content="内存、磁盘    /**
      * 获取内存使用情况
      */
     @RequestMapping(&#34;/diskCapacityManagement&#34;)
-    public String diskCapacityManagemen">
+    public String diskCapacityManage">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -342,7 +342,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    926
+                    709
                 </div>
                 
 
@@ -359,58 +359,50 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="内存、磁盘"><a href="#内存、磁盘" class="headerlink" title="内存、磁盘"></a>内存、磁盘</h1><pre class=" language-java"><code class="language-java"> <span class="token comment" spellcheck="true">/**
+                <h1 id="内存、磁盘"><a href="#内存、磁盘" class="headerlink" title="内存、磁盘"></a>内存、磁盘</h1><pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">/**
      * 获取内存使用情况
      */</span>
     <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/diskCapacityManagement"</span><span class="token punctuation">)</span>
     <span class="token keyword">public</span> String <span class="token function">diskCapacityManagement</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse reps<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
-        OperatingSystemMXBean mem <span class="token operator">=</span> <span class="token punctuation">(</span>OperatingSystemMXBean<span class="token punctuation">)</span> ManagementFactory<span class="token punctuation">.</span><span class="token function">getOperatingSystemMXBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 获取内存总容量</span>
-        <span class="token keyword">long</span> totalMemorySize <span class="token operator">=</span> mem<span class="token punctuation">.</span><span class="token function">getTotalPhysicalMemorySize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 获取可用内存容量(剩余物理内存）</span>
-        <span class="token keyword">long</span> freeMemorySize <span class="token operator">=</span> mem<span class="token punctuation">.</span><span class="token function">getFreePhysicalMemorySize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 空闲的交换容量</span>
-        <span class="token keyword">long</span> freeSwapSpaceSize <span class="token operator">=</span> mem<span class="token punctuation">.</span><span class="token function">getFreeSwapSpaceSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token keyword">float</span> usedRAM <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>totalMemorySize <span class="token operator">-</span> freeMemorySize<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1.0</span> <span class="token operator">/</span> totalMemorySize<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span><span class="token punctuation">{</span>
+            OperatingSystemMXBean mem <span class="token operator">=</span> <span class="token punctuation">(</span>OperatingSystemMXBean<span class="token punctuation">)</span> ManagementFactory<span class="token punctuation">.</span><span class="token function">getOperatingSystemMXBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 获取内存总容量</span>
+            <span class="token keyword">long</span> totalMemorySize <span class="token operator">=</span> mem<span class="token punctuation">.</span><span class="token function">getTotalPhysicalMemorySize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 获取可用内存容量(剩余物理内存）</span>
+            <span class="token keyword">long</span> freeMemorySize <span class="token operator">=</span> mem<span class="token punctuation">.</span><span class="token function">getFreePhysicalMemorySize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"物理内存总容量totalMemorySize："</span> <span class="token operator">+</span> <span class="token function">transformation</span><span class="token punctuation">(</span>totalMemorySize<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"剩余物理内存可用容量freeMemorySize："</span> <span class="token operator">+</span> <span class="token function">transformation</span><span class="token punctuation">(</span>freeMemorySize<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"usedRAM："</span> <span class="token operator">+</span> usedRAM<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"空闲的交换容量:"</span> <span class="token operator">+</span> <span class="token function">transformation</span><span class="token punctuation">(</span>freeSwapSpaceSize<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">float</span> usedRAMRate <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>totalMemorySize <span class="token operator">-</span> freeMemorySize<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1.0</span> <span class="token operator">/</span> totalMemorySize<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">//        Runtime runtime = Runtime.getRuntime();</span>
-<span class="token comment" spellcheck="true">//        // java虚拟机中的内存总量，可用内存空间 单位为byte，默认为系统的1/64</span>
-<span class="token comment" spellcheck="true">//        long totalMemory = runtime.totalMemory();</span>
-<span class="token comment" spellcheck="true">//        // java虚拟机试图使用的最大内存量 最大可用内存空间 单位byte，默认为系统的1/4</span>
-<span class="token comment" spellcheck="true">//        long maxMemory = runtime.maxMemory();</span>
-<span class="token comment" spellcheck="true">//        // java 虚拟机中的空闲内存量 空闲空间 单位byte， 默认为系统的1/4</span>
-<span class="token comment" spellcheck="true">//        long freeMemory = runtime.freeMemory();</span>
-<span class="token comment" spellcheck="true">//        float usedRAMJava = (float)(((totalMemory - freeMemory) * 1.0 / totalMemory) * 100);</span>
-<span class="token comment" spellcheck="true">//        System.out.println("java虚拟机中的内存总量:" + totalMemory / 1024 / 1024 + "MB" );</span>
-<span class="token comment" spellcheck="true">//        System.out.println("java虚拟机试图使用的最大内存量:" + maxMemory / 1024 / 1024 + "MB" );</span>
-<span class="token comment" spellcheck="true">//        System.out.println("java虚拟机中的空闲内存量:" + freeMemory / 1024 / 1024 + "MB" );</span>
-<span class="token comment" spellcheck="true">//        System.out.println("java虚拟机中的剩余内存占总量:" + usedRAMJava + "%" );</span>
-
-        <span class="token comment" spellcheck="true">//限制小数点位数</span>
-        DecimalFormat df <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DecimalFormat</span><span class="token punctuation">(</span><span class="token string">"#0.00"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        File<span class="token punctuation">[</span><span class="token punctuation">]</span> disks <span class="token operator">=</span> File<span class="token punctuation">.</span><span class="token function">listRoots</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>File file <span class="token operator">:</span> disks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">// 获取盘符</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">getCanonicalPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"   "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 获取总容量</span>
-            <span class="token keyword">long</span> totalSpace <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getTotalSpace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            DecimalFormat df <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DecimalFormat</span><span class="token punctuation">(</span><span class="token string">"#0.00"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//        File[] disks = File.listRoots();</span>
+            File disks <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>Constants<span class="token punctuation">.</span>DISKCAPACITYPATH<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//获取总容量</span>
+            <span class="token keyword">long</span> totalSpace <span class="token operator">=</span> disks<span class="token punctuation">.</span><span class="token function">getTotalSpace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token comment" spellcheck="true">// 获取剩余容量</span>
-            <span class="token keyword">long</span> usableSpace <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getUsableSpace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">long</span> usableSpace <span class="token operator">=</span> disks<span class="token punctuation">.</span><span class="token function">getUsableSpace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token comment" spellcheck="true">// 获取已经使用的容量</span>
-            <span class="token keyword">long</span> freeSpace <span class="token operator">=</span> totalSpace <span class="token operator">-</span> usableSpace<span class="token punctuation">;</span>
+            <span class="token keyword">long</span> usedSpace <span class="token operator">=</span> totalSpace <span class="token operator">-</span> usableSpace<span class="token punctuation">;</span>
             <span class="token comment" spellcheck="true">// 获取使用率</span>
-            <span class="token keyword">float</span> useRate <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>freeSpace <span class="token operator">*</span> <span class="token number">1.0</span> <span class="token operator">/</span> totalSpace<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"总容量： "</span> <span class="token operator">+</span> <span class="token function">transformation</span><span class="token punctuation">(</span>totalSpace<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"已经使用： "</span> <span class="token operator">+</span> <span class="token function">transformation</span><span class="token punctuation">(</span>freeSpace<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"剩余容量： "</span> <span class="token operator">+</span> <span class="token function">transformation</span><span class="token punctuation">(</span>usableSpace<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"使用率： "</span> <span class="token operator">+</span> df<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>useRate<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"%   "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">float</span> useRate <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>usedSpace <span class="token operator">*</span> <span class="token number">1.0</span> <span class="token operator">/</span> totalSpace<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">boolean</span> isConnect <span class="token operator">=</span> <span class="token function">isConnect</span><span class="token punctuation">(</span><span class="token string">"www.baidu.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"网络状态"</span> <span class="token operator">+</span> isConnect<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            DiskCapacityEntity diskCapacity <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DiskCapacityEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            diskCapacity<span class="token punctuation">.</span><span class="token function">setTotalMemorySize</span><span class="token punctuation">(</span><span class="token function">transformation</span><span class="token punctuation">(</span>totalMemorySize<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            diskCapacity<span class="token punctuation">.</span><span class="token function">setTotalSpace</span><span class="token punctuation">(</span><span class="token function">transformation</span><span class="token punctuation">(</span>totalSpace<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            diskCapacity<span class="token punctuation">.</span><span class="token function">setConnect</span><span class="token punctuation">(</span>isConnect<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            diskCapacity<span class="token punctuation">.</span><span class="token function">setUsedRAMRate</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>usedRAMRate<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"%"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            diskCapacity<span class="token punctuation">.</span><span class="token function">setUseRate</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>useRate<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"%"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            req<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"diskCapacity"</span><span class="token punctuation">,</span> diskCapacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"进入磁盘管理页面成功！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"进入磁盘管理页面失败！"</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
+
+
+        <span class="token keyword">return</span> <span class="token string">"diskCapacityManagement"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
 
         <span class="token keyword">boolean</span> isConnect <span class="token operator">=</span> <span class="token function">isConnect</span><span class="token punctuation">(</span><span class="token string">"www.baidu.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -433,14 +425,15 @@
         <span class="token keyword">return</span> df<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> size <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"GB"</span><span class="token operator">+</span><span class="token string">"   "</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 </code></pre>
-<h1 id="网络情况（是否连接）"><a href="#网络情况（是否连接）" class="headerlink" title="网络情况（是否连接）"></a>网络情况（是否连接）</h1><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">isConnect</span><span class="token punctuation">(</span>String urlPath<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<h1 id="网络情况（是否连接）"><a href="#网络情况（是否连接）" class="headerlink" title="网络情况（是否连接）"></a>网络情况（是否连接）</h1><pre class=" language-java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">isConnect</span><span class="token punctuation">(</span>String urlPath<span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//定义其返回的状态，默认为false，网络不正常</span>
         <span class="token keyword">boolean</span> connect <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
         Runtime runtime <span class="token operator">=</span> Runtime<span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Process process<span class="token punctuation">;</span>
         <span class="token keyword">try</span> <span class="token punctuation">{</span>
             <span class="token comment" spellcheck="true">//-c3代表Linux测试三次，Windows不用加-c参数</span>
-            process <span class="token operator">=</span> runtime<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token string">"ping -c3 "</span> <span class="token operator">+</span> urlPath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String command <span class="token operator">=</span> ProcessUtil<span class="token punctuation">.</span>IS_WINDOWS<span class="token operator">?</span><span class="token string">"ping "</span> <span class="token operator">:</span> <span class="token string">"ping -c3 "</span><span class="token punctuation">;</span>
+            process <span class="token operator">=</span>  runtime<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span> command <span class="token operator">+</span> urlPath<span class="token punctuation">)</span><span class="token punctuation">;</span>
             InputStream is <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             InputStreamReader isr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span>is<span class="token punctuation">,</span><span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             BufferedReader br <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span>isr<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -454,7 +447,6 @@
             isr<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             br<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>null <span class="token operator">!=</span> sb <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>sb<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token comment" spellcheck="true">// windows大写，Linux小写</span>
                 String ttl <span class="token operator">=</span> ProcessUtil<span class="token punctuation">.</span>IS_WINDOWS <span class="token operator">?</span> <span class="token string">"TTL"</span> <span class="token operator">:</span> <span class="token string">"ttl"</span><span class="token punctuation">;</span>
                 <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>ttl<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                     <span class="token comment" spellcheck="true">// 网络畅通</span>
@@ -928,7 +920,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">52.8k</span>
+                        class="white-color">52.5k</span>
             
             
             
