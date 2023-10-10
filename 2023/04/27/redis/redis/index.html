@@ -334,7 +334,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    3.8k
                 </div>
                 
 
@@ -367,6 +367,15 @@
 <li>发布订阅系统</li>
 <li>地图信息分析</li>
 <li>计时器、计数器（浏览量！）</li>
+</ol>
+<h1 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h1><ol>
+<li>redis-server.exe，双击运行</li>
+<li>redis-cli.exe，双击运行</li>
+<li>切换数据库：select 1&#x2F;2&#x2F;3（切换数据库为1、2、3， 当前默认为数据库0）</li>
+<li>查当前库的大小：dbsize</li>
+<li>清空当前库：flushdb</li>
+<li>清空全部库：flushall</li>
+<li>再次查当前库的大小：dbsize （为0）</li>
 </ol>
 <h1 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h1><p>Redis官方推荐的Java连接开发工具</p>
 <p>SpringBoot2.×版本已经将Jedis换成了Lettuce</p>
@@ -1504,7 +1513,7 @@ auto-aof-rewrite-min-size 64mb
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">52.5k</span>
+                        class="white-color">53.5k</span>
             
             
             
