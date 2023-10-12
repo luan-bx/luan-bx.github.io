@@ -176,9 +176,9 @@
     <category term="MySQL命令" scheme="https://luan-bx.github.io/categories/MySQL%E5%91%BD%E4%BB%A4/"/>
     
     
-    <category term="Linux" scheme="https://luan-bx.github.io/tags/Linux/"/>
-    
     <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
+    
+    <category term="Linux" scheme="https://luan-bx.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -203,9 +203,9 @@
     <category term="CRUD" scheme="https://luan-bx.github.io/categories/CRUD/"/>
     
     
-    <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
-    
     <category term="CRUD" scheme="https://luan-bx.github.io/tags/CRUD/"/>
+    
+    <category term="MySQL" scheme="https://luan-bx.github.io/tags/MySQL/"/>
     
   </entry>
   
@@ -291,9 +291,9 @@
     <category term="开发常见问题" scheme="https://luan-bx.github.io/categories/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     
     
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
     <category term="开发常见问题" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
     
   </entry>
   
@@ -318,9 +318,9 @@
     <category term="监听器" scheme="https://luan-bx.github.io/categories/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
     
-    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
-    
     <category term="文件操作" scheme="https://luan-bx.github.io/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    
+    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
     
     <category term="监听器" scheme="https://luan-bx.github.io/tags/%E7%9B%91%E5%90%AC%E5%99%A8/"/>
     
@@ -347,9 +347,9 @@
     <category term="String类" scheme="https://luan-bx.github.io/categories/String%E7%B1%BB/"/>
     
     
-    <category term="String类" scheme="https://luan-bx.github.io/tags/String%E7%B1%BB/"/>
-    
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+    <category term="String类" scheme="https://luan-bx.github.io/tags/String%E7%B1%BB/"/>
     
   </entry>
   
@@ -486,11 +486,11 @@
     <category term="Sokect" scheme="https://luan-bx.github.io/categories/Sokect/"/>
     
     
+    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
+    
     <category term="Sokect" scheme="https://luan-bx.github.io/tags/Sokect/"/>
     
     <category term="传输对象" scheme="https://luan-bx.github.io/tags/%E4%BC%A0%E8%BE%93%E5%AF%B9%E8%B1%A1/"/>
-    
-    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
     
   </entry>
   
