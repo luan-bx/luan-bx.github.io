@@ -298,6 +298,34 @@
   </entry>
   
   <entry>
+    <title>提交-确认/取消-弹窗</title>
+    <link href="https://luan-bx.github.io/2023/02/26/html/confirm/"/>
+    <id>https://luan-bx.github.io/2023/02/26/html/confirm/</id>
+    <published>2023-02-26T14:03:49.000Z</published>
+    <updated>2024-01-26T07:01:24.336Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h1&gt;&lt;p&gt;在一些“删除”功能按钮处，需要添加一些确认弹窗，避免误触导致数据丢失。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="html" scheme="https://luan-bx.github.io/categories/html/"/>
+    
+    
+    <category term="弹窗" scheme="https://luan-bx.github.io/tags/%E5%BC%B9%E7%AA%97/"/>
+    
+    <category term="html" scheme="https://luan-bx.github.io/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
     <title>监听器</title>
     <link href="https://luan-bx.github.io/2023/02/25/module/filelistener/"/>
     <id>https://luan-bx.github.io/2023/02/25/module/filelistener/</id>
@@ -486,11 +514,11 @@
     <category term="Sokect" scheme="https://luan-bx.github.io/categories/Sokect/"/>
     
     
-    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
-    
     <category term="Sokect" scheme="https://luan-bx.github.io/tags/Sokect/"/>
     
     <category term="传输对象" scheme="https://luan-bx.github.io/tags/%E4%BC%A0%E8%BE%93%E5%AF%B9%E8%B1%A1/"/>
+    
+    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
     
   </entry>
   
@@ -544,40 +572,9 @@
     <category term="前端加弹窗" scheme="https://luan-bx.github.io/categories/%E5%89%8D%E7%AB%AF%E5%8A%A0%E5%BC%B9%E7%AA%97/"/>
     
     
-    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
-    
     <category term="html" scheme="https://luan-bx.github.io/tags/html/"/>
     
-  </entry>
-  
-  <entry>
-    <title>接口继承</title>
-    <link href="https://luan-bx.github.io/2022/08/14/javacode/javacodeimplements/"/>
-    <id>https://luan-bx.github.io/2022/08/14/javacode/javacodeimplements/</id>
-    <published>2022-08-14T14:32:51.000Z</published>
-    <updated>2023-05-09T09:17:57.775Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;ApplicationRunner&quot;&gt;&lt;a href=&quot;#ApplicationRunner&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="接口" scheme="https://luan-bx.github.io/categories/%E6%8E%A5%E5%8F%A3/"/>
-    
-    
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
-    <category term="接口" scheme="https://luan-bx.github.io/tags/%E6%8E%A5%E5%8F%A3/"/>
-    
-    <category term="继承" scheme="https://luan-bx.github.io/tags/%E7%BB%A7%E6%89%BF/"/>
-    
-    <category term="自启动" scheme="https://luan-bx.github.io/tags/%E8%87%AA%E5%90%AF%E5%8A%A8/"/>
+    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
     
   </entry>
   
