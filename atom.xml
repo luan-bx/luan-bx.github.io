@@ -6,7 +6,7 @@
   <link href="https://luan-bx.github.io/atom.xml" rel="self"/>
   
   <link href="https://luan-bx.github.io/"/>
-  <updated>2023-10-10T07:03:42.672Z</updated>
+  <updated>2024-01-26T13:14:02.820Z</updated>
   <id>https://luan-bx.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spring手动注册/销毁Bean</title>
+    <link href="https://luan-bx.github.io/2023/10/11/module/bean/"/>
+    <id>https://luan-bx.github.io/2023/10/11/module/bean/</id>
+    <published>2023-10-11T08:39:53.000Z</published>
+    <updated>2024-01-26T13:14:02.820Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;AIO项目中，摄像头注册bean，在删除摄像头的时候，注意把bean注销，否则再次添加该摄像头时，由于重复注册bean导致报错&lt;/p&gt;
+&lt;h1 id=&quot;Bean&quot;&gt;&lt;a href=&quot;#Bean&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="手动注册/销毁Bean" scheme="https://luan-bx.github.io/categories/%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%86%8C-%E9%94%80%E6%AF%81Bean/"/>
+    
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+    <category term="注册/销毁Bean" scheme="https://luan-bx.github.io/tags/%E6%B3%A8%E5%86%8C-%E9%94%80%E6%AF%81Bean/"/>
+    
+    <category term="Spring" scheme="https://luan-bx.github.io/tags/Spring/"/>
+    
+  </entry>
   
   <entry>
     <title>调用maven打的jar包</title>
@@ -291,9 +321,9 @@
     <category term="开发常见问题" scheme="https://luan-bx.github.io/categories/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     
     
-    <category term="开发常见问题" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
-    
     <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
+    
+    <category term="开发常见问题" scheme="https://luan-bx.github.io/tags/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
@@ -302,7 +332,7 @@
     <link href="https://luan-bx.github.io/2023/02/26/html/confirm/"/>
     <id>https://luan-bx.github.io/2023/02/26/html/confirm/</id>
     <published>2023-02-26T14:03:49.000Z</published>
-    <updated>2024-01-26T07:01:24.336Z</updated>
+    <updated>2024-01-26T07:33:51.173Z</updated>
     
     
       
@@ -486,9 +516,9 @@
     <category term="JVM" scheme="https://luan-bx.github.io/categories/JVM/"/>
     
     
-    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
-    
     <category term="JVM" scheme="https://luan-bx.github.io/tags/JVM/"/>
+    
+    <category term="Java" scheme="https://luan-bx.github.io/tags/Java/"/>
     
   </entry>
   
@@ -514,11 +544,11 @@
     <category term="Sokect" scheme="https://luan-bx.github.io/categories/Sokect/"/>
     
     
+    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
+    
     <category term="Sokect" scheme="https://luan-bx.github.io/tags/Sokect/"/>
     
     <category term="传输对象" scheme="https://luan-bx.github.io/tags/%E4%BC%A0%E8%BE%93%E5%AF%B9%E8%B1%A1/"/>
-    
-    <category term="TCP" scheme="https://luan-bx.github.io/tags/TCP/"/>
     
   </entry>
   
@@ -548,33 +578,6 @@
     <category term="磁盘" scheme="https://luan-bx.github.io/tags/%E7%A3%81%E7%9B%98/"/>
     
     <category term="网络" scheme="https://luan-bx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端加弹窗</title>
-    <link href="https://luan-bx.github.io/2022/09/24/module/frontpopover/"/>
-    <id>https://luan-bx.github.io/2022/09/24/module/frontpopover/</id>
-    <published>2022-09-24T12:06:54.000Z</published>
-    <updated>2023-04-11T05:44:12.683Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前端加弹窗&quot;&gt;&lt;a href=&quot;#前端加弹窗&quot; class=&quot;headerlink&quot; title=&quot;前端加弹窗&quot;&gt;&lt;/a&gt;前端加弹窗&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="前端加弹窗" scheme="https://luan-bx.github.io/categories/%E5%89%8D%E7%AB%AF%E5%8A%A0%E5%BC%B9%E7%AA%97/"/>
-    
-    
-    <category term="html" scheme="https://luan-bx.github.io/tags/html/"/>
-    
-    <category term="module" scheme="https://luan-bx.github.io/tags/module/"/>
     
   </entry>
   
