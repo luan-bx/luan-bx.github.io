@@ -334,7 +334,7 @@ dpkg --get-selections|">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.1k
                 </div>
                 
 
@@ -351,175 +351,175 @@ dpkg --get-selections|">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><h2 id="若以前安装过，先卸载"><a href="#若以前安装过，先卸载" class="headerlink" title="若以前安装过，先卸载"></a>若以前安装过，先卸载</h2><pre><code>sudo apt-get --purge remove nginx
+                <h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><h2 id="若以前安装过，先卸载"><a href="#若以前安装过，先卸载" class="headerlink" title="若以前安装过，先卸载"></a>若以前安装过，先卸载</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> --purge remove nginx
  
-sudo apt-get --purge remove nginx-common
+<span class="token function">sudo</span> <span class="token function">apt-get</span> --purge remove nginx-common
  
-dpkg --get-selections|grep nginx
+dpkg --get-selections<span class="token operator">|</span><span class="token function">grep</span> nginx
 </code></pre>
-<h2 id="1-前置环境"><a href="#1-前置环境" class="headerlink" title="1.前置环境"></a>1.前置环境</h2><pre><code>sudo apt-get update
-sudo apt-get install gcc
-sudo apt-get install ruby
-sudo apt-get install zlib1g
-sudo apt-get install zlib1g.dev
-sudo apt-get install libpcre3 libpcre3-dev
-sudo apt-get install openssl libssl-dev
+<h2 id="1-前置环境"><a href="#1-前置环境" class="headerlink" title="1.前置环境"></a>1.前置环境</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> gcc
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> ruby
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> zlib1g
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> zlib1g.dev
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> libpcre3 libpcre3-dev
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> openssl libssl-dev
 </code></pre>
 <h2 id="2-下载nginx源码"><a href="#2-下载nginx源码" class="headerlink" title="2.下载nginx源码"></a>2.下载nginx源码</h2><p>下载地址在<a target="_blank" rel="noopener" href="https://nginx.org/">https://nginx.org</a><br>源码在压缩包中附带1.22.1版本，nginx-1.22.1.tar.gz<br>解压到用户主目录 ~</p>
 <p>注意：如果使用向日葵传输文件夹，文件夹的owner和gruop默认是root，对该文件夹的一切操作都需要root权限。或者也可以使用下面的方法：</p>
-<pre><code>sudo chown -R user &lt;文件夹路径&gt;
-sudo chgrp -R user &lt;文件夹路径&gt;
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">chown</span> -R user <span class="token operator">&lt;</span>文件夹路径<span class="token operator">></span>
+<span class="token function">sudo</span> <span class="token function">chgrp</span> -R user <span class="token operator">&lt;</span>文件夹路径<span class="token operator">></span>
 </code></pre>
 <h2 id="3-下载nginx-http-flv-module"><a href="#3-下载nginx-http-flv-module" class="headerlink" title="3.下载nginx-http-flv-module"></a>3.下载nginx-http-flv-module</h2><p>在压缩包中附带1.2.10版本nginx-http-flv-module-1.2.10.zip<br>把nginx-http-flv-module解压，移动到&#x2F;usr&#x2F;local目录下，并将文件夹改名为：nginx-http-flv-module</p>
-<pre><code>sudo mv nginx-http-flv-module-1.2.10 /usr/local/nginx-http-flv-module
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">mv</span> nginx-http-flv-module-1.2.10 /usr/local/nginx-http-flv-module
 </code></pre>
 <p>进入nginx目录</p>
-<pre><code>cd ~/nginx-1.22.1
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> ~/nginx-1.22.1
 </code></pre>
 <p>将nginx-http-flv-module添加到nginx中</p>
-<pre><code>sudo ./configure --prefix=/usr/local  --with-http_ssl_module --add-module=/usr/local/nginx-http-flv-module
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> ./configure --prefix<span class="token operator">=</span>/usr/local  --with-http_ssl_module --add-module<span class="token operator">=</span>/usr/local/nginx-http-flv-module
 </code></pre>
 <p>生成make文件</p>
-<pre><code>sudo make
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">make</span>
 </code></pre>
 <p>安装</p>
-<pre><code>sudo make install
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
 </code></pre>
 <p>测试是否安装成功</p>
-<pre><code>nginx -v
+<pre class=" language-bash"><code class="language-bash">nginx -v
 </code></pre>
 <h2 id="4-配置nginx"><a href="#4-配置nginx" class="headerlink" title="4.配置nginx"></a>4.配置nginx</h2><p>需要修改nginx的配置文件，它的位置在nginx-1.22.1&#x2F;conf&#x2F;nginx.conf<br>nginx.conf文件内容如下：</p>
-<pre><code>
-worker_processes  10; #should be 1 for Windows, for it doesn&#39;t support Unix domain socket
-#worker_processes  auto; #from versions 1.3.8 and 1.2.5
+<pre class=" language-bash"><code class="language-bash">
+worker_processes  10<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">#should be 1 for Windows, for it doesn't support Unix domain socket</span>
+<span class="token comment" spellcheck="true">#worker_processes  auto; #from versions 1.3.8 and 1.2.5</span>
 
-#worker_cpu_affinity  0001 0010 0100 1000; #only available on FreeBSD and Linux
-#worker_cpu_affinity  auto; #from version 1.9.10
+<span class="token comment" spellcheck="true">#worker_cpu_affinity  0001 0010 0100 1000; #only available on FreeBSD and Linux</span>
+<span class="token comment" spellcheck="true">#worker_cpu_affinity  auto; #from version 1.9.10</span>
 
-error_log logs/error.log error;
+error_log logs/error.log error<span class="token punctuation">;</span>
 
-#if the module is compiled as a dynamic module and features relevant
-#to RTMP are needed, the command below MUST be specified and MUST be
-#located before events directive, otherwise the module won&#39;t be loaded
-#or will be loaded unsuccessfully when NGINX is started
+<span class="token comment" spellcheck="true">#if the module is compiled as a dynamic module and features relevant</span>
+<span class="token comment" spellcheck="true">#to RTMP are needed, the command below MUST be specified and MUST be</span>
+<span class="token comment" spellcheck="true">#located before events directive, otherwise the module won't be loaded</span>
+<span class="token comment" spellcheck="true">#or will be loaded unsuccessfully when NGINX is started</span>
 
-#load_module modules/ngx_http_flv_live_module.so;
+<span class="token comment" spellcheck="true">#load_module modules/ngx_http_flv_live_module.so;</span>
 
-events &#123;
-    worker_connections  10240;
-&#125;
+events <span class="token punctuation">{</span>
+    worker_connections  10240<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-http &#123;
-        include       mime.types;
-        default_type  application/octet-stream;
-        sendfile        on;
-       keepalive_timeout  65;
-        server &#123;
-            listen       9000; #http-flv的拉流端口
-            server_name  localhost【这个地方写你的ip、或者说是域名都是可以的--】; #http-flv的拉流ip
-            location / &#123;
-                root   html;
-                index  index.html index.htm;
-               &#125;
-            #http-flv的相关配置
-            location /live&#123;
-                flv_live on; #打开HTTP播放FLV直播流功能
-                chunked_transfer_encoding  on;
-                add_header &#39;Access-Control-Allow-Origin&#39; &#39;*&#39;;
-                add_header &#39;Access-Control-Allow-Credentials&#39; &#39;true&#39;;
-            &#125;
-            location /hls&#123;
-                types &#123;
-                    application/vnd.apple.mpegurl m3u8;
-            video/mp2t ts;
-                 &#125;
-                 root ~/nginx-1.22.1/html/hls;
-                 add_header &#39;Cache-Control&#39; &#39;no-cache&#39;;
-            &#125;
-             location /dash &#123;
-                root ~/nginx-1.22.1/html/dash;
-                add_header &#39;Cache-Control&#39; &#39;no-cache&#39;;
-            &#125;
+http <span class="token punctuation">{</span>
+        include       mime.types<span class="token punctuation">;</span>
+        default_type  application/octet-stream<span class="token punctuation">;</span>
+        sendfile        on<span class="token punctuation">;</span>
+       keepalive_timeout  65<span class="token punctuation">;</span>
+        server <span class="token punctuation">{</span>
+            listen       9000<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">#http-flv的拉流端口</span>
+            server_name  localhost【这个地方写你的ip、或者说是域名都是可以的--】<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">#http-flv的拉流ip</span>
+            location / <span class="token punctuation">{</span>
+                root   html<span class="token punctuation">;</span>
+                index  index.html index.htm<span class="token punctuation">;</span>
+               <span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">#http-flv的相关配置</span>
+            location /live<span class="token punctuation">{</span>
+                flv_live on<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">#打开HTTP播放FLV直播流功能</span>
+                chunked_transfer_encoding  on<span class="token punctuation">;</span>
+                add_header <span class="token string">'Access-Control-Allow-Origin'</span> <span class="token string">'*'</span><span class="token punctuation">;</span>
+                add_header <span class="token string">'Access-Control-Allow-Credentials'</span> <span class="token string">'true'</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            location /hls<span class="token punctuation">{</span>
+                types <span class="token punctuation">{</span>
+                    application/vnd.apple.mpegurl m3u8<span class="token punctuation">;</span>
+            video/mp2t ts<span class="token punctuation">;</span>
+                 <span class="token punctuation">}</span>
+                 root ~/nginx-1.22.1/html/hls<span class="token punctuation">;</span>
+                 add_header <span class="token string">'Cache-Control'</span> <span class="token string">'no-cache'</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+             location /dash <span class="token punctuation">{</span>
+                root ~/nginx-1.22.1/html/dash<span class="token punctuation">;</span>
+                add_header <span class="token string">'Cache-Control'</span> <span class="token string">'no-cache'</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
  
-             location /stat &#123;
-                #configuration of push &amp; pull status
-                  rtmp_stat all;
-                  rtmp_stat_stylesheet stat.xsl;
-             &#125;
-            location /stat.xsl &#123;
-                  root ~/nginx-1.22.1/html;
-            &#125;
+             location /stat <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">#configuration of push &amp; pull status</span>
+                  rtmp_stat all<span class="token punctuation">;</span>
+                  rtmp_stat_stylesheet stat.xsl<span class="token punctuation">;</span>
+             <span class="token punctuation">}</span>
+            location /stat.xsl <span class="token punctuation">{</span>
+                  root ~/nginx-1.22.1/html<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
  
-             location /control &#123;
-                rtmp_control all; #configuration of control module of rtmp
-            &#125;
+             location /control <span class="token punctuation">{</span>
+                rtmp_control all<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">#configuration of control module of rtmp</span>
+            <span class="token punctuation">}</span>
  
-            error_page   500 502 503 504  /50x.html;
-            location = /50x.html &#123;
-                root   html;
-            &#125;
-        &#125;
+            error_page   500 502 503 504  /50x.html<span class="token punctuation">;</span>
+            location <span class="token operator">=</span> /50x.html <span class="token punctuation">{</span>
+                root   html<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
  
-&#125;
+<span class="token punctuation">}</span>
 
-rtmp_auto_push on;
-rtmp_auto_push_reconnect 1s;
-rtmp_socket_dir /tmp;
+rtmp_auto_push on<span class="token punctuation">;</span>
+rtmp_auto_push_reconnect 1s<span class="token punctuation">;</span>
+rtmp_socket_dir /tmp<span class="token punctuation">;</span>
 
 
-rtmp&#123;
-        out_queue 4096;
-        out_cork 8;
-        max_streams 128;
-        timeout 15s;
-        drop_idle_publisher 15s;
-        log_interval 5s;
-        log_size 1m;
-        server&#123;
-            #推流端口
-            listen 1935;
-            #推流应用名称
-             application myapp&#123;
-                 live on;
-     	 record off;
-                 gop_cache on;
-              &#125;
-             application hls&#123;
-                  live on;
-                  hls on;
-                  hls_path ~/nginx-1.22.1/html/hls;
-                  hls_fragment 1s;
-                        hls_playlist_length 3s;
-            &#125;
-             application dash&#123;
-                   live on;
-                   dash on;
-                   dash_path ~/nginx-1.22.1/html/dash;
-             &#125;
+rtmp<span class="token punctuation">{</span>
+        out_queue 4096<span class="token punctuation">;</span>
+        out_cork 8<span class="token punctuation">;</span>
+        max_streams 128<span class="token punctuation">;</span>
+        <span class="token function">timeout</span> 15s<span class="token punctuation">;</span>
+        drop_idle_publisher 15s<span class="token punctuation">;</span>
+        log_interval 5s<span class="token punctuation">;</span>
+        log_size 1m<span class="token punctuation">;</span>
+        server<span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">#推流端口</span>
+            listen 1935<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">#推流应用名称</span>
+             application myapp<span class="token punctuation">{</span>
+                 live on<span class="token punctuation">;</span>
+     	 record off<span class="token punctuation">;</span>
+                 gop_cache on<span class="token punctuation">;</span>
+              <span class="token punctuation">}</span>
+             application hls<span class="token punctuation">{</span>
+                  live on<span class="token punctuation">;</span>
+                  hls on<span class="token punctuation">;</span>
+                  hls_path ~/nginx-1.22.1/html/hls<span class="token punctuation">;</span>
+                  hls_fragment 1s<span class="token punctuation">;</span>
+                        hls_playlist_length 3s<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+             application dash<span class="token punctuation">{</span>
+                   live on<span class="token punctuation">;</span>
+                   dash on<span class="token punctuation">;</span>
+                   dash_path ~/nginx-1.22.1/html/dash<span class="token punctuation">;</span>
+             <span class="token punctuation">}</span>
  
-        &#125;
-&#125;
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 </code></pre>
 <p>文件中有五处路径为<del>&#x2F;nginx-1.22.1，在实际使用时要换成具体的目录，例如用户为user，那么这里就要把</del>换成用户主目录&#x2F;home&#x2F;user<br>该文件要放到~&#x2F;nginx-1.22.1&#x2F;conf文件夹下</p>
-<h2 id="5-启动nginx"><a href="#5-启动nginx" class="headerlink" title="5.启动nginx"></a>5.启动nginx</h2><pre><code>cd ~/nginx-1.22.1
-sudo nginx -c conf/nginx.conf
-sudo nginx -s reload
+<h2 id="5-启动nginx"><a href="#5-启动nginx" class="headerlink" title="5.启动nginx"></a>5.启动nginx</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> ~/nginx-1.22.1
+<span class="token function">sudo</span> nginx -c conf/nginx.conf
+<span class="token function">sudo</span> nginx -s reload
 </code></pre>
-<h2 id="6-安装ffmpeg"><a href="#6-安装ffmpeg" class="headerlink" title="6.安装ffmpeg"></a>6.安装ffmpeg</h2><pre><code>sudo apt-get install ffmpeg
+<h2 id="6-安装ffmpeg"><a href="#6-安装ffmpeg" class="headerlink" title="6.安装ffmpeg"></a>6.安装ffmpeg</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> ffmpeg
 </code></pre>
-<h2 id="7-测试推流"><a href="#7-测试推流" class="headerlink" title="7.测试推流"></a>7.测试推流</h2><pre><code>ffmpeg -re -i rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4 -vcodec copy -acodec copy -f flv &quot;rtmp://127.0.0.1:1935/myapp/test&quot;
+<h2 id="7-测试推流"><a href="#7-测试推流" class="headerlink" title="7.测试推流"></a>7.测试推流</h2><pre class=" language-bash"><code class="language-bash">ffmpeg -re -i rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4 -vcodec copy -acodec copy -f flv <span class="token string">"rtmp://127.0.0.1:1935/myapp/test"</span>
 </code></pre>
-<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><pre><code>sudo apt-get install curl
-curl -sSL https://get.daocloud.io/docker | sh
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> curl
+curl -sSL https://get.daocloud.io/docker <span class="token operator">|</span> sh
 </code></pre>
-<h2 id="拉取镜像源"><a href="#拉取镜像源" class="headerlink" title="拉取镜像源"></a>拉取镜像源</h2><pre><code>sudo docker pull iludfy/predict_model
+<h2 id="拉取镜像源"><a href="#拉取镜像源" class="headerlink" title="拉取镜像源"></a>拉取镜像源</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> docker pull iludfy/predict_model
 </code></pre>
 <h2 id="Docker创建容器并启动"><a href="#Docker创建容器并启动" class="headerlink" title="Docker创建容器并启动"></a>Docker创建容器并启动</h2><p>拉取完镜像需要挂载到容器中才能启动，命令是docker run，它的参数如下：</p>
-<pre><code>sudo docker run [Options] image
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> docker run <span class="token punctuation">[</span>Options<span class="token punctuation">]</span> image
 
-#参数说明
---name=&quot;名字&quot;           指定容器名字
+<span class="token comment" spellcheck="true">#参数说明</span>
+--name<span class="token operator">=</span><span class="token string">"名字"</span>           指定容器名字
 -d                     后台方式运行
 -it                    使用交互方式运行,进入容器查看内容
 -p                     指定容器的端口
@@ -531,51 +531,51 @@ curl -sSL https://get.daocloud.io/docker | sh
 -v					   容器数据卷挂载
 </code></pre>
 <p>规定端口为5000，输入下面的命令：</p>
-<pre><code>sudo docker run -p 5000:5000 iludfy/predict_model
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> docker run -p 5000:5000 iludfy/predict_model
 </code></pre>
 <p>一个容器就已经被创建好并启动了。</p>
 <h3 id="端口被占用解决办法："><a href="#端口被占用解决办法：" class="headerlink" title="端口被占用解决办法："></a>端口被占用解决办法：</h3><p>以ubuntu系统为例：<br>先查到5000端口被哪个进程占用：</p>
-<pre><code>sudo netstat -ntlp
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">netstat</span> -ntlp
 </code></pre>
 <p>查到进程id后，使用kill命令杀死进程：</p>
-<pre><code>sudo kill &#123;pid&#125;
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">kill</span> <span class="token punctuation">{</span>pid<span class="token punctuation">}</span>
 </code></pre>
 <p>查看刚刚创建的容器的id：</p>
-<pre><code>sudo docker ps -a
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> docker <span class="token function">ps</span> -a
 </code></pre>
 <p>启动</p>
-<pre><code>sudo docker start &#123;id&#125;
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> docker start <span class="token punctuation">{</span>id<span class="token punctuation">}</span>
 </code></pre>
 <h1 id="MySQL-8-0"><a href="#MySQL-8-0" class="headerlink" title="MySQL 8.0"></a>MySQL 8.0</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先切换到root用户下：</p>
-<pre><code>sudo su
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">su</span>
 </code></pre>
 <p>本文档中使用的操作系统是ubuntu20.04，默认使用apt下载mysql默认版本可能是mysql5，所以先去官网<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a>下载mysql8的源：<br><img src="/./mysql8%E5%AE%89%E8%A3%851.png" alt="img"><br><img src="/./mysql8%E5%AE%89%E8%A3%852.png" alt="img"><br>我们将下载到的<code>mysql-apt-config_0.8.24-1_all.deb</code>文件放到用户主目录下，执行下面的命令：</p>
-<pre><code>dpkg -i mysql-apt-config_0.8.24-1_all.deb
+<pre class=" language-bash"><code class="language-bash">dpkg -i mysql-apt-config_0.8.24-1_all.deb
 </code></pre>
 <p>会出现下面的界面，选择<code>mysql server -&gt; mysql-8.0 -&gt; ok</code><br><img src="/./mysql8%E5%AE%89%E8%A3%853.png" alt="img"><br>之后我们使用下面的命令安装mysql：</p>
-<pre><code>apt-get upgrade
-apt-get install mysql-server
+<pre class=" language-bash"><code class="language-bash"><span class="token function">apt-get</span> upgrade
+<span class="token function">apt-get</span> <span class="token function">install</span> mysql-server
 </code></pre>
 <p>安装过程中会让你设置初始密码：<br><img src="/./mysql8%E5%AE%89%E8%A3%854.png" alt="img"><br>若是没出错就已经安装好了，可以尝试登录一下：</p>
-<pre><code>mysql -u root -p
+<pre class=" language-bash"><code class="language-bash">mysql -u root -p
 </code></pre>
 <p>输入刚才的初始密码即可。<br><img src="/./mysql8%E5%AE%89%E8%A3%855.png" alt="img"></p>
 <h2 id="远程访问"><a href="#远程访问" class="headerlink" title="远程访问"></a>远程访问</h2><p>防火墙这里先不提，需要提前配置好防火墙，开放端口。<br>mysql8默认只有本机可以访问，如果需要从其他机器远程访问数据库，需要进行配置。<br>登录数据库，查看权限表：</p>
-<pre><code>mysql -u root -p
-mysql&gt; use mysql;
-mysql&gt; select user,host from user where user=&#39;root&#39;;
+<pre class=" language-bash"><code class="language-bash">mysql -u root -p
+mysql<span class="token operator">></span> use mysql<span class="token punctuation">;</span>
+mysql<span class="token operator">></span> <span class="token keyword">select</span> user,host from user where user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
 </code></pre>
 <p>会查询到如下结果：</p>
-<pre><code>+------+-----------------+
-| user | host            |
+<pre class=" language-bash"><code class="language-bash">+------+-----------------+
+<span class="token operator">|</span> user <span class="token operator">|</span> host            <span class="token operator">|</span>
 +------+-----------------+
-|root  | localhost       |
+<span class="token operator">|</span>root  <span class="token operator">|</span> localhost       <span class="token operator">|</span>
 +------+-----------------+
-1 row in set (0.00sec)
+1 row <span class="token keyword">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span>0.00sec<span class="token punctuation">)</span>
 </code></pre>
 <p>这里可以看到root用户的host字段是localhost，代表root用户只有本机可以访问。把它改成%即可远程访问：</p>
-<pre><code>update user set host = &#39;%&#39; where user =&#39;root&#39;;
-flush privileges;
+<pre class=" language-bash"><code class="language-bash">update user <span class="token keyword">set</span> host <span class="token operator">=</span> <span class="token string">'%'</span> where user <span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
+flush privileges<span class="token punctuation">;</span>
 </code></pre>
 <p>然后mysql就允许远程主机访问了。</p>
 <h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>如果安装时未提示创建密码，则用sudo命令，用户root进入密码123456后，可以创建一个新用户，并用root用户赋予新建用户的权限。</p>
@@ -623,56 +623,56 @@ mysql<span class="token operator">></span> <span class="token keyword">select</s
 flush <span class="token keyword">privileges</span><span class="token punctuation">;</span>
 </code></pre>
 <h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="下载jdk"><a href="#下载jdk" class="headerlink" title="下载jdk"></a>下载jdk</h2><p>先检验是否安装java:</p>
-<pre><code>java -version
+<pre class=" language-bash"><code class="language-bash">java -version
 </code></pre>
 <p>若没有安装java，会得到如下输出：</p>
-<pre><code>user@user-NULL:~$ java -version
+<pre class=" language-bash"><code class="language-bash">user@user-NULL:~$ java -version
 
-Command &#39;java&#39; not found, but can be installed with:
+Command <span class="token string">'java'</span> not found, but can be installed with:
 
-sudo apt install openjdk-11-jre-headless  # version 11.0.18+10-0ubuntu1~20.04.1, or
-sudo apt install default-jre              # version 2:1.11-72
-sudo apt install openjdk-16-jre-headless  # version 16.0.1+9-1~20.04
-sudo apt install openjdk-17-jre-headless  # version 17.0.6+10-0ubuntu1~20.04.1
-sudo apt install openjdk-8-jre-headless   # version 8u362-ga-0ubuntu1~20.04.1
-sudo apt install openjdk-13-jre-headless  # version 13.0.7+5-0ubuntu1~20.04
+<span class="token function">sudo</span> apt <span class="token function">install</span> openjdk-11-jre-headless  <span class="token comment" spellcheck="true"># version 11.0.18+10-0ubuntu1~20.04.1, or</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> default-jre              <span class="token comment" spellcheck="true"># version 2:1.11-72</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> openjdk-16-jre-headless  <span class="token comment" spellcheck="true"># version 16.0.1+9-1~20.04</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> openjdk-17-jre-headless  <span class="token comment" spellcheck="true"># version 17.0.6+10-0ubuntu1~20.04.1</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> openjdk-8-jre-headless   <span class="token comment" spellcheck="true"># version 8u362-ga-0ubuntu1~20.04.1</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> openjdk-13-jre-headless  <span class="token comment" spellcheck="true"># version 13.0.7+5-0ubuntu1~20.04</span>
 </code></pre>
 <p>上面已经自动列出可选的版本了，我们这里选择java8安装：</p>
-<pre><code>sudo apt install openjdk-8-jre-headless
-sudo apt install openjdk-8-jdk-headless
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> openjdk-8-jre-headless
+<span class="token function">sudo</span> apt <span class="token function">install</span> openjdk-8-jdk-headless
 </code></pre>
 <p>安装好后再检查java安装：</p>
-<pre><code>user@user-NULL:~$ java -version
-openjdk version &quot;1.8.0_362&quot;
-OpenJDK Runtime Environment (build 1.8.0_362-8u362-ga-0ubuntu1~20.04.1-b09)
-OpenJDK 64-Bit Server VM (build 25.362-b09, mixed mode)
+<pre class=" language-bash"><code class="language-bash">user@user-NULL:~$ java -version
+openjdk version <span class="token string">"1.8.0_362"</span>
+OpenJDK Runtime Environment <span class="token punctuation">(</span>build 1.8.0_362-8u362-ga-0ubuntu1~20.04.1-b09<span class="token punctuation">)</span>
+OpenJDK 64-Bit Server VM <span class="token punctuation">(</span>build 25.362-b09, mixed mode<span class="token punctuation">)</span>
 
 user@user-NULL:~$ javac -version
 javac 1.8.0_362
 </code></pre>
 <h2 id="配置java环境变量"><a href="#配置java环境变量" class="headerlink" title="配置java环境变量"></a>配置java环境变量</h2><p>要配置环境变量，首先需要知道java的安装路径：</p>
-<pre><code>sudo update-alternatives --config java
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> update-alternatives --config java
 </code></pre>
 <p>得到如下输出：</p>
-<pre><code>链接组 java (提供 /usr/bin/java)中只有一个候选项：/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+<pre class=" language-bash"><code class="language-bash">链接组 java <span class="token punctuation">(</span>提供 /usr/bin/java<span class="token punctuation">)</span>中只有一个候选项：/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 无需配置。
 </code></pre>
 <p>拿到路径后打开环境变量配置文件：</p>
-<pre><code>sudo vim /etc/environment
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> vim /etc/environment
 </code></pre>
 <p>在此文件的末尾，添加java路径：</p>
-<pre><code>JAVA_HOME=&quot;/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java&quot;
+<pre class=" language-bash"><code class="language-bash">JAVA_HOME<span class="token operator">=</span><span class="token string">"/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"</span>
 </code></pre>
 <p>修改此文件将为系统上的所有用户设置JAVA_HOME路径。</p>
 <p>保存文件并退出编辑器。</p>
 <p>现在重新加载此文件：</p>
-<pre><code>source /etc/environment
+<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> /etc/environment
 </code></pre>
 <p>验证是否已设置环境变量：</p>
-<pre><code>echo $JAVA_HOME
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token variable">$JAVA_HOME</span>
 </code></pre>
 <p>输出路径：</p>
-<pre><code>/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+<pre class=" language-bash"><code class="language-bash">/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 </code></pre>
 <p>其他用户需要执行命令source &#x2F;etc&#x2F;environment或注销并重新登录才能应用此设置。</p>
 <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h2><p>1、解锁文件夹下所有文件</p>
@@ -1093,7 +1093,7 @@ javac 1.8.0_362
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">54.2k</span>
+                        class="white-color">54.1k</span>
             
             
             
